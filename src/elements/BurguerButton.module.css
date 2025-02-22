@@ -1,0 +1,62 @@
+/*estilos del botón de hamburguesa*/
+.Burguer__button{
+    width: 3.2rem;
+    height: 3.2rem;
+    position: absolute;
+    z-index: 3;
+    top: 1.6rem;
+    left: 1.6rem;
+}
+
+.Burguer__button div{
+    height: .4rem;
+    border-radius: .2rem;
+    background: var(--black);
+}
+
+.Burguer__button .Burguer__first_line{
+    width: 2.4rem;
+    position: absolute;
+    top: 4px;
+    left: .3rem;
+}
+
+.Burguer__button .Burguer__second_line_move{
+    width: 1.6rem;
+    position: absolute;
+    top: calc( 50% - .2rem);
+    left: .3rem;
+    transform: translateX(8px);
+    transition-timing-function: ease;
+    transition-duration: .4s;
+}
+
+.Burguer__button .Burguer__second_line{
+    width: 1.6rem;
+    position: absolute;
+    top: calc( 50% - .2rem);
+    left: .3rem;
+    transform: translateX(0px);
+    transition-timing-function: ease;
+    transition-duration: .4s;
+}
+
+.Burguer__button .Burguer__third_line_move{
+    width: 1.2rem;
+    position: absolute;
+    top: 2.4rem;
+    left: .3rem;
+    transform: translateX(11px);
+    transition-timing-function: ease;
+    transition-duration: .4s;
+}
+
+.Burguer__button .Burguer__third_line{
+    width: 1.2rem;
+    position: absolute;
+    top: 2.4rem;
+    left: .3rem;
+    transform: translateX(0px);
+    transition-timing-function: ease;
+    transition-duration: .4s;
+}

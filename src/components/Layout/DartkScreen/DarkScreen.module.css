@@ -1,0 +1,12 @@
+.Dark__screen{
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,.5);
+    z-index: 1;
+    position: fixed;
+    display: block;
+}
+
+.Dark__screen_hidden{
+    display: none;
+}

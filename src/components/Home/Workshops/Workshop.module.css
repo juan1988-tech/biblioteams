@@ -1,0 +1,71 @@
+.Workshops{
+    display: grid;
+    grid-template-rows: repeat(4,1fr);
+}
+
+.Workshop__target{
+    height: 28.4rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1.6rem;
+    background-size: cover;
+    color: var(--white)
+}
+
+.Workshop__tittle{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.Workshop__description,
+.Workshop__schedule{
+    font-size: 1.6rem;
+    margin-top: .8rem;
+}
+
+.Workshop__target button{
+    margin: 0 auto;
+    margin-top: auto;
+    width: 21.4rem;
+    height: 4rem;
+    border-radius: 2rem;
+    border: 1px solid var(--black);
+    font-family: "Comic Neue", serif;
+    font-size: 1.6rem;
+}
+
+.Workshop__target_one{
+    background-image: url('../../../../public/images/activities/activities-club-infantil-mobile.jpg');
+    background-position: center;
+}
+
+.Workshop__target_one button{
+    background: var(--green-light-button);
+}
+
+.Workshop__target_two{
+    background-image: url('../../../../public/images/activities/activities-club-ajedrez-mobile.jpg');
+    background-position: center;
+}
+
+.Workshop__target_two button{
+    background: var(--yellow-button);
+}
+
+.Workshop__target_three{
+    background-image: url('../../../../public/images/activities/activities-pre-icfes-mobile.jpg');
+    background-position: center;
+}
+
+.Workshop__target_three button{
+    background: var(--light-blue-button);
+}
+
+.Workshop__target_four{
+    background-image: url('../../../../public/images/activities/activities-english-club-mobile.jpg');
+    background-position: center;
+}
+
+.Workshop__target_four button{
+    background: var(--pink-button);
+}

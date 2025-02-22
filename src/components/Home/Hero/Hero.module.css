@@ -1,0 +1,93 @@
+.Hero{
+    height: 56.8rem;
+    background: var(--white-font);
+    padding: 1.6rem 1.6rem 0rem 1.6rem;
+}
+
+.Header{
+    display: none;
+}
+
+/*estilos para la sección hero*/
+.Hero__tittle_grid{
+    display: grid;
+    grid-template: 10rem 2.8rem 6rem 8rem/1fr 5.2rem 1fr;
+    grid-template-areas:"Hero__image Hero__image_1 Hero__image_2"
+                        "Hero__first_tittle Hero__first_tittle Hero__first_tittle"
+                        "Hero__second_tittle Hero__second_tittle Hero__second_tittle"
+                        "Hero__image_3 Hero__image_4 Hero__image_5";
+    position: relative;
+    width: 28.8rem;
+    margin: 0 auto;
+}
+
+.Hero__first_tittle{
+    grid-area: Hero__first_tittle;
+    font-size: 2.4rem;
+    text-align: center;
+    color: var(--tittle-blue);
+}
+
+.Hero__second_tittle{
+    grid-area: Hero__second_tittle;
+    font-size: 2.2rem;
+    font-weight: 400;
+    text-align: center;
+    width: 25rem;
+    justify-self: center;
+}
+
+.Hero__image,
+.Hero__image_1,
+.Hero__image_2,
+.Hero__image_3,
+.Hero__image_4,
+.Hero__image_5{
+    width: 5.2rem;
+    height: 5.2rem;
+    position: absolute;
+}
+
+.Hero__image{
+    grid-area: Hero__image;
+    left:34px;
+    top: 24px
+}
+
+.Hero__image_1{
+    grid-area: Hero__image_1;
+    top:1px;
+}
+
+.Hero__image_2{
+    grid-area: Hero__image_2;
+    top: 38px;
+    left: 40px;
+}
+
+.Hero__image_3{
+    grid-area: Hero__image_3;
+    left:28px;
+}
+
+.Hero__image_4{
+    grid-area: Hero__image_4;
+    top: 32px;
+}
+
+.Hero__image_5{
+    grid-area: Hero__image_5;
+    left: 55px;
+}
+
+/*estilos de la imágen principal*/
+.Hero__main_image{
+    margin: 0 auto;
+}
+
+.Hero__main_image img{
+    width: 23.4rem;
+    height: 23.4rem;
+    margin: 0 auto;
+    display: block;
+}

@@ -1,0 +1,56 @@
+.Home__search_bar{
+    height: 28.4rem;
+    background-image: url('../../../../public/images/searchbar/background-search-bar-cellphone.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Home__search_bar_container{
+    width: 90%;
+    height: 7.8rem;
+    border-radius: 1.6rem;
+    display: flex;
+    flex-direction: column;   
+}
+
+.Home__search_bar_description{
+    font-size: 2rem;
+    text-align: center;
+    color: var(--light-blue-button);
+    font-weight: 600;
+}
+
+.Home__search_bar_container input[type="text"]{
+    border: 1px solid white;
+    background: rgba(0,0,0,0.90);
+    color: var(--white-font);
+    width: 100%;
+    height: 3.2rem;
+    border-radius: 1.6rem;
+    padding: 0 1.2rem;
+    color: white;
+    font-family: "Comic Neue", serif;
+}
+
+.Home__search_bar_layout{
+    height: 3.2rem;
+    position: relative;
+    margin-top: 2.4rem;
+}
+
+.Home__search_bar_container input[type="text"]::placeholder{
+    color: rgba(255,255,255,.8);
+    font-family: "Comic Neue", serif;
+}
+
+.Home__search_bar_container .Home__search_bar_button{
+    background: none;
+    border: none;
+    position: absolute;
+    top: calc( 50% - 10px );
+    right: 12px;
+}

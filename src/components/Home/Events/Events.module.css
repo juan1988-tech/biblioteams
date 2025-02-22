@@ -1,0 +1,91 @@
+.Events{
+    display: flex;
+    flex-direction: column;
+    margin: 1.6rem 0;
+}
+
+.Events__tittle{
+    color: var(--tittle-blue);   
+    font-weight: 700;
+    text-align: center;
+    font-size: 2.4rem;
+}
+
+.EventTarget:not(:first-child){
+    width: 28.8rem;
+    height: 35.6rem;
+    border: 1px solid var(--black);
+    border-radius: 1.2rem;
+    background: var(--white-font);
+    padding: 1.2rem;
+    margin: 0 auto;
+    margin-top: 1.6rem;
+}
+
+.EventTarget:first-child{
+    margin-top: .8rem;
+}
+
+
+.Event__image,
+.Event__image_1,
+.Event__image_2,
+.Event__image_3,
+.Event__image_4{
+    height: 17.3rem;
+    border-radius: 1.2rem;
+    border: 1px solid var(--black);
+    background-size: cover;
+    padding: 1rem;
+}
+
+.Event__image_1{
+    background-image: url('../../../../public/images/events/evento-1-teatro.jpg');
+}
+
+.Event__image_2{
+    background-image: url('../../../../public/images/events/evento-2-mujeres.jpg');
+}
+
+.Event__image_3{
+    background-image: url('../../../../public/images/events/evento-3-humedal.jpg');
+}
+
+.Event__image_4{
+    background-image: url('../../../../public/images/events/evento-4-osos.jpg');
+}
+
+.Event__category{
+    width: 8.8rem;
+    height: 2.5rem;
+    background: var(--black);
+    text-align: center;
+    font-size: 1.6rem;
+    color: var(--white-font);
+    border-radius: .6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+}
+
+.Event__tittle{
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--tittle-blue);
+    margin-top: .8rem;
+}
+
+.Event__description{
+    font-size: 1.6rem;
+    margin-top: .8rem;
+}
+
+.Event__book_date,
+.Event__book_schedule{
+    display: flex;
+    align-items: center;
+    margin-top: .8rem;
+    font-size: 1.6rem;
+}
+
