@@ -69,3 +69,111 @@
 .Workshop__target_four button{
     background: var(--pink-button);
 }
+
+@media screen and (min-width: 568px){
+    .Workshop__tittle{
+        font-size: 2.4rem;
+    }
+
+    .Workshop__description,
+    .Workshop__schedule{
+        font-size: 2rem;
+        width: 35rem;
+    }
+
+    .Workshop__target_one{
+        background-image: url('../../../../public/images/activities/activities-club-infantil-cell.jpg');
+    }
+
+    .Workshop__target_two{
+        background-image: url('../../../../public/images/activities/activities-club-ajedrez-cell.jpg');
+    }
+
+    .Workshop__target_three{
+        background-image: url('../../../../public/images/activities/activities-pre-icfes-cell.jpg');
+    }
+
+    .Workshop__target_four{
+        background-image: url('../../../../public/images/activities/activities-english-club-cell.jpg');
+    }
+}
+
+
+@media screen and (min-width: 744px){
+    .Workshops{
+        grid-template: repeat(2,1fr)/repeat(2,1fr);
+        height: 56.8rem;   
+    }
+
+    .Workshop__target_one{
+        background-image: url('../../../../public/images/activities/activities-club-infantil-mobile.jpg');
+    }
+
+    .Workshop__target_two{
+        background-image: url('../../../../public/images/activities/activities-club-ajedrez-mobile.jpg');
+    }
+
+    .Workshop__target_three{
+        background-image: url('../../../../public/images/activities/activities-pre-icfes-mobile.jpg');
+    }
+
+    .Workshop__target_four{
+        background-image: url('../../../../public/images/activities/activities-english-club-mobile.jpg');
+    }
+}
+
+@media screen and (min-width: 1280px){
+    .Workshops{
+        height: 74.6rem;
+    }
+
+    .Workshop__target_one,
+    .Workshop__target_two,
+    .Workshop__target_three,
+    .Workshop__target_four{
+        height: 100%;
+    }
+
+    .Workshop__tittle{
+        font-size: 2.8rem;
+    }
+
+    .Workshop__description,
+    .Workshop__schedule{
+        font-size: 2.4rem;
+        width: 46.2rem;
+    }
+
+    .Workshop__description{
+        width: 41.6rem;
+    }
+
+    .Workshop__target_one .Workshop__description:nth-child(2){
+        width: 41.6rem;
+    }
+
+    .Workshop__target_two .Workshop__description:nth-child(2){
+        width: 35.1rem;
+    }
+
+    .Workshop__target_three .Workshop__description:nth-child(2){
+        width: 59.8rem;
+    }
+
+    .Workshop__target_four .Workshop__description:nth-child(2){
+        width: 56.2rem;
+    }
+}
+
+@media screen and (min-width: 1440px){
+    .Workshops{
+        height: 84rem;
+    }
+
+    .Workshop__target_one,
+    .Workshop__target_two,
+    .Workshop__target_three,
+    .Workshop__target_four{
+        padding: 3.2rem;
+    }
+}

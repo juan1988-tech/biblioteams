@@ -37,7 +37,7 @@ export default function Workshops() {
         />
         <WorkshopTarget
             workshop__tittle="Pre-icfes"
-            workshop__description="Club para fomentar y patrocinar la práctica y la cultura del ajedrez"
+            workshop__description="Taller con actividades para alcanzar los puntajes de los exámenes de Estado y llegar a las mejores Universidades"
             workshop__schedule="Sábado: 10: 00 a.m. - 11: 00 a.m."
             workshop__classname_number={`${styles.Workshop__target} ${styles.Workshop__target_three}`}
         />

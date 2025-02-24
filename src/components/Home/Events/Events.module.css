@@ -5,18 +5,19 @@
 }
 
 .Events__tittle{
-    color: var(--tittle-blue);   
+    color: var(--main-tittle);   
     font-weight: 700;
     text-align: center;
     font-size: 2.4rem;
 }
 
+.EventTarget, 
 .EventTarget:not(:first-child){
     width: 28.8rem;
     height: 35.6rem;
-    border: 1px solid var(--black);
+    border: 1px solid var(--line-fonts);
     border-radius: 1.2rem;
-    background: var(--white-font);
+    background: var(--component-background);
     padding: 1.2rem;
     margin: 0 auto;
     margin-top: 1.6rem;
@@ -26,7 +27,6 @@
     margin-top: .8rem;
 }
 
-
 .Event__image,
 .Event__image_1,
 .Event__image_2,
@@ -34,7 +34,7 @@
 .Event__image_4{
     height: 17.3rem;
     border-radius: 1.2rem;
-    border: 1px solid var(--black);
+    border: 1px solid var(--line-fonts);
     background-size: cover;
     padding: 1rem;
 }
@@ -61,7 +61,7 @@
     background: var(--black);
     text-align: center;
     font-size: 1.6rem;
-    color: var(--white-font);
+    color: var(--white);
     border-radius: .6rem;
     display: flex;
     justify-content: center;
@@ -72,13 +72,14 @@
 .Event__tittle{
     font-size: 2rem;
     font-weight: 700;
-    color: var(--tittle-blue);
+    color: var(--main-tittle);
     margin-top: .8rem;
 }
 
 .Event__description{
     font-size: 1.6rem;
     margin-top: .8rem;
+    color: var(--line-fonts);
 }
 
 .Event__book_date,
@@ -87,5 +88,89 @@
     align-items: center;
     margin-top: .8rem;
     font-size: 1.6rem;
+    color: var(--line-fonts);
 }
 
+.Event__book_date p,
+.Event__book_schedule p{
+    margin-left: .8rem;
+}
+
+@media screen and (min-width: 568px){
+    .EventTarget,
+    .EventTarget:not(:first-child){
+        width: 50.4rem;
+        height: 22rem;
+        display: grid;
+        grid-template-columns: 26.5rem 1fr;
+        gap: 12px;
+    }
+
+    .Event__image,
+    .Event__image_1,
+    .Event__image_2,
+    .Event__image_3,
+    .Event__image_4{
+        height: 19.4rem;
+    }
+}
+
+@media screen and (min-width: 744px){
+    .Events{
+        margin: 1.6rem 0;
+    }
+
+    .Events__tittle{
+        font-size: 2.8rem;
+    }
+
+    .Events__container{
+        display: grid;
+        grid-template: repeat(2,1fr)/repeat(2,1fr);
+        width: 610px;
+        gap: 2.4rem;
+        margin: 0 auto;
+        margin-top: 1.6rem;
+        justify-items: center;
+    }
+
+    .EventTarget, 
+    .EventTarget:not(:first-child){
+        width: 28.8rem;
+        height: 35.6rem;
+        border: 1px solid var(--line-fonts);
+        border-radius: 1.2rem;
+        background: var(--component-background);
+        padding: 1.2rem;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .EventTarget:first-child{
+        margin: 0;
+    }
+
+    .Event__image,
+    .Event__image_1,
+    .Event__image_2,
+    .Event__image_3,
+    .Event__image_4{
+        height: 17.3rem;
+        border-radius: 1.2rem;
+        border: 1px solid var(--line-fonts);
+        background-size: cover;
+        padding: 1rem;
+    }
+}
+
+@media screen and (min-width: 1280px){
+    .Events__tittle{
+       font-size: 3.2rem;
+    }
+
+    .Events__container{
+       display: flex;
+       width: 121.2rem;
+    }
+}

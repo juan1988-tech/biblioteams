@@ -1,10 +1,15 @@
 .Footer{
-    background: var(--white-font);
+    background: var(--component-background);
     padding-top: 1.2rem;
 }
 
+.Footer__container{
+    display: flex;
+    flex-direction: column;
+}
+
 .Footer__tittle{
-    color: var(--tittle-blue);
+    color: var(--main-tittle);
     font-size: 2.4rem;
     font-weight: 700;
     text-align: center;
@@ -32,7 +37,7 @@
 .Footer__first_column h3,
 .Footer__second_column h3{
     font-size: 1.6rem;
-    color: var(--tittle-blue);
+    color: var(--main-tittle);
     margin-top: 1.2rem;
     font-weight: 700;
 }
@@ -41,12 +46,13 @@
 .Footer__second_column p{
     font-size: 1.6rem;
     margin-top: 1.2rem;
+    color: var(--line-fonts);
 }
 
 .Footer__links_developers{
     font-size: 1.6rem;
-    background: #e6e6e6;
-    padding: 1.2rem 0rem;
+    background: var(--second-footer-background);
+    padding: 1.2rem 0rem;  
 }
 
 .Footer__links_developers h3{
@@ -54,14 +60,145 @@
     font-weight: 700;
     width: 14rem;
     margin: 0 auto;
+    color: var(--line-fonts);
 }
 
 .Footer__links_developers a{
     display: block;
     text-decoration: none;
     font-size: 1.6rem;
-    color: var(--black);
     width: 13rem;
     margin: 0 auto;
     margin-top: 1.2rem;
+    color: var(--line-fonts);
+}
+
+.Footer__links_developers p{
+    margin: 0 auto;
+    margin-top: 1.2rem;
+    color: var(--line-fonts);
+    width: 13rem;
+    font-size: 1.6rem;
+}
+
+@media screen and (min-width: 744px){
+    .Footer__container {
+        display: grid;
+        grid-template: 3.6rem 3.6rem 20.3rem 6rem/ repeat(2,1fr);
+        column-gap: 2rem;
+        grid-template-areas:"Footer__tittle Footer__tittle"
+                            "Footer__social_media Footer__social_media"
+                            "Footer__first_column Footer__second_column"
+                            "Footer__links_developers Footer__links_developers";
+        padding: 0 3.2rem;
+        width: 90%;
+        max-width: 128rem;
+        margin: 0 auto;
+    }
+    
+    .Footer__tittle{
+        grid-area: Footer__tittle;
+        font-size: 3.2rem;
+    }
+
+    .Footer__social_media{
+        grid-area: Footer__social_media;
+        margin: 0 auto;
+        margin-top: 1.2rem;
+    }
+
+    .Footer__first_column{
+        grid-area: Footer__first_column;
+        margin: 0;
+        justify-self: center;
+    }
+
+    .Footer__second_column{
+        grid-area: Footer__second_column;
+        margin: 0;
+        justify-self: center;
+    }
+
+    .Footer__links_developers{
+        grid-area: Footer__links_developers;
+    }
+
+    .Footer__first_column p,
+    .Footer__second_column p{
+        font-size: 1.6rem;
+    }
+
+    .Footer__first_column h3,
+    .Footer__second_column h3{
+        font-size: 1.6rem;
+        font-weight: 700;
+    }
+
+    .Footer__links_developers{
+        display: flex;
+        align-items: center;
+    }
+
+    .Footer__links_developers h3{
+        margin: 0;
+    }
+
+    .Footer__links_developers a{
+        margin: 0;
+        font-size: 1.6rem;
+    }
+
+    .Footer__links_dev_container{
+        width: 90%;
+        max-width: 128rem;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+    }
+
+    .Footer__links_dev_container p {
+        margin: 0;
+        margin-left: 2.4rem;
+    }
+}
+
+@media screen and (min-width: 1280px){
+    .Footer__links_developers a:first-child{
+        width: 14.2rem;
+    }
+
+    .Footer__links_developers a:nth-child(2){
+        width: 11rem;
+        margin-left: 2.4rem;
+    }
+
+    .Footer__links_developers a:nth-child(3){
+        width: 9.4rem;
+        margin-left: 2.4rem;
+    }
+
+    .Footer__links_developers a:nth-child(4){
+        width: 13.4rem;
+        margin-left: 2.4rem;
+    }
+
+    .Footer__links_developers p{
+        margin-left: auto;
+        margin-top: 0;
+        width: 10rem;
+    }
+
+    .Footer__first_column h3,
+    .Footer__second_column h3{
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    .Footer__first_column p,
+    .Footer__second_column p{
+        font-size: 2rem;
+        width: 35rem;
+    }
+
+    
 }

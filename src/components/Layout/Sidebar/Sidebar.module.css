@@ -1,7 +1,7 @@
 .Sidebar__hidden{
     min-height: 56.8rem;
     height: 100vh;
-    background: var(--white-font);
+    background: var(--component-background);
     width: 22rem;
     z-index: 2;
     position: fixed;
@@ -14,12 +14,12 @@
 .Sidebar{
     min-height: 56.8rem;
     height: 100vh;
-    background: var(--white-font);
+    background: var(--component-background);
     width: 22rem;
     z-index: 2;
     position: fixed;
     left:-22rem;
-    transform: translateX(22rem);
+    transform: translateX(100%);
     transition-timing-function: linear;
     transition-duration: .6s;
 }
@@ -27,9 +27,10 @@
 .Sidebar .Sidebar__tittle,
 .Sidebar__hidden .Sidebar__tittle{
     text-align: center;
-    color: var(--tittle-blue);
+    color: var(--main-tittle);
     font-size: 2.4rem;
     margin-top: 6.2rem;
+    margin-top: 4.6rem;
 }
 
 .Sidebar a,
@@ -40,7 +41,7 @@
     margin-top: 2.4rem;
     width: 6.8rem;
     text-decoration: none;
-    color: var(--black)
+    color: var(--line-fonts)
 }
 
 .Sidebar .Sidebar__theme_button,
@@ -51,8 +52,10 @@
     margin: 0 auto;
     margin-top: 2.4rem;
     border-radius: 1.2rem;
-    border: 1px solid black;
+    border: 1px solid var(--line-fonts);
     padding: 1px;
+    background: var(--linear-background);
+    position: relative;
 }
 
 .Sidebar .Sidebar__theme_button_icon,
@@ -60,10 +63,35 @@
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
-    border: 1px solid black;
+    border: 1px solid var(--line-fonts);
+    background: var(--circle-button);
     display: flex;
     align-items: center;
     justify-content: center;
+    transform: translateX(0px);
+    transition-timing-function: ease;
+    transition-duration: .4s;
+    position: absolute;
+    left:1px;
+    top: 1px;
+}
+
+.Sidebar .Sidebar__theme_button_icon_move,
+.Sidebar__hidden .Sidebar__theme_button_icon_move{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 1px solid var(--line-fonts);
+    background: var(--circle-button);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(23px);
+    transition-timing-function: ease;
+    transition-duration: .4s;
+    position: absolute;
+    left:1px;
+    top: 1px;
 }
 
 .Sidebar .Sidebar__social_media,
@@ -74,4 +102,56 @@
     justify-content: space-between;
     margin: 0 auto;
     margin-top: 2.4rem;
+}
+
+@media screen and (min-width: 744px){
+    .Sidebar__hidden{
+        min-height: 56.8rem;
+        height: 100vh;
+        background: var(--component-background);
+        width: 22rem;
+        z-index: 2;
+        position: fixed;
+        left:- 50%;
+        transform: translateX(0px);
+        transition-timing-function: linear;
+        transition-duration: .6s;
+    }
+    
+    .Sidebar{
+        min-height: 56.8rem;
+        height: 100vh;
+        background: var(--component-background);
+        width: 50%;
+        z-index: 2;
+        position: fixed;
+        left:-50%;
+        transform: translateX(100%);
+        transition-timing-function: linear;
+        transition-duration: .6s;
+    }
+
+    .Sidebar .Sidebar__tittle,
+    .Sidebar__hidden .Sidebar__tittle{
+        font-size: 3.2rem;
+        margin-top: 12.3rem;
+    }
+
+    .Sidebar a,
+    .Sidebar__hidden a{
+        font-size: 2rem;
+        margin-top: 3.6rem;
+    }
+
+    .Sidebar .Sidebar__theme_button,
+    .Sidebar__hidden .Sidebar__theme_button{
+        margin-top: 3.6rem;
+    }
+}
+
+@media screen and (min-width: 1280px){
+    .Sidebar__hidden,
+    .Sidebar{
+        display: none;
+    }
 }

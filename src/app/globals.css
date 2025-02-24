@@ -1,19 +1,30 @@
-:root{
-  --white-font: #f4f4f4;
-  --white: #fff;
+ :root{
+  /*colores a cambiar por el light/dark mode*/
+  --component-background: #f4f4f4;
+  --main-bakground: #fff;
+  --line-fonts: #000;
+  --main-tittle: #1813FF;
+  --linear-background: linear-gradient(90deg, rgba(239,236,236,1) 0%, rgba(228,227,228,1) 50%, rgba(239,236,236,1) 100%);
+  --circle-button: #D9D9D9;
+  --second-footer-background: #F1F0F0;
+
+  /*colores no variables*/
+  --white:#fff;
   --black:#000;
-  --tittle-blue: #1813FF;
   --light-blue-button:#00FFF5;
   --green-light-button:#8FF313;
   --yellow-button:#FAFF0E;
   --pink-button:#FF0ED3;
+  
+  /*colores pendietnes a asignar en variables*/
   --light-linear: linear-gradient(90deg, rgba(239,236,236,1) 0%, rgba(228,227,228,1) 50%, rgba(239,236,236,1) 100%);
   --dark-linear: linear-gradient(90deg, rgba(25,23,57,1) 0%, rgba(34,29,79,1) 50%, rgba(25,23,57,1) 100%);
   --gray-line: #A6A6A6;
   --blue-background:#121044;
+  --dark-blue-background:#0E0C32;
   --light-gray: #ECECEC;
-}
-
+} 
+ 
 *{
   box-sizing: border-box;
   margin: 0;
@@ -24,6 +35,48 @@ html{
   font-size: 62.5%;
 }
 
-body{
-  background: var(--white);
+[data-theme="dark"] {
+  /*colores a cambiar por el light/dark mode*/
+  --component-background: #0E0C32;
+  --main-bakground: #121044;
+  --line-fonts: #F4F4F4;
+  --main-tittle: #00FFF5;
+  --linear-background: linear-gradient(90deg, rgba(25,23,57,1) 0%, rgba(34,29,79,1) 50%, rgba(25,23,57,1) 100%);
+  --circle-button: ##A6A6A6;
+  --second-footer-background: #121044;
 }
+
+
+/*
+:root {
+  --bg-color: white;
+  --text-color: black;
+}
+
+[data-theme="dark"] {
+  --bg-color: black;
+  --text-color: white;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+Ejemplo de cambio de colores en Reac.js
+export default function ThemeToggle() {
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+  }, [theme]);
+
+  return (
+    <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
+      Toggle Theme
+    </button>
+  );
+}
+*/
+

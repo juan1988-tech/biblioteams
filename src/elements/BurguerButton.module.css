@@ -11,7 +11,7 @@
 .Burguer__button div{
     height: .4rem;
     border-radius: .2rem;
-    background: var(--black);
+    background: var(--line-fonts);
 }
 
 .Burguer__button .Burguer__first_line{
@@ -59,4 +59,10 @@
     transform: translateX(0px);
     transition-timing-function: ease;
     transition-duration: .4s;
+}
+
+@media screen and (min-width: 1280px){
+    .Burguer__button{
+        display: none;
+    }
 }

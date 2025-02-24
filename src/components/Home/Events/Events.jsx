@@ -1,9 +1,12 @@
+"use client"
 import React from 'react';
 import styles from './Events.module.css';
 import Image from 'next/image';
-
+import { ThemeContext } from '@/app/theme-provider';
 
 const EventTarget = ({event__category,event__label,event__tittle,event__description,event__book_date,event__book_schedule}) => {
+  const { theme } = React.useContext(ThemeContext); 
+
   return (
     <article className={styles.EventTarget}>  
       <header className={event__label}>
@@ -13,13 +16,13 @@ const EventTarget = ({event__category,event__label,event__tittle,event__descript
         <h1 className={styles.Event__tittle}>{event__tittle}</h1>
         <p className={styles.Event__description}>{event__description}</p>
         <div className={styles.Event__book_date}><Image
-            src="/black-calendar-icon.svg"
+            src={(theme==='light')?'/black-calendar-icon.svg':'/white-calendar-icon.svg'} 
             width={24}
             height={24}
             alt={`${event__tittle}-evento`}
         /> <p>{event__book_date}</p></div>
         <div className={styles.Event__book_schedule}><Image
-            src="/black-clock-icon.svg"
+            src={(theme==='light')?"/black-clock-icon.svg":"/white-clock-icon.svg"}
             width={24}
             height={24}
             alt={`${event__tittle}-evento`}
@@ -33,6 +36,7 @@ export default function Events() {
   return (
     <section className={styles.Events}>
         <h1 className={styles.Events__tittle}>Eventos</h1>
+        <article className={styles.Events__container}>
         <EventTarget
             event__category="Teatro"
             event__label={`${styles.Event__image} ${styles.Event__image_1}`}
@@ -65,6 +69,7 @@ export default function Events() {
              event__book_date="15 de marzo de 2025"
              event__book_schedule="09:00 a.m. - 10:30 a.am"
         />
+        </article>
     </section>
   )
 }

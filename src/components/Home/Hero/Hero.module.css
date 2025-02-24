@@ -1,8 +1,13 @@
 .Hero{
     height: 56.8rem;
-    background: var(--white-font);
+    background: var(--component-background);
     padding: 1.6rem 1.6rem 0rem 1.6rem;
 }
+
+.Hero__container{
+    display: flex;
+    flex-direction: column;
+}    
 
 .Header{
     display: none;
@@ -25,7 +30,7 @@
     grid-area: Hero__first_tittle;
     font-size: 2.4rem;
     text-align: center;
-    color: var(--tittle-blue);
+    color: var(--main-tittle);
 }
 
 .Hero__second_tittle{
@@ -35,6 +40,7 @@
     text-align: center;
     width: 25rem;
     justify-self: center;
+    color: var(--line-fonts)
 }
 
 .Hero__image,
@@ -90,4 +96,334 @@
     height: 23.4rem;
     margin: 0 auto;
     display: block;
+}
+
+@media screen and (min-width: 568px){
+    .Hero{
+        display: flex;
+        height: 32rem;
+    }
+
+    .Hero__container{
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .Hero__first_tittle{
+        text-align: left;
+    }
+
+    .Hero__second_tittle{
+        text-align: left;
+        justify-self: left;
+    }
+
+    .Hero__image,
+    .Hero__image_1,
+    .Hero__image_2,
+    .Hero__image_3,
+    .Hero__image_4,
+    .Hero__image_5{
+        width: 4.8rem;
+        height: 4.8rem;
+        position: absolute;
+    }
+
+    .Hero__main_image img{
+        width: 23.3rem;
+        height: 23.3rem;
+        align-self: center;
+    }
+}
+    
+@media screen and (min-width: 744px){
+    .Hero{
+        height: 63rem;
+        padding: 1.6rem 3.2rem 0rem 3.2rem;
+    }   
+
+    .Hero__tittle_grid{
+        display: grid;
+        grid-template: 25.7rem 4.1rem 7.6rem 1fr/11rem 10.3rem 1fr;
+        grid-template-areas:"Hero__image Hero__image_1 Hero__image_2"
+                            "Hero__first_tittle Hero__first_tittle Hero__first_tittle"
+                            "Hero__second_tittle Hero__second_tittle Hero__second_tittle"
+                            "Hero__image_3 Hero__image_4 Hero__image_5";
+        position: relative;
+        width: 33rem;
+        margin: 0;
+    }
+
+    .Hero__first_tittle{
+        font-size: 3.6rem;
+    }
+
+    .Hero__second_tittle{
+        font-size: 2.8rem;
+        width: 33rem;
+    }
+
+    .Hero__image,
+    .Hero__image_1,
+    .Hero__image_2,
+    .Hero__image_3,
+    .Hero__image_4,
+    .Hero__image_5{
+        width: 7.2rem;
+        height: 7.2rem;
+        position: absolute;
+    }
+    
+    .Hero__image{
+        top: 135px;
+        left: 24px;
+    }
+
+    .Hero__image_1{
+        top: 96px;
+        left: 45px
+    }
+
+    .Hero__image_2{
+        top: 150px;
+        left: 45px;
+    }
+
+    .Hero__image_3{
+        left: 0px;
+        top: 40px
+    }
+
+    .Hero__image_4{
+        top: 98px;
+        left: 42px;
+    }
+
+    .Hero__image_5{
+        top: 50px;
+        left: 52px;
+    }
+
+    .Hero__main_image{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .Hero__main_image img{
+        width: 40rem;
+        height: 40rem;
+    }
+}
+
+@media screen and (min-width: 1133px){
+    .Hero__tittle_grid{
+        display: grid;
+        grid-template: 25.7rem 5.3rem 7.6rem 1fr/36.3rem 16.8rem 1fr;
+        grid-template-areas:"Hero__image Hero__image_1 Hero__image_2"
+                            "Hero__first_tittle Hero__first_tittle Hero__first_tittle"
+                            "Hero__second_tittle Hero__second_tittle Hero__second_tittle"
+                            "Hero__image_3 Hero__image_4 Hero__image_5";
+        position: relative;
+        width: 63.5rem;
+        margin: 0;
+    }
+
+    .Hero__first_tittle{
+        font-size: 4rem;
+    }
+
+    .Hero__second_tittle{
+        font-size: 3.2rem;
+        width: 36.3rem;
+    }
+
+    .Hero__image,
+    .Hero__image_1,
+    .Hero__image_2,
+    .Hero__image_3,
+    .Hero__image_4,
+    .Hero__image_5{
+        width: 9.6rem;
+        height: 9.6rem;
+        position: absolute;
+    }
+
+    .Hero__image{
+        left: 220px;
+        top: 135px
+    }
+
+    .Hero__image_1{
+        top: 101px;
+        left: 79px;
+    }
+
+    .Hero__image_2{
+        top: 149px;
+        left:20px;
+    }
+
+    .Hero__image_3{
+        left: 168px;
+        top: 60px;
+    }
+
+    .Hero__image_4{
+        left: 0;
+        top: 108px;
+    }
+
+    .Hero__image_5{
+        left: 22px;
+        top: 80px
+    }
+
+    .Hero__main_image{
+        margin: 0;
+        align-self: center;
+        justify-self: center;
+        margin: 0 auto;
+    }
+
+    .Hero__main_image img{
+        width: 41rem;
+        height: 41rem;
+        margin-left: auto;
+    }
+}
+
+@media screen and (min-width: 1280px){
+    /*estilos para el header */
+    .Header{
+        display: block;
+        width: 101rem;
+        height: 6rem;
+        border-radius: 3rem;
+        border: 1px solid var(--line-fonts);
+        position: absolute;
+        left: calc( 50% - 50.5rem);
+        top: 3.6rem;   
+        background: var(--linear-background);
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+
+    .Header__list{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .Header__list li{
+        display: inline-flex;
+    }
+
+    .Header__list li a{
+        font-size: 1.8rem;
+        text-decoration: none;
+        color: var(--main-tittle);
+        font-weight: 700;
+    }
+
+    .Header__general_settings{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 12.6rem;
+    }
+
+    .Header__theme_button{
+        display: block;
+        width: 4.8rem;
+        height: 2.4rem;
+        border-radius: 1.2rem;
+        border: 1px solid var(--line-fonts);
+        padding: 1px;
+        background: var(--linear-background);
+        position: relative;
+    }
+
+    .Header__theme_button_icon{
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        border: 1px solid var(--line-fonts);
+        background: var(--circle-button);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(0px);
+        transition-timing-function: ease;
+        transition-duration: .4s;
+        position: absolute;
+        left:1px;
+        top: 1px;
+    }
+
+    .Header__theme_button_icon_move{
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        border: 1px solid var(--line-fonts);
+        background: var(--circle-button);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(23px);
+        transition-timing-function: ease;
+        transition-duration: .4s;
+        position: absolute;
+        left:1px;
+        top: 1px;
+    }
+
+    /*estilos para el hero*/
+    .Hero{
+        position: relative;
+        height: 72rem;
+        padding: 0;
+    }
+
+    .Hero__container{
+        width: 90%;
+        max-width: 128rem;
+        margin: 0 auto;
+        display: flex;
+    }
+
+    .Hero__tittle_grid{
+        display: grid;
+        grid-template: 25.7rem 6.4rem 7.6rem 1fr/32.9rem 16.6rem 1fr;
+        grid-template-areas:"Hero__image Hero__image_1 Hero__image_2"
+                            "Hero__first_tittle Hero__first_tittle Hero__first_tittle"
+                            "Hero__second_tittle Hero__second_tittle Hero__second_tittle"
+                            "Hero__image_3 Hero__image_4 Hero__image_5";
+        position: relative;
+        width: 64.2rem;
+        margin: 0;
+    }
+    
+    .Hero__first_tittle{
+        font-size: 6.4rem;
+    }   
+
+    .Hero__second_tittle{
+        width: 56.2rem;
+        font-size: 5.2rem;
+    }
+
+    .Hero__main_image img{
+        width: 500px;
+        height: 500px;
+    }
+}
+
+@media screen and (min-width: 1440px){
+    /*estilos para el header */
+    .Header{
+        width: 106.2rem;
+    }
 }
