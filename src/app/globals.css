@@ -35,6 +35,10 @@ html{
   font-size: 62.5%;
 }
 
+body{
+  background: var(--main-bakground);
+}
+
 [data-theme="dark"] {
   /*colores a cambiar por el light/dark mode*/
   --component-background: #0E0C32;
@@ -47,36 +51,5 @@ html{
 }
 
 
-/*
-:root {
-  --bg-color: white;
-  --text-color: black;
-}
 
-[data-theme="dark"] {
-  --bg-color: black;
-  --text-color: white;
-}
-
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-Ejemplo de cambio de colores en Reac.js
-export default function ThemeToggle() {
-  const [theme, setTheme] = useState("light");
-
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-  }, [theme]);
-
-  return (
-    <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
-      Toggle Theme
-    </button>
-  );
-}
-*/
 
