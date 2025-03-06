@@ -1,0 +1,100 @@
+.Header{
+    display: none;
+}
+
+
+@media screen and (min-width: 1280px){
+     /*estilos para el header */
+     .Header{
+        display: block;
+        width: 101rem;
+        height: 6rem;
+        border-radius: 3rem;
+        border: 1px solid var(--line-fonts);
+        position: absolute;
+        left: calc( 50% - 50.5rem);
+        top: 3.6rem;   
+        background: var(--linear-background);
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        z-index: 1;
+    }
+
+    .Header__list{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .Header__list li{
+        display: inline-flex;
+    }
+
+    .Header__list li a{
+        font-size: 1.8rem;
+        text-decoration: none;
+        color: var(--main-tittle);
+        font-weight: 700;
+    }
+
+    .Header__general_settings{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 12.6rem;
+    }
+
+    .Header__theme_button{
+        display: block;
+        width: 4.8rem;
+        height: 2.4rem;
+        border-radius: 1.2rem;
+        border: 1px solid var(--line-fonts);
+        padding: 1px;
+        background: var(--linear-background);
+        position: relative;
+    }
+
+    .Header__theme_button_icon{
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        border: 1px solid var(--line-fonts);
+        background: var(--circle-button);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(0px);
+        transition-timing-function: ease;
+        transition-duration: .4s;
+        position: absolute;
+        left:1px;
+        top: 1px;
+    }
+
+    .Header__theme_button_icon_move{
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        border: 1px solid var(--line-fonts);
+        background: var(--circle-button);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(23px);
+        transition-timing-function: ease;
+        transition-duration: .4s;
+        position: absolute;
+        left:1px;
+        top: 1px;
+    }
+}
+
+@media screen and (min-width: 1440px){
+    /*estilos para el header */
+    .Header{
+        width: 106.2rem;
+    }
+}

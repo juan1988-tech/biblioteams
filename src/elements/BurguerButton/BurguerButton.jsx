@@ -1,6 +1,11 @@
+'use client'
 import styles from './BurguerButton.module.css';
+import ThemeProvider, { ThemeContext } from "@/app/theme-provider";
+import React from 'react';
 
-export default function BurguerButton({buttonBurguer,setButtonBurguer}) {
+export default function BurguerButton() {
+    const {buttonBurguer,setButtonBurguer} = React.useContext(ThemeContext)
+
     const clickButton = () =>{
       setButtonBurguer(!buttonBurguer);
     }  

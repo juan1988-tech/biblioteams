@@ -1,12 +1,14 @@
+'use client'
 import React from 'react';
 import styles from './Sidebar.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ThemeContext } from '@/app/theme-provider';
+import useContext from 'react'
 
-export default function Sidebar({buttonBurguer}) {
- const { theme,setTheme } = React.useContext(ThemeContext);
-
+export default function Sidebar() {
+ const { theme,setTheme,buttonBurguer } = React.useContext(ThemeContext);
+ 
  const onChangeLayout = (e) =>{
         e.preventDefault();
         if(theme==="light"){
@@ -19,7 +21,7 @@ export default function Sidebar({buttonBurguer}) {
     return (
         <section className={(buttonBurguer===true)?styles.Sidebar__hidden:styles.Sidebar}>
             <h1 className={styles.Sidebar__tittle}>Biblioteams</h1>  
-            <Link href={''}>Catálogo</Link>
+            <Link href={'/cathalog'}>Catálogo</Link>
             <Link href={''}>Eventos</Link>
             <Link href={''}>Regístrate</Link>
             <button className={styles.Sidebar__theme_button} onClick={onChangeLayout}>
