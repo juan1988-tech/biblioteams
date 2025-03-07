@@ -1,0 +1,127 @@
+.Cathalog__book{
+    border: 1px solid var(--line-fonts);
+    padding: 1.2rem;
+    border-radius: 1.2rem;
+    background: var(--component-background);
+    height: 37rem;
+}
+
+.Cathalog__book_tittle{
+    height: 2.4rem;
+    display: flex;
+    align-items: center;
+}
+
+.Cathalog__number{
+    width: 3.2rem;
+    height: 2.4rem;
+    border-radius: .6rem;
+    text-align: center;
+    font-size: 1.6rem;
+    background: var(--number-book-button);
+    color: var(--white);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Cathalog__number + h1{
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--main-tittle);
+    margin-left: .8rem;
+}
+
+.Cathalog__book_information{
+    display: grid;
+    grid-template: 3.2rem 4.8rem 3.2rem 5.6rem/7rem 1fr;
+    grid-template-areas:"Cathalog__book_author Cathalog__book_author_name"
+                        "Cathalog__book_author_publisher Cathalog__book_author_publisher_name"
+                        "Cathalog__book_author_year Cathalog__book_author_year_name"
+                        "Cathalog__book_topic Cathalog__book_topics_set";
+    align-items: flex-start;
+    font-size: 1.6rem;
+    gap: .4rem;
+    padding: 1.2rem .6rem;
+}
+
+.Cathalog__book_information h3{
+    color: var(--main-tittle);
+    font-size: 1.6rem;
+}
+
+.Cathalog__book_information p{
+    color: var(--line-fonts);
+}
+
+.Cathalog__book_author{
+    grid-area: Cathalog__book_author;
+}
+
+.Cathalog__book_author_name{
+    grid-area: Cathalog__book_author_name;
+}
+
+.Cathalog__book_author_publisher{
+    grid-area: Cathalog__book_author_publisher;
+}
+
+.Cathalog__book_author_publisher_name{
+    grid-area: Cathalog__book_author_publisher_name;
+}
+
+.Cathalog__book_author_year{
+    grid-area: Cathalog__book_author_year;
+}
+
+.Cathalog__book_author_year_name{
+    grid-area: Cathalog__book_author_year_name;
+}
+
+.Cathalog__book_topic{
+    grid-area: Cathalog__book_topic;
+}
+
+.Cathalog__book_topics_set{
+    grid-area: Cathalog__book_topics_set;
+}
+
+.Cathalog__book_availabilty{
+    height: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.Cathalog__book_available{
+    color: var(--available-book);
+}
+
+.Cathalog__book_not_available{
+    color: var(--not-available-book);
+    opacity: 60%;
+}
+
+.Cathalog__book_actions{
+    display: flex;
+    flex-direction: column;
+    width: 14.8rem;
+    margin: 0 auto;
+}
+
+.Cathalog__book_actions_button{
+    width: 14.8rem;
+    height: 2.4rem;
+    border: 1px solid var(--line-fonts);
+    color: var(--line-fonts);
+    font-size: 1.6rem;
+    border-radius: .6rem;
+    display: flex;
+    align-items: center;
+    padding: .4rem;
+    justify-content: space-between;
+    margin-top: .8rem;
+    background: var(--main-bakground);
+}
