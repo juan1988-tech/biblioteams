@@ -3,12 +3,23 @@
     padding: 1.2rem;
     border-radius: 1.2rem;
     background: var(--component-background);
-    height: 37rem;
+    height: 38.4rem;
+    width: 28.8rem;
+    margin: 0 auto;
+}
+
+.Cathalog__book:not(:first-child){
+    margin-top: 1.6rem;
+}
+
+.Cathalog__book:last-child{
+    margin-bottom: 1.6rem;
 }
 
 .Cathalog__book_tittle{
-    height: 2.4rem;
-    display: flex;
+    height: 3.6rem;
+    display: grid;
+    grid-template-columns: 3.2rem 1fr;
     align-items: center;
 }
 
@@ -124,4 +135,83 @@
     justify-content: space-between;
     margin-top: .8rem;
     background: var(--main-bakground);
+}
+
+@media screen and (min-width: 568px){
+    .Cathalog__book{
+        width: 53.6rem;
+        height: 22.9rem;
+        padding: 1.2rem;
+        display: grid;
+        grid-template: 2.4rem 15.4rem 1fr/35.4rem 1fr;
+        grid-template-areas:"tittle tittle"
+                            "information actions"
+                            "available available";
+        gap: 0.4rem
+    }
+
+    .Cathalog__book_tittle{
+        height: 2.4rem;
+        grid-area: tittle;
+    }
+
+    .Cathalog__book_information{
+        width:  35.4rem;
+        grid-column: information;
+        grid-template: 2rem 3.6rem 2rem 5.6rem/7rem 1fr;
+        grid-template-areas:"Cathalog__book_author Cathalog__book_author_name"
+        "Cathalog__book_author_publisher Cathalog__book_author_publisher_name"
+        "Cathalog__book_author_year Cathalog__book_author_year_name"
+        "Cathalog__book_topic Cathalog__book_topics_set";
+        padding: 0;
+    } 
+
+    .Cathalog__book_actions{
+        grid-area: actions;
+        align-self: center;
+    }
+
+    .Cathalog__book_availabilty{
+        grid-area: available;
+        align-self: center;
+    }
+}
+
+@media screen and (min-width: 744px){
+    .Cathalog__book{
+        width: 67.6rem;
+        height: 22.9rem;
+        padding: 1.2rem;
+        display: grid;
+        grid-template: 2.4rem 15.4rem 1fr/48.6rem 1fr;
+        grid-template-areas:"tittle tittle"
+                            "information actions"
+                            "available available";
+        gap: 0.4rem
+    }   
+
+    .Cathalog__number + h1{
+        font-size: 2rem;
+    }
+
+    .Cathalog__book_information{
+        width:  48.4rem;
+        grid-column: information;
+        grid-template: 2rem 3.6rem 2rem 5.6rem/7rem 1fr;
+        grid-template-areas:"Cathalog__book_author Cathalog__book_author_name"
+        "Cathalog__book_author_publisher Cathalog__book_author_publisher_name"
+        "Cathalog__book_author_year Cathalog__book_author_year_name"
+        "Cathalog__book_topic Cathalog__book_topics_set";
+        padding: 0;
+        font-size: 1.6rem;        
+    }
+
+    .Cathalog__book_information h3{
+        color: var(--main-tittle);
+        font-size: 1.8rem;
+    }
+    
+    .Cathalog__book_information p{
+        font-size: 1.8rem;
+    }
 }

@@ -67,7 +67,7 @@ export default function CathalogSearchBar() {
         width={16}
         height={16}
         src={theme==="light"?"/filter-black-icon.svg":"/filter-white-icon.svg"}
-        alt="filter-icon"
+        alt="icono de filtro"
       />
     </section>
     </form>

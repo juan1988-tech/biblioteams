@@ -8,7 +8,6 @@ const Hero = () => {
   return (
     <section className={styles.Hero}>
     <div className={styles.Hero__container}>   
-    {/* <Header/> */}
     <article className={styles.Hero__tittle_grid}>
       <h1 className={styles.Hero__first_tittle}>Biblioteams</h1>
       <h3 className={styles.Hero__second_tittle}>Un espacio de formación para niños y jóvenes</h3>

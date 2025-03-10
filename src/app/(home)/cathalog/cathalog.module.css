@@ -1,5 +1,26 @@
 .Cathalog__book_container{
-    width: 90%;
+    width: 28.8rem;
     margin: 0 auto;
     margin-top: 1.6rem;
+}
+
+@media screen and (min-width: 568px){
+    .Cathalog__book_container{
+        width: 53.6rem;
+    }
+}
+
+@media screen and (min-width: 744px){
+    .Cathalog__book_container{
+        width: 68rem;
+        margin: 0;
+        margin-top: 1.6rem;
+        margin-left: 2.1rem;
+    }
+
+    .Cathalog__Main_grid{
+        display: flex;
+        width: 108rem;
+        margin-left: 3.2rem;
+    }
 }

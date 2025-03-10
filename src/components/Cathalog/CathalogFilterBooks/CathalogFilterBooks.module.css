@@ -1,0 +1,140 @@
+.Cathalog__filter_books{
+    display: none;   
+}
+
+@media screen and (min-width: 1133px){
+    .Cathalog__filter_books{
+        display: flex;
+        flex-direction: column;
+        width: 25.2rem;
+        border: 1px solid var(--line-fonts);
+        color: var(--line-fonts);
+        border-radius: 1.2rem;  
+        background: var(--component-background);
+        padding: 1.2rem;
+        margin-top: 1.6rem;
+        overflow-y: hidden;
+        transition: all .8s ease;
+    }
+    
+    .Cathalog__filter_header > h3{
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: var(--main-tittle)
+    }
+
+    .Cathalog__filter_header{
+        display: inline-flex;
+        justify-content: space-between;
+        width: 100%;
+        font-size: 1.6rem;
+        height: 2rem;
+        margin-top: .8rem;
+    }
+
+    .Cathalog__author_selector{
+        display: inline-flex;
+        width: 100%;
+        font-size: 1.6rem;
+        height: 1.8rem;
+        margin-top: 1.2rem;
+    }
+
+    .Cathalog__author_selector p{
+        margin-left: 1.6rem;
+    }
+
+
+    .Cathalog__year_selector{
+        display: inline-flex;
+        width: 100%;
+        font-size: 1.6rem;
+        height: 2rem;
+        margin-top: 1.2rem;
+    }
+
+    .Cathalog__year_selector p{
+        margin-left: 1.6rem;
+    }
+
+    .Cathalog__topic_selector{
+        height: 2rem;
+        display: inline-flex;
+        width: 100%;
+        font-size: 1.6rem;
+        margin-top: .8rem;
+    }
+
+    .Cathalog__topic_selector input[type="checkbox"]{
+        align-self: flex-start;
+    }
+
+    .Cathalog__topic_selector p{
+        align-self: flex-start;
+        margin-left: 1.6rem;
+    }
+
+    .Cathalog__author_grid{
+        height: 10rem;
+        display: flex;
+        flex-direction: column;
+        overflow-y: hidden;
+        transition: all .8s ease;
+    }
+
+    .Cathalog__author_grid_hidden{
+        height: 0rem;
+        display: flex;
+        flex-direction: column;
+        overflow-y: hidden;
+        transition: all .8s ease;
+    }
+
+    .Cathalog__year_grid{
+        height: 10rem;
+        display: flex;
+        flex-direction: column;
+        overflow-y: hidden;
+        transition: all .8s ease;
+    }
+
+    .Cathalog__year_grid_hidden{
+        height: 0rem;
+        display: flex;
+        flex-direction: column;
+        overflow-y: hidden;
+        transition: all .8s ease;
+    }
+
+    .Cathalog__topic_grid{
+        height: 10rem;
+        display: flex;
+        flex-direction: column;
+        overflow-y: hidden;
+        transition: all .8s ease;
+    }
+
+    .Cathalog__topic_grid_hidden{
+        height: 0rem;
+        display: flex;
+        flex-direction: column;
+        overflow-y: hidden;
+        transition: all .8s ease;
+    }
+
+    .Chatalog__available_grid{
+        height: 5.6rem;
+        display: flex;
+        flex-direction: column;
+        overflow-y: hidden;
+        transition: all .8s ease;
+    }
+
+    .Chatalog__available_grid_hidden{
+        height: 0rem;
+        display: flex;
+        flex-direction: column;
+        overflow-y: hidden;
+        transition: all .8s ease;
+    }
+}
