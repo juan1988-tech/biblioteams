@@ -1,13 +1,12 @@
 "use client"
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useState, useContext } from 'react';
 import styles from './CathalogFilterBooks.module.css';
 import Image from 'next/image';
-
-
+import { ThemeContext } from '@/app/theme-provider';
 
 export default function CathalogFilterBooks() {
-  const [cathalogClassList, setCathalogClasslist] = useState(49.6);
-
+  const { theme } = useContext(ThemeContext);  
+  const [cathalogClassList, setCathalogClasslist] = useState(58.8);
   const [cathalogAuthor,setCathalogAuthor] = useState(styles.Cathalog__author_grid)
   const [cathalogYear, setCathalogYear] = useState(styles.Cathalog__year_grid)
   const [cathalogTopic, setCathalgoTopic] = useState(styles.Cathalog__topic_grid) 
@@ -36,10 +35,10 @@ export default function CathalogFilterBooks() {
  const changeFilterTopic = () =>{
     if(cathalogTopic===styles.Cathalog__topic_grid){
         setCathalgoTopic(styles.Cathalog__topic_grid_hidden)   
-         setCathalogClasslist(num=>num-10);
+         setCathalogClasslist(num=>num-13);
     }else{
          setCathalgoTopic(styles.Cathalog__topic_grid)
-         setCathalogClasslist(num=>num+10);
+         setCathalogClasslist(num=>num+13);
     }   
  }
 
@@ -55,13 +54,14 @@ const changeFilterAvailability = () =>{
 
   return (
     <form  className={styles.Cathalog__filter_books} style={{height: `${cathalogClassList}rem`}}>
+            <h1 className={styles.Cathalog__main_tittle}>Filtro</h1>
             <article className={styles.Cathalog__author_buttons}>
             <header className={styles.Cathalog__filter_header} onClick={changeFilterAuthor}>
                 <h3>Autor</h3>
                 <Image
                 width={14}
                 height={14}
-                src={'/ep_arrow-blue-bold.svg'}
+                src={theme==="light"?'/ep_arrow-blue-bold.svg':'/ep_arrow-light-blue-bold.svg'}
                 alt={'blue bold arrow'}
                 />
             </header>
@@ -86,7 +86,7 @@ const changeFilterAvailability = () =>{
                 <Image
                 width={14}
                 height={14}
-                src={'/ep_arrow-blue-bold.svg'}
+                src={theme==="light"?'/ep_arrow-blue-bold.svg':'/ep_arrow-light-blue-bold.svg'}
                 alt={'blue bold arrow'}
                 />
             </header>
@@ -111,7 +111,7 @@ const changeFilterAvailability = () =>{
                 <Image
                 width={14}
                 height={14}
-                src={'/ep_arrow-blue-bold.svg'}
+                src={theme==="light"?'/ep_arrow-blue-bold.svg':'/ep_arrow-light-blue-bold.svg'}
                 alt={'blue bold arrow'}
                 />
             </header>
@@ -136,7 +136,7 @@ const changeFilterAvailability = () =>{
                 <Image
                 width={14}
                 height={14}
-                src={'/ep_arrow-blue-bold.svg'}
+                src={theme==="light"?'/ep_arrow-blue-bold.svg':'/ep_arrow-light-blue-bold.svg'}
                 alt={'blue bold arrow'}
                 />
             </header>
@@ -150,7 +150,8 @@ const changeFilterAvailability = () =>{
                     <p>No Disponible</p>
                 </label>
                 </section>
-            </article>    
+            </article>
+            <button className={styles.Cathalog__clean_search}>Limpiar filtro</button>    
     </form>
   )
 }

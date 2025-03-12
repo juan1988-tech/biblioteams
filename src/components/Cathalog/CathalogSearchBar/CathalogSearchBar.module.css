@@ -142,24 +142,6 @@
     color: var(--line-fonts);
 }
 
-.Cathalog__filter_options{
-    border: 1px solid var(--line-fonts);
-    background: var(--component-background);
-    color: var(--line-fonts);
-    height: 3.2rem;
-    border-radius: .6rem;
-    display: flex;
-    font-size: 1.6rem;
-    margin-top: 1.6rem;
-    padding: 0.8rem;
-    overflow-y: hidden;
-    transition: all 1s ease-in-out;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-    order: 4;
-}
-
 @media screen and (min-width: 568px){
     .Cathalog__search_bar{
         width: 44.4rem;
@@ -214,19 +196,7 @@
         align-items: center;
         grid-area: results;
     }
-
-    .Cathalog__filter_options{
-        height: 3.6rem;
-        width: 23rem;
-        padding: .4rem .8rem;
-        font-size: 1.4rem;
-        position: relative;
-        margin-top: 0;
-        justify-self: center;
-        align-self: center;
-        grid-area: options;
-    }
-
+ 
     .Cathalog__search_bar{
         width: 44.6rem;
     }
@@ -303,25 +273,37 @@
     }
 }
 
+@media screen and (min-width: 1133px){
+    .Cathalog__search_bar{
+        width: 85.2rem;
+        height: 8rem;
+        grid-template: repeat(2,1fr)/20.2rem 1fr 20.2rem;
+        grid-template-areas:"filter searchbar options"
+                            "results results results"; 
+    }
+
+    .Cathalog__filter_bar{
+        width: 20rem;
+        height: 3.6rem;
+        z-index: 1;
+    }
+
+    .Cathalog__filter_bar__extended{
+        width: 20rem;
+        z-index: 1;
+    }
+
+    .Cathalog__filter_results{
+        grid-template: 1fr/10.9rem 29.4rem 11.2rem 9.7rem;
+        position: relative;
+        align-items: center;
+        grid-area: results;
+    }
+}
+
 
 @media screen and (min-width: 1280px){
-
-    .Cathalog__search_bar_layout{
-        height: 4rem;
-        border-radius: 2rem;
-    }
-
-    .Cathalog__search_bar_container input[type="text"]{
-        height: 4rem;
-        font-size: 2rem;
-        border-radius: 2rem;
-    }
-
-    .Cathalog__search_bar_container input[type="text"]::placeholder{
-        font-size: 2rem;
-        height: 100%;
-        display: flex;
-        align-items: center;
-    }
-    
+    .Cathalog__search_bar{
+        margin-top: 11rem;
+    }       
 }

@@ -1,0 +1,92 @@
+.Cathalog__filter_bar{
+    display: none;
+}
+
+@media screen and (min-width: 1133px){
+    .Cathalog__filter_bar{
+        border: 1px solid var(--line-fonts);
+        background: var(--component-background);
+        height: 3.6rem;
+        border-radius: .6rem;
+        display: block;
+        padding: 0.8rem;
+        overflow-y: hidden;
+        transition: all .8s ease;
+        width: 20rem;
+        z-index: 2;
+        position: absolute;
+        align-self: center;
+        justify-self: center;
+        grid-area: options;
+        top: 0;
+    }
+
+    .Cathalog__filter_bar__extended{
+        border: 1px solid var(--line-fonts);
+        background: var(--component-background);
+        height: 14.6rem;
+        border-radius: .6rem;
+        display: block;
+        padding: 0.8rem;
+        overflow-y: hidden;
+        transition: all .8s ease;
+        width: 20rem;
+        z-index: 2;
+        position: absolute;
+        align-self: center;
+        justify-self: center;
+        grid-area: options;
+        top: 0;
+    }
+
+    .Cathalog__filter_tittle{
+        font-size: 1.6rem;
+        height: 2.6rem;
+        height: 14.7rem;
+        margin: 0 auto;
+        font-size: 1.6rem;
+        display: flex;
+        height: 1.8rem;
+        align-items: center;
+        justify-content: space-between;
+        color: var(--line-fonts);
+    }
+
+    .Cathalog__grid_buttons{
+        overflow-y: auto;
+    }
+
+    .Cathalog__filter_selector{
+        display: inline-flex;
+        width: 100%;
+        justify-content: space-between;
+        font-size: 1.6rem;
+        margin-top: 1.6rem;
+    }    
+    
+    .Cathalog__filter_selector p{
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: var(--main-tittle);
+    }
+    
+    .Cathalog__filter_selector input[type="radio"]{
+        display: none;
+        padding: .2rem;
+    }
+    
+    .Cathalog__filter_selector .Cathalog__radio{
+        display: block;
+        width: 1.2rem;
+        height: 1.2rem;
+        border-radius: 50%;
+        border: 1px solid var(--line-fonts);   
+    }
+
+    .Cathalog__filter_selector input[type="radio"]:checked + .Cathalog__radio{
+        border:1px solid var(--line-fonts);
+        width: 1.2rem;
+        height: 1.2rem;
+        background: #b6b6b6;
+    }
+}

@@ -17,6 +17,12 @@
         transition: all .8s ease;
     }
     
+    .Cathalog__main_tittle{
+        text-align: center;
+        color: var(--main-tittle);
+    }
+
+
     .Cathalog__filter_header > h3{
         font-size: 1.6rem;
         font-weight: 700;
@@ -30,6 +36,7 @@
         font-size: 1.6rem;
         height: 2rem;
         margin-top: .8rem;
+        cursor: pointer;
     }
 
     .Cathalog__author_selector{
@@ -44,7 +51,6 @@
         margin-left: 1.6rem;
     }
 
-
     .Cathalog__year_selector{
         display: inline-flex;
         width: 100%;
@@ -58,7 +64,7 @@
     }
 
     .Cathalog__topic_selector{
-        height: 2rem;
+        height: 3.6rem;
         display: inline-flex;
         width: 100%;
         font-size: 1.6rem;
@@ -107,7 +113,7 @@
     }
 
     .Cathalog__topic_grid{
-        height: 10rem;
+        height: 13rem;
         display: flex;
         flex-direction: column;
         overflow-y: hidden;
@@ -136,5 +142,22 @@
         flex-direction: column;
         overflow-y: hidden;
         transition: all .8s ease;
+    }
+
+    .Cathalog__clean_search{
+        width: 14.8rem;
+        height: 2.6rem;
+        border-radius: .6rem;
+        background: var(--main-bakground);
+        border: 1px solid var(--line-fonts);
+        margin: 0 auto;
+        margin-top: 1.6rem;
+        color: var(--line-fonts);
+    }
+}
+
+@media screen and (min-width: 1280px){
+    .Cathalog__filter_books{
+        width: 32.9rem;
     }
 }

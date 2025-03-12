@@ -4,7 +4,7 @@ import styles from './cathalog.module.css';
 import CathalogFilterBooks from "@/components/Cathalog/CathalogFilterBooks/CathalogFilterBooks";
 
 export default async function Page() {
-    const API = "http://localhost:3002/api/lista-de-libros";
+    const API = "http://localhost:3002/api/book/list-book";
     const request = await fetch(API);
     const data = await request.json();
     const { list } = data

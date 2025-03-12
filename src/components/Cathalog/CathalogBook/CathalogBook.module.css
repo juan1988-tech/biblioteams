@@ -215,3 +215,18 @@
         font-size: 1.8rem;
     }
 }
+
+
+@media screen and (min-width: 1280px){
+    .Cathalog__book_information{
+        font-size: 1.6rem;
+    }
+
+    .Cathalog__book_information h3{
+        font-size: 1.6rem;
+    }
+    
+    .Cathalog__book_information p{
+        font-size: 1.6rem;
+    }
+}

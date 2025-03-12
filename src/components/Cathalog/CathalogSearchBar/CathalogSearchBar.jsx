@@ -3,19 +3,20 @@ import React from 'react';
 import Image from "next/image";
 import styles from './CathalogSearchBar.module.css';
 import { ThemeContext } from '@/app/theme-provider';
+import CathalogFilterOptions from '@/elements/CathalogFilterOptions/CathalogFilterOptions';
+import CathalogOrderBooks from '@/elements/CathalogOrderBooks/CathalogOrderBooks';
 
 export default function CathalogSearchBar() {
   const [filterBars, setFilterBars] = React.useState(false);
-  const { theme, setTheme } =React.useContext(ThemeContext);
+  const { theme } = React.useContext(ThemeContext);
   
-
   const onChangeFilterBar = () =>{
     setFilterBars(!filterBars)
     console.log(filterBars)
   }
 
   return (
-    <form className={styles.Cathalog__search_bar}>
+    <form className={styles.Cathalog__search_bar}>  
     <label className={styles.Cathalog__search_bar_container}>
         <section className={styles.Cathalog__search_bar_layout}>
             <input type="text" placeholder="Buscar por título, autor, género o tema"/>
@@ -61,15 +62,8 @@ export default function CathalogSearchBar() {
       <p className={styles.Cathalog__results__tittle}>Resultado para:</p> <p className={styles.Cathalog__results_output}>Resultado de libro</p>
       <p className={styles.Cathalog__results__tittle}>Total resultado:</p> <p className={styles.Cathalog__results_output}>9 de 12 libros</p>
     </section>  
-    <section className={styles.Cathalog__filter_options}>
-      <p>Filtrar y ordenar búsqueda</p>
-      <Image
-        width={16}
-        height={16}
-        src={theme==="light"?"/filter-black-icon.svg":"/filter-white-icon.svg"}
-        alt="icono de filtro"
-      />
-    </section>
+    <CathalogFilterOptions/>
+    <CathalogOrderBooks/>
     </form>
   )
 }
