@@ -22,6 +22,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link 
+          rel="icon"
+          type="image/svg"
+          href="/logo-robot.svg"
+          sizes="16*16"
+        />
+      </head>
       <body className={comicNeue.className}>
         <ThemeProvider>
         <BurguerButton />
