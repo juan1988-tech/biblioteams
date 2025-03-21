@@ -1,0 +1,74 @@
+.Book__action_target{
+    width: 19.5rem;
+    height: 23.7rem;
+    border: 1px solid var(--line-fonts);
+    border-radius: 1.2rem;
+    margin: 0 auto;
+    margin-top: 1.6rem;
+    padding: .8rem;
+}
+
+.Book__reserve_button{
+    width: 100%;
+    height: 3.2rem;
+    border-radius: 1.6rem;
+    border: 1px solid #000;
+    display: flex;
+    background-color: var(--green-light-button);
+    font-family: "Comic Neue",cursive;
+    font-size: 1.6rem;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.Book__available_state{
+    display: grid;
+    grid-template-columns: 8.4rem 1fr;
+    margin-top: 1.2rem;
+}
+
+.Book__available_state p:first-child{
+    color: var(--available-book);
+    font-weight: 700;
+}
+
+.Book__available_state p:nth-child(2){
+    color: var(--not-available-book);
+    opacity: 40%;
+}
+
+.Book__profile_options{
+    margin-top: 1.2rem;
+}
+
+.Book__profile_options p{
+    color: var(--line-fonts);
+}
+
+.Book__profile_options p a{
+    text-decoration: none;
+    color: var(--main-tittle);
+    font-weight: 700;
+}
+
+.Book__profile_options p + p{
+    margin-top: .8rem;
+    font-size: 1.4rem;
+}
+
+.Book_actions_button{
+    width: 14.8rem;
+    height: 2.4rem;
+    border: 1px solid var(--line-fonts);
+    color: var(--line-fonts);
+    font-size: 1.6rem;
+    border-radius: .6rem;
+    display: flex;
+    align-items: center;
+    padding: .4rem;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-top: 1rem;
+    background: var(--main-bakground);
+}
+

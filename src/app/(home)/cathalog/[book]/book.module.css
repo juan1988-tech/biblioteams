@@ -1,0 +1,154 @@
+.Book_main_container{
+    width: 28.8rem;
+    margin: 0 auto;
+    margin-bottom: 1.6rem;
+    font-size: 1.6rem;
+}
+
+.Book_main_information{
+    padding-top: 5.2rem;
+}
+
+.Book_main_tittle{
+    font-size: 2rem;
+    color: var(--main-tittle);
+}
+
+.Book_image_container{
+    width: 9.2rem;
+    height: 11.8rem;
+    border: 1px solid var(--line-fonts);
+    border-radius: 1.2rem;
+    margin: 0 auto;
+    margin-top: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Book_author,
+.Book_year,
+.Book_publisher,
+.Book_topics{
+    display: flex;
+    align-items: center;
+    margin-top: 1.6rem;
+}
+
+.Book_author h3,
+.Book_year h3,
+.Book_publisher h3,
+.Book_topics h3{
+    color: var(--main-tittle);
+    display: inline-flex;
+    width: 8rem;
+}
+
+.Book_author h3 + p,
+.Book_year h3 + p,
+.Book_publisher h3 + p{
+    display: inline-flex;
+    color: var(--line-fonts);
+}
+
+.Book_topics h3{
+    align-self: flex-start;
+}
+
+.Book_topics_dewey{
+    display: flex;
+    flex-direction: column;
+    width: 20.5rem;
+}
+
+.Book_topics_dewey p{
+    color: var(--line-fonts);
+}
+
+.Book_topics_dewey p:nth-child(2){
+    margin-top: .8rem;
+    color: var(--line-fonts);
+}
+
+.Books_description{
+    color: var(--line-fonts);
+}
+
+.Books_description h3{
+    color: var(--main-tittle);
+}
+
+.Books_description h3 + p{
+    margin-top: .8rem;
+}
+
+.Book__main_tittle{
+    text-align: center;
+    color: var(--main-tittle);
+    margin-top: 1.6rem;
+    font-size: 2rem;
+}
+
+@media screen and (min-width: 568px){
+    .Book_main_container{
+        width: 53.6rem;
+    }
+
+    .Book_main_information{
+        display: grid;
+        grid-template: 2.5rem 4.3rem 3.6rem 3.2rem 4.8rem 22rem/ 9.2rem 1fr;
+        grid-template-areas:"Book_main_tittle Book_main_tittle"
+                            "Book_image_container Book_author"
+                            "Book_image_container Book_year"
+                            "Book_image_container Book_publisher"
+                            "Book_image_container Book_topics"
+                            "Books_description Books_description";
+        gap: 1.6rem;
+    }
+
+    .Book_main_tittle{
+        grid-area: Book_main_tittle;
+    }
+    
+    .Book_image_container{
+        grid-area: Book_image_container;
+    }
+
+    .Book_author{
+        grid-area: Book_author;
+        margin: 0;
+    }
+
+    .Book_year{
+        grid-area: Book_year;
+        margin: 0;
+    }
+
+    .Book_publisher{
+        grid-area: Book_publisher;
+        margin: 0;
+    }
+
+    .Book_topics{
+        grid-area: Book_topics;
+        width: 100%;
+        align-items: flex-start;
+        margin: 0;
+    }
+
+    .Books_description{
+        grid-area: Books_description;
+    }
+
+    .Book_topics_dewey{
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
