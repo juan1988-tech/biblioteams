@@ -5,6 +5,11 @@
     font-size: 1.6rem;
 }
 
+.Book__container_grid{
+    display: flex;
+    flex-direction: column;
+}
+
 .Book_main_information{
     padding-top: 5.2rem;
 }
@@ -108,6 +113,7 @@
 
     .Book_main_tittle{
         grid-area: Book_main_tittle;
+        font-size: 2.8rem;
     }
     
     .Book_image_container{
@@ -144,6 +150,124 @@
         width: 100%;
     }
 }
+
+@media screen and (min-width: 744px){
+    .Book_main_container{
+        width: 68.9rem;
+    }
+
+    .Book_main_information{
+        width: 48.8rem;
+        grid-template: 2.5rem 4.3rem 3.6rem 3.2rem 4.8rem 27rem/ 9.2rem 1fr;
+        grid-template-areas:"Book_main_tittle Book_main_tittle"
+        "Book_image_container Book_author"
+        "Book_image_container Book_year"
+        "Book_image_container Book_publisher"
+        "Book_image_container Book_topics"
+        " . Books_description";
+    }
+
+    .Book__container_grid{
+        flex-direction: row;
+    }
+}
+
+@media screen and (min-width: 1133px){
+    .Book_main_container{
+        width: 106.9rem;
+    }
+
+    .Book_main_information{
+        width: 87.4rem;
+        grid-template: 2.5rem 4.3rem 3.6rem 3.2rem 4.8rem 28rem/ 16.8rem 1fr;
+        grid-template-areas:"Book_main_tittle Book_main_tittle"
+        "Book_image_container Book_author"
+        "Book_image_container Book_year"
+        "Book_image_container Book_publisher"
+        "Book_image_container Book_topics"
+        " . Books_description";
+    }
+
+    .Book_image_container{
+        width: 16.8rem;
+        height: 21.7rem;
+    }
+
+    .Book_image_container img{
+        width: 14.5rem;
+        height: 14.5rem;
+    }
+
+
+    .Book_author h3,
+    .Book_year h3,
+    .Book_publisher h3,
+    .Book_topics h3,
+    .Books_description h3{
+        font-size: 2rem;
+        width: 10.8rem;
+    }
+
+    .Book_author h3 + p,
+    .Book_year h3 + p,
+    .Book_publisher h3 + p,
+    .Books_description p{
+        font-size: 2rem;
+        margin-top: 0.8rem;
+    }
+
+    .Book_topics_dewey{
+        font-size: 1.6rem;
+        width: 84%;
+    }
+
+    .Books_description{
+        display: grid;
+        grid-template: 8.6rem 10rem 1fr/10.8rem 1fr;
+        grid-template-areas:"description-tittle p1"
+                            " . p2"
+                            " . p3";
+    }
+
+    .Books_description h3{
+        grid-area:description-tittle;
+    }
+
+    .Books_description p{
+        margin-top: 0;
+    }
+
+    .Books_description p:nth-child(1){
+        grid-area: p1;
+    }
+
+    .Books_description p:nth-child(2){
+        grid-area: p2;
+    }
+
+    .Books_description p:nth-child(3){
+        grid-area: p3;
+    }
+
+    .Books_recommended .Book__main_tittle{
+        font-size: 2.8rem;
+    }
+
+    .Other__Books_target{
+        display: flex;
+        width: 91rem;
+        justify-content: space-between;
+        margin: 0 auto;
+    }   
+}
+
+
+@media screen and (min-width: 1280px){
+    .Book_main_information{
+        padding-top: 11.4rem;
+    }
+}
+
 
 
 

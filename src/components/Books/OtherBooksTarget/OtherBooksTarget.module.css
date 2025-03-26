@@ -88,3 +88,11 @@
         grid-area: Other__books_topics;
     }
 }
+
+
+@media screen and (min-width: 744px){
+    .Other__books_target{
+        margin: 0;
+        margin-top: 1.6rem;
+    }   
+}

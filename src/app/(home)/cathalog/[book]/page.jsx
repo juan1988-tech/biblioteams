@@ -4,9 +4,9 @@ import BookActionTarget from '@/components/Books/BookActionTarget/BookActionTarg
 import OtherBooksTarget from '@/components/Books/OtherBooksTarget/OtherBooksTarget';
 
 export default function Page() {
-  return (
-      <>
+  return ( 
       <main className={styles.Book_main_container}>
+      <div className={styles.Book__container_grid}>  
       <section className={styles.Book_main_information}>
         <h1 className={styles.Book_main_tittle}>HTML, CSS y Jquery</h1>
         <figure className={styles.Book_image_container}>
@@ -43,12 +43,15 @@ export default function Page() {
         </article>
       </section>
       <BookActionTarget/>
+      </div>
       <section className={styles.Books_recommended}>
         <h1 className={styles.Book__main_tittle}>Otros libros relacionados</h1>
-        <OtherBooksTarget/>
-        <OtherBooksTarget/>  
+        <article className={styles.Other__Books_target}>
+          <OtherBooksTarget/>
+          <OtherBooksTarget/>  
+        </article>
       </section>
       </main> 
-      </>
+
   )
 }
