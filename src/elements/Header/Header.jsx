@@ -21,23 +21,23 @@ export const Header =  () => {
           <ul className={styles.Header__list}>
             <li>
               <Link
+              href={'/'}
+              >Inicio</Link>
+            </li>
+            <li>
+              <Link
               href={'/cathalog'}
               >Catálogo</Link>
             </li>
             <li>
               <Link
               href={''}
-              >Eventos</Link>
+              >Ingresa</Link>
             </li>
             <li>
               <Link
               href={''}
               >Regístrate</Link>
-            </li>
-            <li>
-              <Link
-              href={''}
-              >Ingresa</Link>
             </li>
             <section className={styles.Header__general_settings}>
             <button className={styles.Header__theme_button} onClick={onChangeLayout}>

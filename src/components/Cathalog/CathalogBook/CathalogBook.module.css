@@ -36,11 +36,12 @@
     justify-content: center;
 }
 
-.Cathalog__number + h1{
+.Cathalog__number + a{
     font-size: 1.6rem;
     font-weight: 700;
     color: var(--main-tittle);
     margin-left: .8rem;
+    text-decoration: none;
 }
 
 .Cathalog__book_information{

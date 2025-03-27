@@ -1,17 +1,20 @@
 "use client"
 import styles from './CathalogBook.module.css';
 import Image from 'next/image';
+import Link from 'next/link';
 import { ThemeContext } from '@/app/theme-provider';
 import { useContext } from 'react';
 
 
-export default function CathalogBook({Cathalog__number,Cathalog__name,Cathalog__author,Cathalog__publisher,Cathalog__year,Cathalog__topic_1,Cathalog__topic_2,Cathalog__available}) {
+export default function CathalogBook({Cathalog__number,Cathalog__name,Cathalog__author,Cathalog__publisher,Cathalog__year,Cathalog__topic_1,Cathalog__topic_2,Cathalog__available,Cathalog__link}) {
   const { theme } = useContext(ThemeContext);
   return  (
     <section className={styles.Cathalog__book}>
       <header className={styles.Cathalog__book_tittle}>
         <h1 className={styles.Cathalog__number}>{Cathalog__number}</h1>
-        <h1>{Cathalog__name}</h1>
+        <Link 
+        href={`/cathalog/${Cathalog__link}`}
+        ><h1>{Cathalog__name}</h1></Link>
       </header>
       <article className={styles.Cathalog__book_information}>
         <h3 className={styles.Cathalog__book_author}>Autor:</h3>

@@ -1,8 +1,13 @@
+"use client"
 import styles from './BookActionTarget.module.css';
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ThemeContext } from '@/app/theme-provider';
 
 export default function BookActionTarget() {
+const { theme } = React.useContext(ThemeContext);
+
   return (
     <section className={styles.Book__action_target}>
         <button className={styles.Book__reserve_button}><p>Reservar</p>
@@ -25,8 +30,7 @@ export default function BookActionTarget() {
                     <Image
                         width={12}
                         height={12}
-                        //src={theme==="light"?"/favourite-black-book.svg":"/favourite-white-book.svg"}
-                        src={"/favourite-black-book.svg"}
+                        src={theme==="light"?"/favourite-black-book.svg":"/favourite-white-book.svg"}
                         alt="icono de libro"
                     />
           </article>
@@ -35,8 +39,7 @@ export default function BookActionTarget() {
             <Image
                 width={12}
                 height={12}
-                //src={theme==="light"?'/share-black-whatsapp.svg':"/share-white-whatsapp.svg"}
-                src={'/share-black-whatsapp.svg'}
+                src={theme==="light"?'/share-black-whatsapp.svg':"/share-white-whatsapp.svg"}
                 alt="icono de libro"
             />
         </article>

@@ -1,9 +1,14 @@
+"use client"
 import styles from './book.module.css';
 import Image from 'next/image';
 import BookActionTarget from '@/components/Books/BookActionTarget/BookActionTarget';
 import OtherBooksTarget from '@/components/Books/OtherBooksTarget/OtherBooksTarget';
+import { useRouter } from 'next/navigation';
 
 export default function Page() {
+  const router = useRouter();
+  console.log(router);
+  
   return ( 
       <main className={styles.Book_main_container}>
       <div className={styles.Book__container_grid}>  

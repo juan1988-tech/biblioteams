@@ -18,7 +18,8 @@ export default async function Page() {
                     index = index + 1;
                     const bookCollections = {...book,index}
 
-                    return <CathalogBook Cathalog__number={bookCollections.index}
+                    return <CathalogBook 
+                    Cathalog__number={bookCollections.index}
                     Cathalog__name={bookCollections.name}
                     Cathalog__author={bookCollections.author}
                     Cathalog__publisher={bookCollections.publisher}
@@ -26,6 +27,7 @@ export default async function Page() {
                     Cathalog__topic_1={bookCollections.topic_1}
                     Cathalog__topic_2={bookCollections.topic_2}
                     Cathalog__available={bookCollections.available}
+                    Cathalog__link={bookCollections.link}
                 /> 
                 }):'Oh vaya no encontramos los libros en tu consulta'}
              </section>
