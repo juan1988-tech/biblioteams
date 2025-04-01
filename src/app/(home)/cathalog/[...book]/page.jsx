@@ -3,48 +3,76 @@ import styles from './book.module.css';
 import Image from 'next/image';
 import BookActionTarget from '@/components/Books/BookActionTarget/BookActionTarget';
 import OtherBooksTarget from '@/components/Books/OtherBooksTarget/OtherBooksTarget';
-import { useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
+import { useEffect, useRef, useState } from 'react';
 
 export default function Page() {
-  const router = useRouter();
-  console.log(router);
+  //obtener la url 
+  const pathName = usePathname();
+  const [book,setBook] = useState([])
+  const descriptionReferernce = useRef(null);
+
+  //sacar el ultimo fragmento de la url
+  const match = pathName.match(/[^/]+$/);
+  const lastFragment = match[0]
   
-  return ( 
+  //hacer el llamado de la API por libro
+  const requestBook = async () =>{
+    const url =  `http://localhost:3002/api/book/one-book/${lastFragment}`;
+    await fetch(url)
+    .then(data=>data.json())
+    .then((item)=>{
+      let { book } = item;
+      setBook(book)
+    })
+  }
+
+  useEffect(()=>{
+    requestBook();
+  },[])
+  
+  /*transformar el texto de la descripción e insertarlo cómo una cadena html*/
+  useEffect(()=>{
+    const node = descriptionReferernce.current;
+    node.innerHTML = `${book.description}`;
+  })
+  
+  if(book){
+    return ( 
       <main className={styles.Book_main_container}>
       <div className={styles.Book__container_grid}>  
       <section className={styles.Book_main_information}>
-        <h1 className={styles.Book_main_tittle}>HTML, CSS y Jquery</h1>
+        <h1 className={styles.Book_main_tittle}>{book.name}</h1>
         <figure className={styles.Book_image_container}>
             <Image 
             width={74}
             height={74}
+            alt='imagen de libro'
             src='/images/blue-book.png'
             />
         </figure>
         <article className={styles.Book_author}>
           <h3>Autor</h3>
-          <p>Jose Antonio Recio García</p>
+          <p>{book.author}</p>
         </article>
         <article className={styles.Book_year}>
           <h3>Año</h3>
-          <p>2018</p>
+          <p>{book.year}</p>
         </article>
         <article className={styles.Book_publisher}>
           <h3>Editorial</h3>
-          <p>Ediciones de la U</p>
+          <p>{book.publisher}</p>
         </article>
         <article className={styles.Book_topics}>
           <h3>Temas</h3>
           <div className={styles.Book_topics_dewey}>
-            <p>Medios interactivos y diseño de interfaces</p>
-            <p>Bibliotecología y ciencias de la información</p>
+            <p>{book.topic_1}</p>
+            <p>{book.topic_2}</p>
           </div>
         </article>
         <article className={styles.Books_description}>
           <h3>Descripción</h3>
-          <p>Este libro ofrece una experiencia docente acumulada por el autor en sus clases universitarias sobre las tecnologías más populares del desarrollo web: HTML, CSS, y JavaScript/JQuery.</p>
-          <p>Gracias a dicha experiencia nos presenta una visión que nos permitirá entender fácilmente cómo encajan las diferentes tecnologías en cualquier sistema web, para luego profundizar en aquellas fundamentales para desarrollar webs de calidad.</p>
-          <p>Desde un espíritu pragmático, centrándose en aquellos elementos que son relevantes para el desarrollo, se detallan los contenidos necesarios para crear un sitio web profesional y moderno</p>
+          <p ref={descriptionReferernce}></p>
         </article>
       </section>
       <BookActionTarget/>
@@ -57,6 +85,6 @@ export default function Page() {
         </article>
       </section>
       </main> 
-
-  )
+    )
+  }
 }

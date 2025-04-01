@@ -28,6 +28,7 @@ export default async function Page() {
                     Cathalog__topic_2={bookCollections.topic_2}
                     Cathalog__available={bookCollections.available}
                     Cathalog__link={bookCollections.link}
+                    Cathalog__description ={bookCollections.description}
                 /> 
                 }):'Oh vaya no encontramos los libros en tu consulta'}
              </section>

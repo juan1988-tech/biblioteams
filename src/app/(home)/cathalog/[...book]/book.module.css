@@ -101,7 +101,7 @@
 
     .Book_main_information{
         display: grid;
-        grid-template: 2.5rem 4.3rem 3.6rem 3.2rem 4.8rem 22rem/ 9.2rem 1fr;
+        grid-template: 2.5rem 4.3rem 3.6rem 3.2rem 4.8rem minmax(15rem,max-content)/ 9.2rem 1fr;
         grid-template-areas:"Book_main_tittle Book_main_tittle"
                             "Book_image_container Book_author"
                             "Book_image_container Book_year"
@@ -158,7 +158,7 @@
 
     .Book_main_information{
         width: 48.8rem;
-        grid-template: 2.5rem 4.3rem 3.6rem 3.2rem 4.8rem 27rem/ 9.2rem 1fr;
+        grid-template: 2.5rem 4.3rem 3.6rem 3.2rem 4.8rem minmax(15rem,max-content)/ 9.2rem 1fr;
         grid-template-areas:"Book_main_tittle Book_main_tittle"
         "Book_image_container Book_author"
         "Book_image_container Book_year"
@@ -179,7 +179,7 @@
 
     .Book_main_information{
         width: 87.4rem;
-        grid-template: 2.5rem 4.3rem 3.6rem 3.2rem 4.8rem 28rem/ 16.8rem 1fr;
+        grid-template: 2.5rem 4.3rem 3.6rem 3.2rem 4.8rem minmax(15rem,max-content)/ 16.8rem 1fr;
         grid-template-areas:"Book_main_tittle Book_main_tittle"
         "Book_image_container Book_author"
         "Book_image_container Book_year"
@@ -198,7 +198,6 @@
         height: 14.5rem;
     }
 
-
     .Book_author h3,
     .Book_year h3,
     .Book_publisher h3,
@@ -210,10 +209,15 @@
 
     .Book_author h3 + p,
     .Book_year h3 + p,
-    .Book_publisher h3 + p,
-    .Books_description p{
+    .Book_publisher h3 + p{
         font-size: 2rem;
         margin-top: 0.8rem;
+    }   
+
+    .Books_description h3 + p{
+        margin-top: 0;
+        grid-area:  p1;
+        font-size: 2rem;
     }
 
     .Book_topics_dewey{
@@ -223,10 +227,9 @@
 
     .Books_description{
         display: grid;
-        grid-template: 8.6rem 10rem 1fr/10.8rem 1fr;
+        grid-template: minmax(max-content,10rem) /10.8rem 1fr;
         grid-template-areas:"description-tittle p1"
-                            " . p2"
-                            " . p3";
+                            " . p1";                    
     }
 
     .Books_description h3{
@@ -237,17 +240,6 @@
         margin-top: 0;
     }
 
-    .Books_description p:nth-child(1){
-        grid-area: p1;
-    }
-
-    .Books_description p:nth-child(2){
-        grid-area: p2;
-    }
-
-    .Books_description p:nth-child(3){
-        grid-area: p3;
-    }
 
     .Books_recommended .Book__main_tittle{
         font-size: 2.8rem;
@@ -258,6 +250,7 @@
         width: 91rem;
         justify-content: space-between;
         margin: 0 auto;
+        margin-bottom: 1.6rem;
     }   
 }
 
@@ -276,7 +269,7 @@
 
     .Book_main_information{
         width: 104rem;
-        grid-template: 2.5rem 4.3rem 3.6rem 3.2rem 4.8rem 28rem/ 16.8rem 1fr;
+        grid-template: 2.5rem 4.3rem 3.6rem 3.2rem 4.8rem minmax(15rem,max-content)/ 16.8rem 1fr;
         grid-template-areas:"Book_main_tittle Book_main_tittle"
         "Book_image_container Book_author"
         "Book_image_container Book_year"
