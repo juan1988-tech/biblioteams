@@ -25,7 +25,7 @@
 }
 
 .Home__search_bar_container input[type="text"]{
-    border: 1px solid white;
+    border: 1px solid var(--layout-border);
     background: rgba(0,0,0,0.90);
     color: var(--white-font);
     width: 100%;

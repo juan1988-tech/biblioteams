@@ -52,7 +52,7 @@
     margin: 0 auto;
     margin-top: 2.4rem;
     border-radius: 1.2rem;
-    border: 1px solid var(--line-fonts);
+    border: 1px solid var(--layout-border);
     padding: 1px;
     background: var(--linear-background);
     position: relative;
@@ -63,7 +63,7 @@
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
-    border: 1px solid var(--line-fonts);
+    border: 1px solid var(--layout-border);
     background: var(--circle-button);
     display: flex;
     align-items: center;
@@ -81,7 +81,7 @@
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
-    border: 1px solid var(--line-fonts);
+    border: 1px solid var(--layout-border);
     background: var(--circle-button);
     display: flex;
     align-items: center;

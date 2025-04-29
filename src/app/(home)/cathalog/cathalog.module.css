@@ -20,7 +20,6 @@
 
     .Cathalog__Main_grid{
         display: flex;
-        width: 108rem;
         margin-left: 3.2rem;
     }
 }

@@ -1,7 +1,7 @@
 .Other__books_target{
     width: 28.8rem;
     height: 34.5rem;
-    border: 1px solid var(--line-fonts);
+    border: 1px solid var(--layout-border);
     border-radius: 1.2rem;
     margin-top: 1.6rem;
     padding: 1.2rem;
@@ -11,7 +11,7 @@
     width: 10.1rem;
     height: 13.1rem;
     border-radius: 1.2rem;
-    border: 1px solid var(--line-fonts);
+    border: 1px solid var(--layout-border);
     display: flex;
     align-items: center;
     justify-content: center;

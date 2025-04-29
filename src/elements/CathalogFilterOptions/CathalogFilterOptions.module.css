@@ -1,5 +1,5 @@
 .Cathalog__filter_options{
-    border: 1px solid var(--line-fonts);
+    border: 1px solid var(--layout-border);
     background: var(--component-background);
     color: var(--line-fonts);
     height: 3.2rem;

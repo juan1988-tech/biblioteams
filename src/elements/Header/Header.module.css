@@ -10,7 +10,7 @@
         width: 101.9rem;
         height: 6rem;
         border-radius: 3rem;
-        border: 1px solid var(--line-fonts);
+        border: 1px solid var(--layout-border);
         position: absolute;
         left: calc( 50% - 50.5rem);
         top: 3.6rem;   
@@ -51,7 +51,7 @@
         width: 4.8rem;
         height: 2.4rem;
         border-radius: 1.2rem;
-        border: 1px solid var(--line-fonts);
+        border: 1px solid var(--layout-border);
         padding: 1px;
         background: var(--linear-background);
         position: relative;
@@ -61,7 +61,7 @@
         width: 2rem;
         height: 2rem;
         border-radius: 50%;
-        border: 1px solid var(--line-fonts);
+        border: 1px solid var(--layout-border);
         background: var(--circle-button);
         display: flex;
         align-items: center;
@@ -78,7 +78,7 @@
         width: 2rem;
         height: 2rem;
         border-radius: 50%;
-        border: 1px solid var(--line-fonts);
+        border: 1px solid var(--layout-border);
         background: var(--circle-button);
         display: flex;
         align-items: center;

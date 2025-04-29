@@ -1,5 +1,5 @@
 .Cathalog__book{
-    border: 1px solid var(--line-fonts);
+    border: 1px solid var(--layout-border);
     padding: 1.2rem;
     border-radius: 1.2rem;
     background: var(--component-background);
@@ -126,7 +126,7 @@
 .Cathalog__book_actions_button{
     width: 14.8rem;
     height: 2.4rem;
-    border: 1px solid var(--line-fonts);
+    border: 1px solid var(--layout-border);
     color: var(--line-fonts);
     font-size: 1.6rem;
     border-radius: .6rem;

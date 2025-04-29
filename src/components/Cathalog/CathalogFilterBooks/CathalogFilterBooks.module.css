@@ -7,7 +7,7 @@
         display: flex;
         flex-direction: column;
         width: 25.2rem;
-        border: 1px solid var(--line-fonts);
+        border: 1px solid var(--layout-border);
         color: var(--line-fonts);
         border-radius: 1.2rem;  
         background: var(--component-background);
@@ -149,7 +149,7 @@
         height: 2.6rem;
         border-radius: .6rem;
         background: var(--main-bakground);
-        border: 1px solid var(--line-fonts);
+        border: 1px solid var(--layout-border);
         margin: 0 auto;
         margin-top: 1.6rem;
         color: var(--line-fonts);
