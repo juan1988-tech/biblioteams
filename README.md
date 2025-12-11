@@ -1,73 +1,81 @@
-# React + TypeScript + Vite
+# Biblioteams
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+<img src="./.github/assets/portrait-bilbioteams.jpg" width="400" alt="Portada de la biblioteca" />
+</p>
 
-Currently, two official plugins are available:
+## Descripción del proyecto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- El presente proyecto consiste en una **Aplicación web que consta de un catálogo digital para una bilbioteca**
+- La aplicación consta de una Landing Page + aplicación del catálogo
 
-## React Compiler
+### Landing Page
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+La landing page tiene cómo objetivo la divulgación de la oferta cultural del colegio o Institución dueña de la biblioteca, entre las secciones sugeridas se encuentra
 
-## Expanding the ESLint configuration
+- **Eventos** Los eventos culturales y de interés realizados por el colegio
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Talleres** Talleres y capacitaciones organizadas extracurricularmente por la institución
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Sección para buscar el catálogo** Sección para buscar un libro en el catálogo de la biblioteca
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Las secciones padicionales serán evauladas a solicitud del cliente
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Catalogo
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- El catálogo consiste en una colección de libros que puedes:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+  **Cómo usuario**
+  - Registrar tu perfil para hacer la devolución de los préstamos en la biblioteca
+  - Pedir libros en préstamo para devolverlos de acuerdo a las políticas de la biblioteca
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+  **Cómo administrador**
+  - Controlar el préstamos de libros de tu biblioteca
+  - Obtener un historial de usuarios
+  - Tener información detallada de la rotación de los libros
+
+## Objetivos
+  - Ofrecer una plataforma accesible económica para la gestión de tu biblioteca
+  - Ofertar actividades culturales y programas extracurriculares que hagan las instituciones
+
+## Público objetivo
+
+Nuestro público objetivo son ***colegios, fundaciones, bibliotecas comunitarias*** y toda institución que posea una biblioteca y/o que cuenta con una oferta cultural para ofrecer a la comunidad (talleres, eventos, pre-icfes,etc)
+
+
+## Distribución
+
+- **Medios propios** Aplicación web, redes sociales
+- **Medios de terceros** Recomendaciones, eventos académicos
+
+## Stack tecnológico
+
+  El stack tecnologico consiste en
+
+### Frontend
+![React](https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=for-the-badge)
+![Typescript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+
+### Backend
+![MongoDB](https://img.shields.io/badge/-MongoDB-13aa52?style=for-the-badge&logo=mongodb&logoColor=white)
+![Node.js](https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+
+*Nota aclaratoria*
+
+*Cómo es un proyecto de código abierto, puedes implementar un backend con PHP,y bases de datos distintas al stack MERN. Así mismo se puede usar bases relacionales cómo MySQL*
+
+## Diseño
+
+El archivo de diseño se encuentra disponible en **Figma**
+
+https://www.figma.com/proto/B6YkRi5vtUqmfawOytMzqh/Biblioteams?node-id=597-9655&t=nJX4E7LxBht1VBBy-1
+
+[Ver el Sistema de diseño]('/.github/sistema-de-diseño.md')
+
+## Contacto
+ - 🧑‍💻 **Nombre**  Juan david Franco
+ - **Perfil de Git Hub** [juan1988-tech](https://github.com/juan1988-tech)
+ - **Perfil de Linkedin** [jfranco-webdev](https://www.linkedin.com/in/jfranco-webdev/)
+ - **📲 Portafolio** [Portadolio de dearrollador](https://juan1988-tech.github.io/portafolio-web/)
+ - **📱 WhatsApp** (+57)3142366069
