@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+/* ahora sí el resto del CSS */
+@property --tw-rotate-x {
+  syntax: "*";
+}
+
+@theme{
+  /*Tipografía*/
+  --font-comic-neue: 'Comic Neue', cursive;
+  
+  /*Colores para el modo claro*/
+  --color-white-font: #FBFBFB;
+  --color-white:#fff;
+
+  /*Variables para el degradado color claro*/
+  --color-light-gray: #EFECEC;
+  --color-medium-gray: #E4E3E4;
+  /*bg-linear-to-r from-light-gray via-medium-gray to-light-gray*/
+
+  /*Colores para los botones*/
+  --color-green-light-button:#8FF313;
+  --color-yellow-button: #FAFF0E;
+  --color-light-blue-button: #00FFF5;
+  --color-pink-button: #FF0ED3;
+
+  --color-tittle-blue:#1813FF;
+  --color-main-black: #000;
+
+  /*Variables para el degradado color oscuro*/
+  --color-light-blue: #191739;
+  --color-medium-blue: #221D4F;
+
+  /*Colores para el modo oscuro*/
+  --color-blue-background: #130F58;
+  --color-gray-line: #888888;
+}
+
+body{
+   font-family: "Comic Neue", cursive; 
+}
+
+
+
+/*
+Referencias para la tipografía Comic Neue:
+
+.comic-neue-light {
+  font-family: "Comic Neue", cursive;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.comic-neue-regular {
+  font-family: "Comic Neue", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.comic-neue-bold {
+  font-family: "Comic Neue", cursive;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.comic-neue-light-italic {
+  font-family: "Comic Neue", cursive;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.comic-neue-regular-italic {
+  font-family: "Comic Neue", cursive;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.comic-neue-bold-italic {
+  font-family: "Comic Neue", cursive;
+  font-weight: 700;
+  font-style: italic;
+}
+*/
