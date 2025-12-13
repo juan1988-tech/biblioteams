@@ -3,25 +3,25 @@ import { HeaderLinks,HeaderImageLinks } from "./data"
 
 const Header:React.FC = () => {
   return (
-    <header className="hidden max-w-265.5 h-16 rounded-full border-black mx-auto border-2 mt-8 md:flex">
-      <ul className="w-auto h-full inline-flex items-center px-8">
+    <header className="hidden max-w-265.5 h-16 rounded-full border-black mx-auto border-2 mt-8 md:flex bg-linear-to-r from-light-gray via-medium-gray to-light-gray px-16">
+      <ul className="w-10/12 h-full inline-flex items-center justify-between">
         {
           HeaderLinks.map((link)=>(
            <li key={link.name}>
-            <a>{link.name}</a>
+            <a className="text-tittle-blue font-bold">{link.name}</a>
            </li>
          ))
         }
       </ul>
-      <ul className="w-auto flex items-center">
+      <ul className="flex-1 flex items-center justify-between ml-10">
             <ToggleBackground/>
             {
-                HeaderImageLinks.map((link)=>(
-                    <li key={link.src}>
-                        <a>
-                            <img alt={link.alt}/>
-                        </a>
-                    </li>
+              HeaderImageLinks.map((link)=>(
+                  <li key={link.src} className="w-6 h-6 rounded-full border border-black">
+                      <a className="block w-full h-full">
+                          <img alt={link.alt} src={link.src}/>
+                      </a>
+                  </li>
                 ))
             }
       </ul>  
