@@ -71,7 +71,7 @@ El archivo de diseño se encuentra disponible en **Figma**
 
 https://www.figma.com/proto/B6YkRi5vtUqmfawOytMzqh/Biblioteams?node-id=597-9655&t=nJX4E7LxBht1VBBy-1
 
-[Ver el Sistema de diseño]('/.github/sistema-de-diseño.md')
+[Ver el Sistema de diseño](/.github/sistema-de-diseño.md)
 
 ## Contacto
  - 🧑‍💻 **Nombre**  Juan david Franco
