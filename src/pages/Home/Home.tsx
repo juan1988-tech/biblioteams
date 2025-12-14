@@ -12,8 +12,8 @@ export default function Home():JSX.Element {
             {imageHeroList.map((book)=>(
               <ImageHero src={book.src} className={book.className} alt={book.alt}/>
             ))}
-            <h1 className="text-h1-64 text-tittle-blue font-semibold col-start-2 col-end-5 row-start-2 row-end-3 justify-self-end">Biblioteams</h1>
-            <p className="text-h2-52 font-medium col-start-2 col-end-7 row-start-3 row-end-4">Un espacio de formación para niños y jóvenes</p>
+            <h1 className="text-font-big-64 text-tittle-blue font-semibold col-start-2 col-end-5 row-start-2 row-end-3 justify-self-end">Biblioteams</h1>
+            <p className="text-font-big-52 font-medium col-start-2 col-end-7 row-start-3 row-end-4">Un espacio de formación para niños y jóvenes</p>
           </div>
           <figure className="w-125 h-125">
             <img src="/images/hero/libro-hero.png" alt="Libro Hero" className="w-full h-full" />

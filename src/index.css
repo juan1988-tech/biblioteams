@@ -36,8 +36,15 @@
   --color-gray-line: #888888;
 
   /*variables para el tamaño de los títulos*/
-  --text-h1-64:64px;
-  --text-h2-52:52px;
+  --text-font-little-p-12:12px;
+  --text-font-little-p-14:14px;
+  --text-font-h4-20:20px;
+  --text-font-h3-24:24px;
+  --text-font-h2-28:28px;
+  --text-font-h1-32:32px;
+  --text-font-big-tittle:36px;
+  --text-font-big-52:52px;
+  --text-font-big-64:64px;
 }
 
 body{
