@@ -1,7 +1,4 @@
 import type { HeaderProps,HeaderImageProps } from "./types";
-import facebookIcon from '/public/instagram.svg'
-
-
 
 export const HeaderLinks:HeaderProps[] =[
     {
@@ -9,15 +6,15 @@ export const HeaderLinks:HeaderProps[] =[
         name:"Inicio"
     },
     {
-        link:"/cathalog",
+        link:"/catalogo",
         name:"Catálogo"
     },
     {
-        link:"/log-in",
+        link:"/ingresa",
         name:"Ingresa"
     },
     {
-        link:"/register",
+        link:"/registrate",
         name:"Regístrate"
     }
 ]

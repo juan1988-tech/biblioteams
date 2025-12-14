@@ -1,14 +1,15 @@
-import ToggleBackground from "../../elements/ToggleBackground/ToggleBackground"
-import { HeaderLinks,HeaderImageLinks } from "./data"
+import ToggleBackground from "../../elements/ToggleBackground/ToggleBackground";
+import { HeaderLinks,HeaderImageLinks } from "./data";
+import { Link } from "react-router-dom";
 
 const Header:React.FC = () => {
   return (
-    <header className="hidden max-w-265.5 h-16 rounded-full border-black mx-auto border-2 mt-8 md:flex bg-linear-to-r from-light-gray via-medium-gray to-light-gray px-16 shadow-2xl">
+    <header className="hidden max-w-265.5 h-16 rounded-full border-black border-2 md:flex bg-linear-to-r from-light-gray via-medium-gray to-light-gray px-16 shadow-2xl sticky top-4 mx-auto">
       <ul className="w-10/12 h-full inline-flex items-center justify-between">
         {
           HeaderLinks.map((link)=>(
            <li key={link.name}>
-            <a className="text-tittle-blue font-bold">{link.name}</a>
+            <Link to={link.link} className="text-tittle-blue font-bold">{link.name}</Link>
            </li>
          ))
         }
