@@ -24,3 +24,5 @@ La tipografía "Comic Neue" y sus variante en bold y normal
 <li style="font-size: 32px; font-family: 'Comic Neue', sans-serif;"><strong>font-big-tittle-36</strong> 36px</li>
 <li style="font-size: 52px; font-family: 'Comic Neue', sans-serif;"><strong>font-big-tittle-52</strong> 52px</li>
 <li style="font-size: 64px; font-family: 'Comic Neue', sans-serif;"><strong>font-big-tittle-64</strong> 64px</li>
+
+### Paleta de colores
