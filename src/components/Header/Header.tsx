@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Header:React.FC = () => {
   return (
-    <header className="hidden max-w-265.5 h-16 rounded-full border-black border-2 md:flex bg-linear-to-r from-light-gray via-medium-gray to-light-gray px-16 shadow-2xl sticky top-4 mx-auto">
+    <header className="max-tablet-hor:hidden  max-w-265.5 h-16 rounded-full border-black border-2 flex bg-linear-to-r from-light-gray via-medium-gray to-light-gray px-14 shadow-2xl sticky top-4 mx-auto">
       <ul className="w-10/12 h-full inline-flex items-center justify-between">
         {
           HeaderLinks.map((link)=>(
@@ -14,7 +14,7 @@ const Header:React.FC = () => {
          ))
         }
       </ul>
-      <ul className="flex-1 flex items-center justify-between ml-10">
+      <ul className="flex items-center justify-between w-28 ml-10">
             <ToggleBackground/>
             {
               HeaderImageLinks.map((link)=>(

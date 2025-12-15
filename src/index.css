@@ -38,6 +38,7 @@
   /*variables para el tamaño de los títulos*/
   --text-font-little-p-12:12px;
   --text-font-little-p-14:14px;
+  --text-font-p:16px;
   --text-font-h4-20:20px;
   --text-font-h3-24:24px;
   --text-font-h2-28:28px;
@@ -45,6 +46,15 @@
   --text-font-big-tittle:36px;
   --text-font-big-52:52px;
   --text-font-big-64:64px;
+
+  /*breakpoints para media queries: responsive design*/
+  --breakpoint-*: initial;
+  --breakpoint-cellphone:320px;
+  --breakpoint-cellphone-hor: 600px;
+  --breakpoint-tablet: 744px;
+  --breakpoint-tablet-hor:1133px;
+  --breakpoint-desktop-1280: 1280px;
+  --breakpoint-desktop-1440: 1440px;
 }
 
 body{
