@@ -44,17 +44,18 @@
   --text-font-h2-28:28px;
   --text-font-h1-32:32px;
   --text-font-big-tittle:36px;
+  --text-font-big-40:40px;
   --text-font-big-52:52px;
   --text-font-big-64:64px;
 
   /*breakpoints para media queries: responsive design*/
   --breakpoint-*: initial;
   --breakpoint-cellphone:320px;
-  --breakpoint-cellphone-hor: 600px;
-  --breakpoint-tablet: 744px;
-  --breakpoint-tablet-hor:1133px;
-  --breakpoint-desktop-1280: 1280px;
-  --breakpoint-desktop-1440: 1440px;
+  --breakpoint-cellphone-hor: 599px;
+  --breakpoint-tablet: 743px;
+  --breakpoint-tablet-hor:1132px;
+  --breakpoint-desktop-1280: 1279px;
+  --breakpoint-desktop-1440: 1439px;
 }
 
 body{
