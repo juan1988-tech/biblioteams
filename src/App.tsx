@@ -1,11 +1,11 @@
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 function App() { 
   return (
     <BrowserRouter>
-    
     <Header/>
     <main>
     <Routes>
@@ -16,6 +16,7 @@ function App() {
       <Route path={"*"} element={<h1>Error 404</h1>}/> 
     </Routes>
     </main>
+    <Footer />
     </BrowserRouter>
   )
 }

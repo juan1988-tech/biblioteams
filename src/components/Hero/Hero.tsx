@@ -15,7 +15,7 @@ export default function Hero():React.ReactNode {
             <p className="text-font-big-52 font-medium col-start-2 col-end-7 row-start-3 row-end-4">Un espacio de formación para niños y jóvenes</p>
           </div>
           <figure className="w-125 h-125">
-            <img src="/images/hero/libro-hero.png" alt="Libro Hero" className="w-full h-full" />
+            <img src="/src/assets/images/hero/libro-hero.png" alt="Libro Hero" className="w-full h-full" />
           </figure>
         </article>
       </div>

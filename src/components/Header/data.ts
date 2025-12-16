@@ -22,12 +22,12 @@ export const HeaderLinks:HeaderProps[] =[
 export const HeaderImageLinks:HeaderImageProps[] = [
     {
         link:"https://www.facebook.com/jdfranco1988?locale=es_LA",
-        src:"/public/logos_facebook.svg",
+        src:"/src/assets/logos_facebook.svg",
         alt:"Facebook-link"
     },
     {
         link:"https://www.instagram.com/jfrancoh1988/",
-        src:"/public/instagram.svg",
+        src:"/src/assets/instagram.svg",
         alt:"Instagram-link"
     }
 ]

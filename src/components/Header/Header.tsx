@@ -19,7 +19,7 @@ const Header:React.FC = () => {
             {
               HeaderImageLinks.map((link)=>(
                   <li key={link.src} className="w-6 h-6 rounded-full">
-                      <a className="block w-full h-full cursor-pointer" href={link.link} >
+                      <a className="block w-full h-full cursor-pointer" href={link.link} target="_blank">
                           <img alt={link.alt} src={link.src}/>
                       </a>
                   </li>
