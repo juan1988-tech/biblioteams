@@ -4,7 +4,7 @@ import type { EventCardProps } from './types';
 
 const EventCard:React.FC<EventCardProps> = ({topic,eventTittle,eventDate,eventSchedule,eventDescription,eventImageClassName}) =>{
     return(
-    <div className="w-82.5 h-89 p-3 border-2 border-black rounded-xl flex flex-col">
+    <div className="w-full h-full p-3 border-2 border-black rounded-xl flex flex-col">
         <header className={eventImageClassName}>
             <p className="text-white bg-black rounded-md ml-auto w-22 h-6 text-center flex items-center justify-center text-font-p">{topic}</p>
         </header>
@@ -21,7 +21,7 @@ export default function Events():JSX.Element{
     <section className="w-full">
        <div className="w-[95%] mx-auto max-w-344"> 
         <h1 className="font-bold text-font-h1-32 text-tittle-blue text-center mt-4">Eventos</h1> 
-        <article className="h-89 w-full grid grid-cols-4 gap-5 mt-4">
+        <article className="h-auto w-full grid grid-cols-4 gap-5 mt-4">
           {EventCardElements.map((event)=>(<EventCard 
                 topic={event.topic}
                 eventTittle={event.eventTittle}

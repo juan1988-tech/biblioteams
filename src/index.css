@@ -50,12 +50,12 @@
 
   /*breakpoints para media queries: responsive design*/
   --breakpoint-*: initial;
-  --breakpoint-cellphone:320px;
-  --breakpoint-cellphone-hor: 599px;
-  --breakpoint-tablet: 742px;
+  --breakpoint-cellphone:426px;
+  --breakpoint-cellphone-hor: 743px;
+  --breakpoint-tablet: 744px;
   --breakpoint-tablet-hor:1132px;
-  --breakpoint-desktop-1280: 1279px;
-  --breakpoint-desktop-1440: 1439px;
+  --breakpoint-desktop-1280: 1280px;
+  --breakpoint-desktop-1440: 1440px;
 }
 
 body{
@@ -64,42 +64,3 @@ body{
 
 
 
-/*
-Referencias para la tipografía Comic Neue:
-
-.comic-neue-light {
-  font-family: "Comic Neue", cursive;
-  font-weight: 300;
-  font-style: normal;
-}
-
-.comic-neue-regular {
-  font-family: "Comic Neue", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.comic-neue-bold {
-  font-family: "Comic Neue", cursive;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.comic-neue-light-italic {
-  font-family: "Comic Neue", cursive;
-  font-weight: 300;
-  font-style: italic;
-}
-
-.comic-neue-regular-italic {
-  font-family: "Comic Neue", cursive;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.comic-neue-bold-italic {
-  font-family: "Comic Neue", cursive;
-  font-weight: 700;
-  font-style: italic;
-}
-*/
