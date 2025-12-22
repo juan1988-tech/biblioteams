@@ -7,7 +7,7 @@ export const workshopCardList:WorkShopCardSet =[
       schedule:"Viernes: 05: 00 p.m. - 06: 00 p.m.",
       className:{
         classNameElement:"bg-[url(/src/assets/images/activities/activities-club-infantil.jpg)]",
-        classNameButton:"block w-[256px] h-12 rounded-full text-font-h4-20 text-center bg-green-light-button text-black border-2 border-black mx-auto mt-40 hover:bg-main-black hover:text-white-font hover:duration-400 pointer"
+        classNameButton:"bg-green-light-button"
       },
       button:"Quiero más información"
     },
@@ -17,7 +17,7 @@ export const workshopCardList:WorkShopCardSet =[
       schedule:"Sábado: 09: 00 a.m. - 10: 00 a.m.",
       className:{
         classNameElement:"bg-[url(/src/assets/images/activities/activities-club-ajedrez.jpg)]",
-        classNameButton:"block w-[256px] h-12 rounded-full text-font-h4-20 text-center bg-yellow-button text-black border-2 border-black mx-auto mt-40 hover:bg-main-black hover:text-white-font hover:duration-400 pointer"
+        classNameButton:"bg-yellow-button"
       },
       button:"Quiero más información"
     },
@@ -27,17 +27,17 @@ export const workshopCardList:WorkShopCardSet =[
       schedule:"Sábado: 10: 00 a.m. - 06: 00 a.m.",
       className:{
         classNameElement:"bg-[url(/src/assets/images/activities/activities-pre-icfes.jpg)]",
-        classNameButton:"block w-[256px] h-12 rounded-full text-font-h4-20 text-center bg-light-blue-button text-black border-2 border-black mx-auto mt-40 hover:bg-main-black hover:text-white-font hover:duration-400 pointer"
+        classNameButton:"bg-light-blue-button"
       },
       button:"Quiero más información"
     },
     {
-      tittle:"Taller de Inglés",
-      description:"Actividades de leer, escribir, hablar y escuchar en el idioma Inglés para acceder a muchas oportunidades",
-      schedule:"Viernes: 05: 00 p.m. - 06: 00 p.m.",
+        tittle:"Taller de Inglés",
+        description:"Actividades de leer, escribir, hablar y escuchar en el idioma Inglés para acceder a muchas oportunidades",
+        schedule:"Viernes: 05: 00 p.m. - 06: 00 p.m.",
       className:{
         classNameElement:"bg-[url(/src/assets/images/activities/activities-english-club.jpg)]",
-        classNameButton:"block w-[256px] h-12 rounded-full text-font-h4-20 text-center bg-pink-button text-black border-2 border-black mx-auto mt-40 hover:bg-main-black hover:text-white-font hover:duration-400 pointer"
+        classNameButton:"bg-pink-button"
       },
       button:"Quiero más información"
     },
