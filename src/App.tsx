@@ -2,11 +2,13 @@ import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import BurguerButton from './components/BurguerButton/BurguerButton';
 
 function App() { 
   return (
     <BrowserRouter>
     <Header/>
+    <BurguerButton/>
     <main>
     <Routes>
       <Route path={"/"} element={<Home/>}/>

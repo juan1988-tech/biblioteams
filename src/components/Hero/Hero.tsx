@@ -9,8 +9,8 @@ export default function Hero():React.ReactNode {
         <article className="flex w-11/12 mx-auto max-w-286 max-tablet-hor:w-214 max-tablet-hor:mx-auto max-cellphone:flex-col">
           <div className="w-183 h-156 grid grid-cols-[90px_127px_96px_76px_1fr] grid-rows-[169px_89px_149px_1fr] 
           max-tablet-hor:grid-cols-[159px_102px_1fr] max-tablet-hor:w-2/4 max-tablet:w-2/4 max-tablet:grid-cols-[96px_87px_1fr]
-          max-cellphone-hor:grid-rows-[86px_35px_52px_1fr] max-cellphone-hor:h-full max-cellphone:w-full max-cellphone:grid-rows-[99px_28px_69px_1fr]
-          max-cellphone:grid-cols-3">
+          max-cellphone-hor:grid-rows-[86px_35px_52px_1fr] max-cellphone-hor:h-full max-cellphone:w-[90%] max-cellphone:mx-auto max-cellphone:grid-rows-[78px_43px_69px_1fr]
+          max-cellphone:grid-cols-3 max-cellphone:h-69">
             {imageHeroList.map((book)=>(
               <ImageHero src={book.src} className={book.className} alt={book.alt}/>
             ))}
