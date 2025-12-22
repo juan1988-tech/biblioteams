@@ -21,7 +21,7 @@ export default function Hero():React.ReactNode {
             max-tablet:text-font-h2-28 max-cellphone-hor:text-font-h4-20 max-cellphone:text-center max-cellphone:justify-center max-cellphone:w-62.5 max-cellphone:justify-self-center">Un espacio de formación para niños y jóvenes</p>
           </div>
           <figure className="w-125 h-125 max-tablet-hor:w-102.5 max-tablet-hor:h-102.5 max-tablet:self-center max-tablet:w-1/2 max-tablet:h-1/2 max-cellphone-hor:w-58.25 max-cellphone-hor:h-58.25 max-cellphone-hor:mx-auto max-cellphone:w-58 max-cellphone:h-58">
-            <img src="/src/assets/images/hero/libro-hero.png" alt="Libro Hero" className="w-full h-full " />
+            <img src="/assets/images/hero/libro-hero.png" alt="Libro Hero" className="w-full h-full " />
           </figure>
         </article>
       </div>

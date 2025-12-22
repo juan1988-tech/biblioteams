@@ -8,12 +8,12 @@ const Footer = () => {
         <section className="flex w-18.5 h-7.5 mx-auto">
         <li className="w-7.5 h-7.5 rounded-full list-none">
             <Link className="w-full h-full" to="https://www.facebook.com/jdfranco1988?locale=es_LA" target="_blank">
-                <img src="/src/assets/logos_facebook.svg"/>
+                <img src="/assets/logos_facebook.svg"/>
             </Link>
         </li>
         <li className="w-7.5 h-7.5 rounded-full list-none">
             <Link className="w-full h-full" to="https://www.instagram.com/jfrancoh1988/" target="_blank">
-                <img src="/src/assets/instagram.svg"/>
+                <img src="/assets/instagram.svg"/>
             </Link>
         </li>
         </section>
