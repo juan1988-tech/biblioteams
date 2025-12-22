@@ -7,8 +7,10 @@ import BurguerButton from './components/BurguerButton/BurguerButton';
 function App() { 
   return (
     <BrowserRouter>
+    <section className='bg-white-font'>
+      <BurguerButton/>
+    </section>
     <Header/>
-    <BurguerButton/>
     <main>
     <Routes>
       <Route path={"/"} element={<Home/>}/>
