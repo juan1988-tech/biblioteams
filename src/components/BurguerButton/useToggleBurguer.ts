@@ -1,11 +1,15 @@
 import { useState,useEffect } from "react";
+import { useToggleHeader } from '../../store/useToggleHeader';
+
 type ToggleClassNameProps = {
     classElement:string,
 }
 
 export const useToggleBurguer = () =>{
-    const [toggleBurguer,setToggleBurguer] = useState<boolean>(false);  
-      const [burguerLines,setBurguerLine] = useState<ToggleClassNameProps[]>([
+  //importar la variable de estado de Zustand
+  const toggleHeader = useToggleHeader((state)=>state.toggleHeader);
+
+  const [burguerLines,setBurguerLine] = useState<ToggleClassNameProps[]>([
         {
          classElement:"w-7.5 h-1 rounded-full bg-black absolute left-2.5 top-3",
         },
@@ -18,7 +22,7 @@ export const useToggleBurguer = () =>{
       ])  
     
       useEffect(()=>{
-        if(toggleBurguer===true){
+        if(toggleHeader===true){
             setBurguerLine([
                 {
                 classElement:"w-7.5 h-1 rounded-full bg-black absolute left-2.5 top-3",
@@ -42,12 +46,7 @@ export const useToggleBurguer = () =>{
                 classElement:"w-2.5 h-1 rounded-full bg-black absolute left-2.5 duration-600 top-7"   
                 }])
         }
-      },[toggleBurguer])
+      },[toggleHeader])
     
-      //hacer la función para cambiar el boton de hamburguesa 
-      const handleButtonBurguer = () =>{
-        setToggleBurguer(!toggleBurguer)
-      }
-
-    return {burguerLines,handleButtonBurguer}  
+    return {burguerLines}  
 }

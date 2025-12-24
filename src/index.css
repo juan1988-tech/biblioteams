@@ -31,6 +31,9 @@
   --color-light-blue: #191739;
   --color-medium-blue: #221D4F;
 
+  /*Variable para el background oscuro*/
+  --color-dark-bg: #000000;
+
   /*Colores para el modo oscuro*/
   --color-blue-background: #130F58;
   --color-gray-line: #888888;

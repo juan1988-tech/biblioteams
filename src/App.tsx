@@ -3,14 +3,18 @@ import Home from './pages/Home/Home';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import BurguerButton from './components/BurguerButton/BurguerButton';
+import DarkBackground from './elements/DarkBackground/DarkBackground';
+import AsideHeader from './elements/AsideHeader/AsideHeader';
 
 function App() { 
   return (
     <BrowserRouter>
     <section className='bg-white-font'>
-      <BurguerButton/>
+      <BurguerButton/>  
     </section>
     <Header/>
+    <DarkBackground/>
+    <AsideHeader/>
     <main>
     <Routes>
       <Route path={"/"} element={<Home/>}/>
