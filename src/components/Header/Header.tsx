@@ -15,7 +15,7 @@ const Header:React.FC = () => {
         }
       </ul>
       <ul className="flex items-center justify-between w-28 ml-10">
-            <ToggleBackground/>
+            <ToggleBackground classToggleName="relative w-11.5 h-6 rounded-full border-2 border-black"/>
             {
               HeaderImageLinks.map((link)=>(
                   <li key={link.src} className="w-6 h-6 rounded-full">
