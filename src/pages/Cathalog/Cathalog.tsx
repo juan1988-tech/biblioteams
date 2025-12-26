@@ -4,7 +4,7 @@ const Cathalog = () => {
   return (
     <main className="mt-8">
       <div className="w-[90%] mx-auto grid grid-cols-12 gap-5">
-        <aside className="col-span-3">
+        <aside className="col-span-3 h-full">
             <FilterCathalog/>
         </aside>
         <section className="col-span-9">
