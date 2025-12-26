@@ -38,9 +38,9 @@ const Footer = () => {
         <div className="w-[95%] h-full mx-auto max-w-344 flex justify-between items-center max-cellphone:flex max-cellphone:flex-col max-cellphone:w-full">
             <article className="inline-flex w-70 max-cellphone:flex max-cellphone:flex-col max-cellphone:w-35">
                 <p className="text-tittle-blue font-bold">Diseño y desarrollo</p>
-                <Link to="https://www.linkedin.com/in/jfranco-webdev/" className="ml-3 decoration-0 max-cellphone:ml-0 mt-5" about="_blank">Juan David Franco</Link>
+                <Link to="https://www.linkedin.com/in/jfranco-webdev/" className="ml-3 decoration-0 max-cellphone:ml-0" about="_blank">Juan David Franco</Link>
             </article>
-            <article className="text-black max-cellphone:ml-0 mt-5">
+            <article className="text-black max-cellphone:ml-0">
                 Bogotá, 2024
             </article>
         </div>
