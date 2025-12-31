@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Header:React.FC = () => {
   return (
-    <header className="max-tablet-hor:hidden max-w-252.5 h-16 rounded-full border-black border-2 flex bg-linear-to-r from-light-gray via-medium-gray to-light-gray px-14 shadow-2xl sticky top-4 mx-auto">
+    <header className="max-tablet-hor:hidden max-w-252.5 h-16 rounded-full border-black border-2 flex bg-linear-to-r from-light-gray via-medium-gray to-light-gray px-14 shadow-2xl sticky top-4 mx-auto z-30">
       <ul className="w-10/12 h-full inline-flex items-center justify-between">
         {
           HeaderLinks.map((link)=>(

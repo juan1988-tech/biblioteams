@@ -38,6 +38,10 @@
   --color-blue-background: #130F58;
   --color-gray-line: #888888;
 
+  /*Colores warning para disponibilidad de libro*/
+  --color-green-available: #18CA00;
+  --color-red-unavailable:#FF4400;
+
   /*variables para el tamaño de los títulos*/
   --text-font-little-p-12:12px;
   --text-font-little-p-14:14px;

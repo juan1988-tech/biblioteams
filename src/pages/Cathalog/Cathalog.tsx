@@ -1,24 +1,17 @@
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import FilterCathalog from "../../components/FilterCathalog/FilterCathalog"
+import type { CathalogBook } from "../../types/cathalog-env";
+import CathalogCard from "../../elements/CathalogCard/CathalogCard";
 
-type availableState = "Disponible" | "No Disponible"
-
-interface cathalogBook {
-    title:string,
-    author: string | string[],
-    editorial: string,
-    year:string,
-    topics:string[],
-    availability: availableState,
-    description?: string,
-    image?:string,
-    favoriteMark?: () => void,
-    shareBook?: () => void,
-    reserve?: () => void
+function onLoadingCathalog<T extends object>(Component: React.ComponentType<T>){
+  return(props:T & {loading:boolean})=>{
+    const {loading,...rest} = props
+    return loading?<p>Cargando Catálogo</p>:<Component {...rest as T}/>
+  }
 }
 
-const Cathalog = () => {
-  const [cathalog,setCathalog]  = useState<cathalogBook[]>([]);
+const RenderCathalog = () =>{
+  const [cathalog,setCathalog]  = useState<CathalogBook[]>([]);
 
   const getInformationCathalog = async () =>{
     const request = await fetch('/api/cathalogBook.json');
@@ -36,7 +29,30 @@ const Cathalog = () => {
     getInformationCathalog()
   },[])
 
-  console.log(cathalog);
+    return(
+      <>
+        {cathalog && cathalog.map((book,index)=>(
+          <CathalogCard 
+            title={book.title}
+            author={book.title}
+            editorial={book.editorial}
+            year={book.year}
+            topics={book.topics}
+            availability={book.availability}
+            index={index + 1}
+          />
+        ))}
+      </>
+    )
+}
+
+const RenderCathalogLoading = onLoadingCathalog(RenderCathalog);
+
+const Cathalog = () => {
+  const [loadingCathalog,setLoadingCathalog] = useState<boolean>(true);
+
+  setLoadingCathalog(false);
+  
   return (
     <main className="mt-8">
       <div className="w-[90%] mx-auto grid grid-cols-12 gap-5">
@@ -44,7 +60,7 @@ const Cathalog = () => {
             <FilterCathalog/>
         </aside>
         <section className="col-span-9">
-            <h1>Resto de la página</h1>
+            <RenderCathalogLoading loading={loadingCathalog}/>
         </section>
       </div>
     </main>

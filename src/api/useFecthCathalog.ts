@@ -3,8 +3,6 @@
 //import { cathalogBook } from "./types";
 
 export const useFetchCathalog = async () =>{
-    
-    
 
     const req = await fetch('../../public/api/cathalogBook.json');
 

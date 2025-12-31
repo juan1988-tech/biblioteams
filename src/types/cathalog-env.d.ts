@@ -1,7 +1,6 @@
-type availableState = "Disponible" | "No Disponible"   
+type availableState = "Disponible" | "No Disponible"
 
-//hacer el tipo de los datos del catálogo de libros
-export interface cathalogBook {
+export interface CathalogBook {
     title:string,
     author: string | string[],
     editorial: string,
@@ -10,6 +9,7 @@ export interface cathalogBook {
     availability: availableState,
     description?: string,
     image?:string,
+    index?:string|number,
     favoriteMark?: () => void,
     shareBook?: () => void,
     reserve?: () => void

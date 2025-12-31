@@ -1,6 +1,6 @@
-import type { cathalogBook } from "./types"
+import type { CathalogBook } from "../types/cathalog-env"
 
-export const cathalogBooks:cathalogBook[] =[
+export const cathalogBooks:CathalogBook[] =[
    {
     "title": "Inteligencia Emocional",
     "author": "Daniel Goleman",
