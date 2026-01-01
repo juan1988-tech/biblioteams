@@ -1,8 +1,69 @@
-import React from 'react'
+import React, { useReducer } from 'react'
 // el tipo CathalogBook corresponde a un tipo global, ya que controla la presentación del libro en el catálogo
 import type { CathalogBook } from '../../types/cathalog-env'
 
+type State ={
+  favourite:boolean,
+  share:boolean,
+  reserve:boolean
+} 
+
+const IconsState:State ={
+  favourite:false,
+  share:false,
+  reserve:false
+}
+
+type Action = { type: "FAVOURITE" } |{ type: "NON-FAVOURITE" } | { type: "SHARE"} | { type: "NON-SHARE"} | { type: "RESERVE"}
+| { type: "NON-RESERVE"} 
+
+const reducer = (state:State,action:Action) =>{
+  const resetState = Object.fromEntries(
+      Object.keys(state).map(key => [key, false])
+    ) as State;
+
+  switch (action.type) {
+    case "FAVOURITE":
+      return{
+        ...resetState,
+        favourite: true,
+      }
+    case "NON-FAVOURITE":
+      return{
+        ...resetState,
+        favourite: false,
+      }    
+    case "SHARE":
+      return{
+        ...resetState,
+          share: true,
+      }
+    case "NON-SHARE":
+      return{
+        ...resetState,
+          share: false,
+      }    
+    case "RESERVE":
+      return{
+        ...resetState,
+          reserve: true,
+      }
+    case "NON-RESERVE":
+      return{
+        ...resetState,
+          reserve: false,
+      }    
+    default:
+      return {
+        ...IconsState,
+      }
+  }
+}
+
 const CathalogCard:React.FC<CathalogBook> = ({title,author,editorial,year,topics,index}) => {
+  const [state,dispatch] = useReducer(reducer,IconsState)
+  console.log(state)
+
   if(index===1){
    return (
     <article className='col-span-6 border-2 border-b-main-black rounded-xl p-3 max-w-169.5'>
@@ -42,20 +103,29 @@ const CathalogCard:React.FC<CathalogBook> = ({title,author,editorial,year,topics
         </section>
         <section className='flex justify-center items-center'>
            <article className='flex flex-col w-full'>
-            <button className='flex items-center justify-between px-2 w-full border-2 border-black rounded-md
-            hover:bg-main-black hover:text-white-font hover:duration-400'>
-                <p>Favorito</p>
-                <img  src="/assets/favourite-black-book.svg"/>
+            <button className='flex items-center justify-between px-2 w-full border-2 border-black rounded-md cursor-pointer
+            hover:bg-main-black hover:text-white-font hover:duration-400'
+            onMouseOver={()=>{dispatch({ type:"FAVOURITE"})}}
+            onMouseLeave={()=>{dispatch({ type:"NON-FAVOURITE"})}}
+            >
+                <p>Favorito </p>
+                <img src={state.favourite?"/assets/favourite-white-book.svg":"/assets/favourite-black-book.svg"} />
             </button>
-            <button className='flex items-center justify-between px-2 mt-3.5 border-2 border-black rounded-md
-            hover:bg-main-black hover:text-white-font hover:duration-400'>
+            <button className='flex items-center justify-between px-2 mt-3.5 border-2 border-black rounded-md cursor-pointer
+            hover:bg-main-black hover:text-white-font hover:duration-400' 
+            onMouseOver={()=>{dispatch({ type:"SHARE"})}}
+            onMouseLeave={()=>{dispatch({ type:"NON-SHARE"})}}       
+            >
                 <p>Compartir</p>
-                <img  src="/assets/share-black-whatsapp.svg"/>
+                <img src={state.share?"/assets/share-white-whatsapp.svg":"/assets/share-black-whatsapp.svg"} />
             </button>
-            <button className='flex items-center justify-between px-2 mt-3.5 border-2 border-black rounded-md
-            hover:bg-main-black hover:text-white-font hover:duration-400'>
+            <button className='flex items-center justify-between px-2 mt-3.5 border-2 border-black rounded-md cursor-pointer
+            hover:bg-main-black hover:text-white-font hover:duration-400'
+            onMouseOver={()=>{dispatch({type:"RESERVE"})}}
+            onMouseLeave={()=>{dispatch({type:"NON-RESERVE"})}}
+            >
                 <p>Reservar</p>
-                <img  src="/assets/reserve-black-book.svg"/>
+                <img  src={state.reserve?"/assets/reserve-white-book.svg":"/assets/reserve-black-book.svg"}/>
             </button>
            </article>        
         </section>  
@@ -102,19 +172,28 @@ const CathalogCard:React.FC<CathalogBook> = ({title,author,editorial,year,topics
         <section className='flex justify-center items-center'>
            <article className='flex flex-col w-full'>
             <button className='flex items-center justify-between px-2 w-full border-2 border-black rounded-md cursor-pointer
-            hover:bg-main-black hover:text-white-font hover:duration-400'>
-                <p>Favorito</p>
-                <img  src="/assets/favourite-black-book.svg"/>
+            hover:bg-main-black hover:text-white-font hover:duration-400'
+            onMouseOver={()=>{dispatch({ type:"FAVOURITE"})}}
+            onMouseLeave={()=>{dispatch({ type:"NON-FAVOURITE"})}}
+            >
+              <p>Favorito</p>
+              <img src={state.favourite?"/assets/favourite-white-book.svg":"/assets/favourite-black-book.svg"}/>
             </button>
             <button className='flex items-center justify-between px-2 mt-3.5 border-2 border-black rounded-md cursor-pointer
-            hover:bg-main-black hover:text-white-font hover:duration-400'>
-                <p>Compartir</p>
-                <img  src="/assets/share-black-whatsapp.svg"/>
+            hover:bg-main-black hover:text-white-font hover:duration-400'
+            onMouseOver={()=>{dispatch({ type:"SHARE"})}}
+            onMouseLeave={()=>{dispatch({ type:"NON-SHARE"})}}
+            >
+              <p>Compartir</p>
+              <img src={state.share?"/assets/share-white-whatsapp.svg":"/assets/share-black-whatsapp.svg"} />
             </button>
             <button className='flex items-center justify-between px-2 mt-3.5 border-2 border-black rounded-md cursor-pointer
-            hover:bg-main-black hover:text-white-font hover:duration-400'>
+            hover:bg-main-black hover:text-white-font hover:duration-400'
+            onMouseOver={()=>{dispatch({type:"RESERVE"})}}
+            onMouseLeave={()=>{dispatch({type:"NON-RESERVE"})}}
+            >
                 <p>Reservar</p>
-                <img  src="/assets/reserve-black-book.svg"/>
+                <img src={state.reserve?"/assets/reserve-white-book.svg":"/assets/reserve-black-book.svg"}/>
             </button>
            </article>        
         </section>  

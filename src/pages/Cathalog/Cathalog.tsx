@@ -6,13 +6,12 @@ import CathalogCard from "../../elements/CathalogCard/CathalogCard";
 function onLoadingCathalog<T extends object>(Component: React.ComponentType<T>){
   return(props:T & {loading:boolean})=>{
     const {loading,...rest} = props
-    return loading?<p>Cargando Catálogo</p>:<Component {...rest as T}/>
+    return loading?<p>Cargando Catálogo....</p>:<Component {...rest as T}/>
   }
 }
-
-const RenderCathalog = () =>{
+const RenderCathalog:React.FC = () =>{
   const [cathalog,setCathalog]  = useState<CathalogBook[]>([]);
-
+  
   const getInformationCathalog = async () =>{
     const request = await fetch('/api/cathalogBook.json');
     const data = await request.json();
@@ -49,18 +48,24 @@ const RenderCathalog = () =>{
 const RenderCathalogLoading = onLoadingCathalog(RenderCathalog);
 
 const Cathalog = () => {
-  const [loadingCathalog,setLoadingCathalog] = useState<boolean>(true);
-
-  setLoadingCathalog(false);
-  
-  return (
+  const [loadingCathalog,setLoadingCathalog] = useState(false);
+ 
+  useEffect(()=>{
+      if(!RenderCathalogLoading){
+    setLoadingCathalog(true);
+  }else{
+    setLoadingCathalog(false);
+    }
+  },[])
+    
+    return (
     <main className="mt-8">
       <div className="w-[90%] mx-auto grid grid-cols-12 gap-5">
         <aside className="col-span-3 h-full">
             <FilterCathalog/>
         </aside>
         <section className="col-span-9">
-            <RenderCathalogLoading loading={loadingCathalog}/>
+             <RenderCathalogLoading loading={loadingCathalog}/>
         </section>
       </div>
     </main>
