@@ -13,21 +13,22 @@ const RenderCathalog:React.FC = () =>{
   const [cathalog,setCathalog]  = useState<CathalogBook[]>([]);
   
   const getInformationCathalog = async () =>{
-    const request = await fetch('/api/cathalogBook.json');
+    const request = await fetch('/dummy/cathalogBook.json');
     const data = await request.json();
+
     try {
       if(data){
         setCathalog(data);
       }  
     } catch (error) {
-      console.error(`Error al cargar los dato: ${error}`)
+      console.error(`Error al cargar los datos: ${error}`)
     }
   }
 
   useEffect(()=>{
     getInformationCathalog()
   },[])
-
+  console.log(cathalog)
     return(
       <>
         {cathalog && cathalog.map((book,index)=>(
