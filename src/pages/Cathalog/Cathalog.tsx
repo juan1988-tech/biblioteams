@@ -3,7 +3,7 @@ import FilterCathalog from "../../components/FilterCathalog/FilterCathalog"
 import type { CathalogBook } from "../../types/cathalog-env";
 import CathalogCard from "../../elements/CathalogCard/CathalogCard";
 import SelectCathalog from "../../components/SelectCathalog/SelectCathalog";
-import { Link, Links } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function onLoadingCathalog<T extends object>(Component: React.ComponentType<T>){
   return(props:T & {loading:boolean})=>{
