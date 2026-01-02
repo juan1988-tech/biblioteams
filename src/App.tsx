@@ -10,9 +10,7 @@ import Cathalog from './pages/Cathalog/Cathalog';
 function App() { 
   return (
     <BrowserRouter>
-    <section className='bg-white-font'>
-      <BurguerButton/>  
-    </section>
+    <BurguerButton/>  
     <Header/>
     <DarkBackground/>
     <AsideHeader/>

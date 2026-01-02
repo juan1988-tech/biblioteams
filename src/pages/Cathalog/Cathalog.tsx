@@ -32,7 +32,7 @@ const RenderCathalog:React.FC = () =>{
   },[])
   
     return(
-      <section className="mt-4 flex flex-col">
+      <section className="flex flex-col col-span-9 row-start-3 row-end-4 max-tablet-hor:col-span-3 max-tablet:col-span-4">
         {cathalog && cathalog.map((book,index)=>(
           <CathalogCard 
             title={book.title}
@@ -62,24 +62,25 @@ const Cathalog = () => {
   },[])
     
     return (
-    <main className="mt-8">
-      <div className="w-[90%] mx-auto grid grid-cols-12 gap-5">
-        <aside className="col-span-3 h-full">
-            <FilterCathalog/>
+    <main className="mt-8 max-tablet-hor:mt-0">
+      <div className="w-[90%] mx-auto grid grid-cols-12 gap-3 grid-rows-[64px_48px_1fr]   
+      max-tablet-hor:grid-cols-4 max-tablet-hor:h-auto max-tablet:justify-center">
+        <aside className="col-span-3 h-full max-tablet-hor:col-span-1 row-start-3 row-end-4 max-tablet:hidden">
+          <FilterCathalog/>
         </aside>
-        <section className="col-span-9">
-            <article className="flex">
-             <div className="col-span-6 max-w-169.5 grid grid-cols-[148px_1fr]"> 
-              <SelectCathalog label="Buscar por" selectName="find-book" selectClassName="flex flex-col w-37 relative" />
-              <div className="flex border-2 border-black w-md h-9 mt-6 rounded-full relative px-4 ml-4">
-                <input type="text" className="appearance-none w-full h-full outline-none focus:outline-none" placeholder="Resultado libro"/>
-                <img src="/public/assets/navbar-dark-loop.svg" className="h-5 w-5 absolute left-[93%] top-1.75"/>
-              </div> 
-             </div>
-             <SelectCathalog label="Ordenar por" selectName="order-book" selectClassName="flex flex-col w-37 relative ml-18"/>
-            </article>
-            <article className="mt-4">
-              <div className="flex flex-col">
+        <article className="flex col-span-9 col-start-4 col-end-13 max-tablet-hor:col-start-1 max-tablet-hor:col-end-5
+        max-tablet:items-center max-tablet:col-span-4 max-tablet:justify-center">
+          <div className="col-span-6  grid grid-cols-[148px_1fr] max-tablet:grid-cols-1 max-tablet:col-span-4"> 
+           <SelectCathalog label="Buscar por" selectName="find-book" selectClassName="flex flex-col w-37 relative max-tablet:hidden"/>
+            <div className="flex border-2 border-black w-md h-9 mt-6 rounded-full relative px-4 ml-4 max-tablet:m-0">
+             <input type="text" className="appearance-none w-full h-full outline-none focus:outline-none" placeholder="Resultado libro"/>
+              <img src="/assets/navbar-dark-loop.svg" className="h-5 w-5 absolute left-[93%] top-1.75"/>
+            </div> 
+          </div>
+          <SelectCathalog label="Ordenar por" selectName="order-book" selectClassName="flex flex-col w-37 relative ml-18 max-tablet-hor:ml-4 max-tablet:hidden"/>
+        </article>
+            <article className="col-span-9 col-start-4 col-end-13 max-tablet-hor:col-start-1 max-tablet-hor:col-end-5">
+              <div className="flex flex-col justify-items-center">
                 <section className="flex">
                   <div className="inline-flex">
                     <p className="text-font-p text-tittle-blue font-bold">Resultado para:</p><p className="text-font-p ml-4">Resultado de libro</p>
@@ -92,10 +93,8 @@ const Cathalog = () => {
                   <p className="text-font-p"><Link className="text-tittle-blue font-bold" to={"/ingresa"}>Ingresa</Link> o <Link to={"/registrate"} className="text-tittle-blue font-bold">Regístrate</Link>, recuerda que para reservar libros debes ser un usuario registrado</p>
                 </section>
               </div>
-              
             </article>
             <RenderCathalogLoading loading={loadingCathalog}/>
-        </section>
       </div>
     </main>
   )
