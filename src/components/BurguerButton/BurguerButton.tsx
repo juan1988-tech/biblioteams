@@ -1,17 +1,13 @@
 import { useToggleBurguer } from "./useToggleBurguer";
-import { useToggleHeader } from '../../store/useToggleHeader';
 
-const BurguerButton = () => {
-  //importa la funcion de cambio del toggle header
-  const onChangeToggle = useToggleHeader((state)=>state.onChangeToggle);
-
+const BurguerButton = () => {   
   //trae las lineas del botón de hamburguesa del hook personalizado
-  const { burguerLines } = useToggleBurguer();
+  const { burguerLines,onChangeBurguerToggle } = useToggleBurguer();
   
-
   return (
     <section className="flex relative flex-coljustify-evenly z-30 w-12 h-12 tablet-hor:hidden left-8 top-3 cursor-pointer max-cellphone-hor:left-4"
-     onClick={onChangeToggle}>
+     //onClick={onChangeToggle}
+     onClick={onChangeBurguerToggle}>
        {
         burguerLines.map((line)=>(
             <div className={line.classElement}></div>

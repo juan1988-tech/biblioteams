@@ -62,8 +62,7 @@ const reducer = (state:State,action:Action) =>{
 
 const CathalogCard:React.FC<CathalogBook> = ({title,author,editorial,year,topics,index}) => {
   const [state,dispatch] = useReducer(reducer,IconsState)
-  console.log(state)
-
+  
   if(index===1){
    return (
     <article className='col-span-6 border-2 border-b-main-black rounded-xl p-3 max-w-169.5'>

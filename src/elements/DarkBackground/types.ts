@@ -1,0 +1,1 @@
+export type DarkBgClassName = "hidden" | "w-screen h-screen bg-black/40 z-10 fixed top-0";

@@ -1,5 +1,5 @@
 import { useState,useEffect } from "react";
-import { useToggleHeader } from '../../store/useToggleHeader';
+import { useToggleContext } from '../../store/useToggleContext';
 
 type ToggleClassNameProps = {
     classElement:string,
@@ -7,7 +7,10 @@ type ToggleClassNameProps = {
 
 export const useToggleBurguer = () =>{
   //importar la variable de estado de Zustand
-  const toggleHeader = useToggleHeader((state)=>state.toggleHeader);
+  const handleToggleBackground = useToggleContext((state)=>state.onChangeBackground);
+  const handleToggleHeader = useToggleContext((state)=>state.onChangeAside);
+
+  const [buttonBurguer,setButtonBurguer] = useState<boolean>(false);
 
   const [burguerLines,setBurguerLine] = useState<ToggleClassNameProps[]>([
         {
@@ -22,7 +25,7 @@ export const useToggleBurguer = () =>{
       ])  
     
       useEffect(()=>{
-        if(toggleHeader===true){
+        if(buttonBurguer===true){
             setBurguerLine([
                 {
                 classElement:"w-7.5 h-1 rounded-full bg-black absolute left-2.5 top-3",
@@ -46,7 +49,13 @@ export const useToggleBurguer = () =>{
                 classElement:"w-2.5 h-1 rounded-full bg-black absolute left-2.5 duration-600 top-7"   
                 }])
         }
-      },[toggleHeader])
+      },[buttonBurguer])
     
-    return {burguerLines}  
+    const onChangeBurguerToggle = () =>{
+      setButtonBurguer(!buttonBurguer)
+      handleToggleBackground();
+      handleToggleHeader(); 
+    }
+
+    return { burguerLines, onChangeBurguerToggle }  
 }

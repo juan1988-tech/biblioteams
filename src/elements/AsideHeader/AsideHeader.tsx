@@ -1,67 +1,23 @@
 import { Link } from "react-router-dom";
 import ToggleBackground from "../ToggleBackground/ToggleBackground";
 import { useEffect, useState } from "react";
-import { useToggleHeader } from "../../store/useToggleHeader";
-
-type LinksAsideHeader = {
-    link:string,
-    name:string
-}
-
-const LinksHeaderSet:LinksAsideHeader[] = [ 
-    {
-        link:"/",
-        name:"Inicio"
-    },
-    {
-        link:"/catalogo",
-        name:"Catálogo"
-    },
-    {
-        link:"/ingresa",
-        name:"Ingresa"
-    },
-    {
-        link:"/registrate",
-        name:"Regístrate"
-    }
-] 
-
-type LinksAsideImageHeader = {
-    link:string,
-    src:string,
-    alt:string,
-}
-
-const LinksImageHeader:LinksAsideImageHeader[] = [
-     {
-        link:"https://www.facebook.com/jdfranco1988?locale=es_LA",
-        src:"/assets/logos_facebook.svg",
-        alt:"Facebook-link"
-    },
-    {
-        link:"https://www.instagram.com/jfrancoh1988/",
-        src:"/assets/instagram.svg",
-        alt:"Instagram-link"
-    }
-]
-
-type AsideHeaderProps = "w-2/4 h-full bg-white-font tablet-hor:hidden flex items-center justify-center z-20 fixed top-0 left-0 transition-all duration-1000 max-cellphone:items-start max-cellphone-hor:w-2/3"
-| "w-2/4 h-full bg-white-font tablet-hor:hidden flex items-center justify-center z-20 fixed top-0 left-[-50%] transition-all duration-1000 max-cellphone:items-start max-cellphone-hor:w-2/3 max-cellphone-hor:left-[-70%]"
+import { useToggleContext } from "../../store/useToggleContext";
+import { LinksHeaderSet, LinksImageHeader } from "./data";
+import type { AsideHeaderProps } from "./types";
 
 const AsideHeader:React.FC= () => {  
   //importar la variable de estado de Zustand
-  const toggleHeader = useToggleHeader((state)=>state.toggleHeader);
-  const onChangeToggle = useToggleHeader((state)=>state.onChangeToggle);
+  const toggleAside = useToggleContext((state)=>state.toggleAside);
+  const handleToggleBackground = useToggleContext((state)=>state.onChangeBackground);
+  const handleToggleHeader = useToggleContext((state)=>state.onChangeAside);
 
   const [asideClassName,setAsideClassName] = useState<AsideHeaderProps>("w-2/4 h-full bg-white-font tablet-hor:hidden flex items-center justify-center z-20 fixed top-0 left-[-50%] transition-all duration-1000 max-cellphone:items-start max-cellphone-hor:w-2/3 max-cellphone-hor:left-[-70%]")  
      
-
   useEffect(()=>{
-    ((toggleHeader===true)
+    ((toggleAside===true)
     ?setAsideClassName("w-2/4 h-full bg-white-font tablet-hor:hidden flex items-center justify-center z-20 fixed top-0 left-0 transition-all duration-1000 max-cellphone:items-start max-cellphone-hor:w-2/3")
     :setAsideClassName("w-2/4 h-full bg-white-font tablet-hor:hidden flex items-center justify-center z-20 fixed top-0 left-[-50%] transition-all duration-1000 max-cellphone:items-start max-cellphone-hor:w-2/3 max-cellphone-hor:left-[-70%]"))
-  },[toggleHeader])
+  },[toggleAside])
 
   return (
     <section className={asideClassName}>
@@ -73,7 +29,11 @@ const AsideHeader:React.FC= () => {
                 <li key={link.link} className="mt-8 text-center max-cellphone:mt-4 ">
                     <Link to={link.link}
                     className="font-black text-font-p text-center"
-                    onClick={onChangeToggle}>{link.name}</Link>
+                    onClick={()=>{
+                      handleToggleBackground();
+                      handleToggleHeader();
+                    }}
+                    >{link.name}</Link>
                 </li>
             ))
          }

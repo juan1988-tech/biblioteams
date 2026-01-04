@@ -62,8 +62,8 @@ const Cathalog = () => {
     return (
     <main className="mt-8 max-tablet-hor:mt-0">
       <div className="w-[90%] mx-auto grid grid-cols-12 gap-3 grid-rows-[64px_48px_1fr]   
-      max-tablet-hor:grid-cols-4 max-tablet-hor:h-auto max-tablet:justify-center max-tablet:grid-rows-[64px_48px_60px_1fr]">
-        <aside className="col-span-3 h-full max-tablet-hor:col-span-1 row-start-3 row-end-4 max-tablet:hidden">
+      max-tablet-hor:grid-cols-4 max-tablet-hor:h-auto max-tablet:justify-center max-tablet:grid-rows-[64px_72px_64px_1fr] max-tablet:auto-rows-auto">
+        <aside className="col-span-3 h-full max-tablet-hor:col-span-1 row-start-3 row-end-4 max-tablet:hidden max-tablet:auto-rows-auto">
           <FilterCathalog/>
         </aside>
         <article className="flex col-span-9 col-start-4 col-end-13 max-tablet-hor:col-start-1 max-tablet-hor:col-end-5
