@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
 import ToggleBackground from "../ToggleBackground/ToggleBackground";
 import { useEffect, useState } from "react";
-import { useToggleContext } from "../../store/useToggleContext";
+import { useToggleContextUX } from "../../store/ux/useToggleContextUX";
 import { LinksHeaderSet, LinksImageHeader } from "./data";
 import type { AsideHeaderProps } from "./types";
 
 const AsideHeader:React.FC= () => {  
   //importar la variable de estado de Zustand
-  const toggleAside = useToggleContext((state)=>state.toggleAside);
-  const handleToggleBackground = useToggleContext((state)=>state.onChangeBackground);
-  const handleToggleHeader = useToggleContext((state)=>state.onChangeAside);
+  const toggleAside = useToggleContextUX((state)=>state.toggleAside);
+  const handleToggleBackground = useToggleContextUX((state)=>state.onChangeBackground);
+  const handleToggleHeader = useToggleContextUX((state)=>state.onChangeAside);
 
   const [asideClassName,setAsideClassName] = useState<AsideHeaderProps>("w-2/4 h-full bg-white-font tablet-hor:hidden flex items-center justify-center z-20 fixed top-0 left-[-50%] transition-all duration-1000 max-cellphone:items-start max-cellphone-hor:w-2/3 max-cellphone-hor:left-[-70%]")  
      

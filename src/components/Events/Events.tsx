@@ -12,8 +12,8 @@ const EventCard:React.FC<EventCardProps> = ({topic,eventTittle,eventDate,eventSc
         <section>
           <h3 className="text-xl font-bold text-tittle-blue ">{eventTittle}</h3>
           <p className="text-font-p">{eventDescription}</p>
-          <p className="inline-flex text-font-p max-cellphone-hor:flex pt-2"><img className="mr-1.5 w-6 h-6" src="/src/assets/black-calendar-icon.svg" alt="icono-evento"/>{eventDate}</p>
-          <p className="inline-flex text-font-p max-cellphone-hor:flex pt-2"><img className="mr-1.5 w-6 h-6" src="/src/assets/black-clock-icon.svg" alt="icono-fecha"/>{eventSchedule}</p>
+          <p className="inline-flex text-font-p max-cellphone-hor:flex pt-2"><img className="mr-1.5 w-6 h-6" src="/assets/black-calendar-icon.svg" alt="icono-evento"/>{eventDate}</p>
+          <p className="inline-flex text-font-p max-cellphone-hor:flex pt-2"><img className="mr-1.5 w-6 h-6" src="/assets/black-clock-icon.svg" alt="icono-fecha"/>{eventSchedule}</p>
         </section>
     </div>
     )

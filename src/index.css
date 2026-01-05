@@ -58,8 +58,8 @@
   /*breakpoints para media queries: responsive design*/
   --breakpoint-*: initial;
   --breakpoint-cellphone:426px;
-  --breakpoint-cellphone-hor: 528px;
-  --breakpoint-tablet: 746px;
+  --breakpoint-cellphone-hor: 744px;
+  --breakpoint-tablet: 834px;
   --breakpoint-tablet-hor:1133px;
   --breakpoint-desktop-1280: 1280px;
   --breakpoint-desktop-1440: 1440px;

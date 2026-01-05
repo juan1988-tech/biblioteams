@@ -1,19 +1,21 @@
 import { useEffect, useState } from "react";
-import { useToggleContext } from "../../store/useToggleContext";
+import { useToggleContextUX } from "../../store/ux/useToggleContextUX";
 import type { DarkBgClassName } from "./types";
 
 const DarkBackground = () => {
     //importar la constante toggleHeader del store
-    const toggleBackground = useToggleContext((state)=>state.toggleBackground);
-    const handleToggleBackground = useToggleContext((state)=>state.onChangeBackground);
-    const toggleAside = useToggleContext((state)=>state.onChangeAside);
+    const toggleBackground = useToggleContextUX((state)=>state.toggleBackground);
+    const handleToggleBackground = useToggleContextUX((state)=>state.onChangeBackground);
+    const toggleFalseAside = useToggleContextUX((state)=>state.onChangeFalseAside);
+    const toggleFalseAsideFilter = useToggleContextUX((state)=>state.onChangeFalseAsideFilter);
 
     //utiliza una variable de clase para cambiar la clase del componente
     let [BgClassName,setBgClassName] = useState<DarkBgClassName>("hidden"); 
 
     const handleChangeEvents = () =>{
-        handleToggleBackground();
-        toggleAside();
+      handleToggleBackground();
+     toggleFalseAside();
+     toggleFalseAsideFilter();   
     }
 
     useEffect(()=>{

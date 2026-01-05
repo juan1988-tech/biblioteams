@@ -1,5 +1,5 @@
 import { useState,useEffect } from "react";
-import { useToggleContext } from '../../store/useToggleContext';
+import { useToggleContextUX } from '../../store/ux/useToggleContextUX';
 
 type ToggleClassNameProps = {
     classElement:string,
@@ -7,8 +7,8 @@ type ToggleClassNameProps = {
 
 export const useToggleBurguer = () =>{
   //importar la variable de estado de Zustand
-  const handleToggleBackground = useToggleContext((state)=>state.onChangeBackground);
-  const handleToggleHeader = useToggleContext((state)=>state.onChangeAside);
+  const handleToggleBackground = useToggleContextUX((state)=>state.onChangeBackground);
+  const handleToggleHeader = useToggleContextUX((state)=>state.onChangeAside);
 
   const [buttonBurguer,setButtonBurguer] = useState<boolean>(false);
 

@@ -10,7 +10,7 @@ const BurguerButton = () => {
      onClick={onChangeBurguerToggle}>
        {
         burguerLines.map((line)=>(
-            <div className={line.classElement}></div>
+            <div className={line.classElement} key={line.classElement}></div>
         ))
        }
     </section>

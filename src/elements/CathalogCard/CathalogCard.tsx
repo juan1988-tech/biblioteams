@@ -70,7 +70,7 @@ const CathalogCard:React.FC<CathalogBook> = ({title,author,editorial,year,topics
         <h4 className='w-8 h-full bg-main-black text-white-font rounded-md text-center font-normal'>{index}</h4>
         <h4 className='text-tittle-blue text-font-h4-20 font-bold ml-2'>{title}</h4>    
       </header>
-      <div className='grid grid-cols-[1fr_148px] gap-x-1.5'>
+      <div className='grid grid-cols-[1fr_148px] gap-x-1.5 max-cellphone:grid-cols-1'>
         <section className='flex flex-col'>
             <article className='grid grid-cols-[104px_1fr] gap-x-4 mt-2'>
               <h4 className='text-font-p font-bold text-tittle-blue text-left'>Autor:</h4>
@@ -95,13 +95,13 @@ const CathalogCard:React.FC<CathalogBook> = ({title,author,editorial,year,topics
             <article className='grid grid-cols-[104px_1fr] gap-x-1.5 gap-y-4 mt-2'>
               <h4 className='text-font-p font-bold text-tittle-blue text-left'>Disponibilidad</h4>
               <div className='flex'>
-                <p className='text-font-p text-green-available font-bold'>Disponible</p>
+                <p className='text-[18px] text-green-available font-bold'>Disponible</p>
                 <p className='text-font-p text-red-unavailable ml-4'>No Disponible</p>
               </div>
             </article>
         </section>
         <section className='flex justify-center items-center'>
-           <article className='flex flex-col w-full'>
+           <article className='flex flex-col w-full max-cellphone:w-44'>
             <button className='flex items-center justify-between px-2 w-full border-2 border-black rounded-md cursor-pointer
             hover:bg-main-black hover:text-white-font hover:duration-400'
             onMouseOver={()=>{dispatch({ type:"FAVOURITE"})}}
@@ -138,7 +138,7 @@ const CathalogCard:React.FC<CathalogBook> = ({title,author,editorial,year,topics
         <h4 className='w-8 h-full bg-main-black text-white-font rounded-md text-center font-normal'>{index}</h4>
         <h4 className='text-tittle-blue text-font-h4-20 font-bold ml-2'>{title}</h4>    
       </header>
-      <div className='grid grid-cols-[1fr_148px] gap-x-1.5'>
+      <div className='grid grid-cols-[1fr_148px] gap-x-1.5 max-cellphone:grid-cols-1'>
         <section className='flex flex-col'>
             <article className='grid grid-cols-[104px_1fr] gap-x-4 mt-2'>
               <h4 className='text-font-p font-bold text-tittle-blue text-left'>Autor:</h4>
@@ -169,7 +169,7 @@ const CathalogCard:React.FC<CathalogBook> = ({title,author,editorial,year,topics
             </article>
         </section>
         <section className='flex justify-center items-center'>
-           <article className='flex flex-col w-full'>
+           <article className='flex flex-col w-full max-cellphone:w-44'>
             <button className='flex items-center justify-between px-2 w-full border-2 border-black rounded-md cursor-pointer
             hover:bg-main-black hover:text-white-font hover:duration-400'
             onMouseOver={()=>{dispatch({ type:"FAVOURITE"})}}
