@@ -1,53 +1,13 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import FilterCathalog from "../../components/FilterCathalog/FilterCathalog"
-import type { CathalogBook } from "../../types/cathalog-env";
-import CathalogCard from "../../elements/CathalogCard/CathalogCard";
 import SelectCathalog from "../../components/SelectCathalog/SelectCathalog";
 import { Link } from "react-router-dom";
 import CathalogSerachBar from "../../components/CathalogSearchBar/CathalogSerachBar";
 import SelectButtonsCathalog from "../../components/SelectButtonsCathalog/SelectButtonsCathalog";
-import { onLoadingCathalog } from "../../utils/onLoadingCathalog";
 import AsideHeaderFilter from "../../elements/AsideHeaderFilter/AsideHeaderFilter";
+import RenderCathalogLoading from "../../components/RenderCathalog/RenderCathalog";
 
-const RenderCathalog:React.FC = () =>{
-  const [cathalog,setCathalog]  = useState<CathalogBook[]>([]);
-  
-  const getInformationCathalog = async () =>{
-    const request = await fetch('/dummy/cathalogBook.json');
-    const data = await request.json();
 
-    try {
-      if(data){
-        setCathalog(data);
-      }  
-    } catch (error) {
-      console.error(`Error al cargar los datos: ${error}`)
-    }
-  }
-
-  useEffect(()=>{
-    getInformationCathalog()
-  },[])
-  
-    return(
-      <section className="flex flex-col col-span-9 row-start-3 row-end-4 max-tablet-hor:col-span-3 max-tablet:col-span-4 
-      max-tablet:row-start-4 max-tablet:row-end-5">
-        {cathalog && cathalog.map((book,index)=>(
-          <CathalogCard 
-            title={book.title}
-            author={book.author}
-            editorial={book.editorial}
-            year={book.year}
-            topics={book.topics}
-            availability={book.availability}
-            index={index + 1}
-          />
-        ))}
-      </section>
-    )
-}
-
-const RenderCathalogLoading = onLoadingCathalog(RenderCathalog);
 
 const Cathalog = () => {
   const [loadingCathalog,setLoadingCathalog] = useState(false);

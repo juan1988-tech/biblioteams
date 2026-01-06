@@ -17,7 +17,7 @@ function App() {
     <main>
     <Routes>
       <Route path={"/"} element={<Home/>}/>
-      <Route path={"/catalogo"} element={<Cathalog/>} />
+      <Route path={"/catalogo"} element={<Cathalog/>}/>      
       <Route path={"/ingresa"} element={<h1>Ingresa</h1>} />
       <Route path={"/registrate"} element={<h1>Regístrate</h1>}/>
       <Route path={"*"} element={<h1>Error 404</h1>}/> 

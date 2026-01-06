@@ -9,7 +9,7 @@ export interface CathalogBook {
     availability: availableState,
     description?: string,
     image?:string,
-    index?:string|number,
+    index:string|number,
     favoriteMark?: () => void,
     shareBook?: () => void,
     reserve?: () => void
