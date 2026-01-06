@@ -1,36 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { CathalogBook } from "../../types/cathalog-env";
 import CathalogCard from "../../elements/CathalogCard/CathalogCard";
 import { onLoadingCathalog } from "../../utils/onLoadingCathalog";
 import { useSearchParams } from "react-router-dom";
+import PaginationButton from "../../elements/PaginationButton/PaginationButton";  
 
 type PaginationNumberPage = {
   numberPageIndex:number;
   paginationClassName:"w-8 h-8 rounded-md border-2 border-black text-white-font bg-main-black text-font-h4-20 text-center cursor-pointer" | 
   "w-8 h-8 rounded-md border-2 border-black text-main-black text-font-h4-20 text-center cursor-pointer";
-  handlePagination:(pageNumber:number)=> void;
-}
- 
-const PaginationButton:React.FC<PaginationNumberPage> = ({numberPageIndex, paginationClassName,handlePagination})=>{
- const [numberPage,setNumberPage] = useState<number>(numberPageIndex);
- //const [paginationClassNameState,setPaginationClassNameState] = useState<string>(paginationClassName);
-
-
-const handlePaginationButton = () =>{
-    handlePagination(numberPageIndex);
-} 
-
- useEffect(()=>{
-    setNumberPage(numberPageIndex);
-   // setPaginationClassNameState("w-8 h-8 rounded-md border-2 border-black text-main-black text-font-h4-20 text-center cursor-pointer")
-
- },[]);   
-    
-  return(
-   <button className={paginationClassName} onClick={handlePaginationButton}>
-    {numberPage}
-   </button>
-     )
+  handlePagination?:(pageNumber:number)=> void;
 }
 
 const RenderCathalog:React.FC = () =>{
@@ -38,11 +17,12 @@ const RenderCathalog:React.FC = () =>{
 
   const [cathalog,setCathalog]  = useState<CathalogBook[]>([]);
   const [page,setPage] = useState<number>(1);
-  
+  const [paginationButtons,setPaginationButtons] = useState<PaginationNumberPage[]>([]);
+
   const getInformationCathalog = async () =>{
     const request = await fetch('/dummy/cathalogBook.json');
     const data = await request.json();
-
+    
     try {
       if(data){
         setCathalog(data);
@@ -52,24 +32,44 @@ const RenderCathalog:React.FC = () =>{
     }
   }
 
-  const onChangePage = (pageNumber:number) =>{
+const onChangePage = (pageNumber:number) =>{
     setPage(pageNumber);
     setSearchParams(`?page=${pageNumber}`);
     window.scrollTo(0,0);
-}
-
-  useEffect(()=>{
-    getInformationCathalog()
-    setSearchParams(`?page=${page}`)
-  },[searchParams])
-
+  }
+  
   const indexedCathalog = cathalog.map((book,index)=>({...book, index: index + 1}));
 
-  let booksPerPages = indexedCathalog.slice((page - 1) * 9, page * 9);
+  let booksPerPages = useMemo(() => indexedCathalog.slice((page - 1) * 9, page * 9), [indexedCathalog, page]);
+  
+  const totalIndexPagination = useMemo(() => Math.ceil(cathalog.length / 9), [cathalog.length]);
 
-  useEffect(()=>{
+  const createPaginationButtons = () =>{
+    if(totalIndexPagination>0){
+        let buttonsArray:PaginationNumberPage[] = [];
+
+        for(let i=1;i<=totalIndexPagination;i++){
+            buttonsArray.push({
+                numberPageIndex:i,
+                paginationClassName: i===page ? "w-8 h-8 rounded-md border-2 border-black text-white-font bg-main-black text-font-h4-20 text-center cursor-pointer"
+                : "w-8 h-8 rounded-md border-2 border-black text-main-black text-font-h4-20 text-center cursor-pointer",
+                handlePagination: (pageNumber:number) => onChangePage(pageNumber)
+            });
+        }
+
+        setPaginationButtons(buttonsArray);
+    }
+ }
+
+useEffect(()=>{
     setCathalog(booksPerPages)
-  },[page])     
+    getInformationCathalog()
+    setSearchParams(`?page=${page}`);
+  },[searchParams,page])
+ 
+useEffect(()=>{
+    createPaginationButtons();
+ },[cathalog,page])
 
     return(
       <section className="flex flex-col col-span-9 row-start-3 row-end-4 max-tablet-hor:col-span-3 max-tablet:col-span-4 
@@ -85,25 +85,16 @@ const RenderCathalog:React.FC = () =>{
             index={book.index}
           />
         ))}
-       <article className="inline-flex mx-auto gap-4 mt-6">
+
+      {/* botones de paginación */}  
+      <article className="inline-flex mx-auto gap-4 mt-6">
+      {(paginationButtons.length>0) && paginationButtons.map((page)=>(
         <PaginationButton 
-            numberPageIndex={1} 
-            paginationClassName="w-8 h-8 rounded-md border-2 border-black text-white-font bg-main-black text-font-h4-20 text-center cursor-pointer"
-            handlePagination={page=>onChangePage(page)}
+            numberPageIndex={page.numberPageIndex} 
+            paginationClassName={page.paginationClassName}
+            handlePagination={page.handlePagination!}
         />
-        <PaginationButton 
-            numberPageIndex={2} 
-            paginationClassName="w-8 h-8 rounded-md border-2 border-black text-main-black text-font-h4-20 text-center cursor-pointer"
-            handlePagination={page=>onChangePage(page)}/> 
-        <PaginationButton 
-            numberPageIndex={3} 
-            paginationClassName="w-8 h-8 rounded-md border-2 border-black text-main-black text-font-h4-20 text-center cursor-pointer"
-            handlePagination={page=>onChangePage(page)}/> 
-        <PaginationButton 
-            numberPageIndex={4} 
-            paginationClassName="w-8 h-8 rounded-md border-2 border-black text-main-black text-font-h4-20 text-center cursor-pointer"
-            handlePagination={page=>onChangePage(page)}
-            />
+      ))}      
        </article> 
       </section>
     )

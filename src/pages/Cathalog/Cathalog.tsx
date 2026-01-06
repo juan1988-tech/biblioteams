@@ -7,8 +7,6 @@ import SelectButtonsCathalog from "../../components/SelectButtonsCathalog/Select
 import AsideHeaderFilter from "../../elements/AsideHeaderFilter/AsideHeaderFilter";
 import RenderCathalogLoading from "../../components/RenderCathalog/RenderCathalog";
 
-
-
 const Cathalog = () => {
   const [loadingCathalog,setLoadingCathalog] = useState(false);
  
