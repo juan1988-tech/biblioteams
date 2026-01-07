@@ -14,3 +14,9 @@ export interface CathalogBook {
     shareBook?: () => void,
     reserve?: () => void
 }
+
+type classNameCardOptions = "col-span-6 border-2 border-b-main-black rounded-xl p-3 max-w-169.5 mt-4" | "col-span-6 border-2 border-b-main-black rounded-xl p-3 max-w-169.5"
+
+export interface CathalogBookCard extends CathalogBook {
+    classNameCard: classNameCardOptions
+}
