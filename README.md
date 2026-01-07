@@ -7,11 +7,12 @@
 ## Descripción del proyecto
 
 - El presente proyecto consiste en una **Aplicación web que consta de un catálogo digital para una bilbioteca**
-- La aplicación consta de una Landing Page + aplicación del catálogo
+- La aplicación consta de una Landing Page + Aplicación web del catálogo + Aplicación móvil del catálogo
 
 ### Landing Page
 
-La landing page tiene cómo objetivo la divulgación de la oferta cultural del colegio o Institución dueña de la biblioteca, entre las secciones sugeridas se encuentra
+La landing page tiene cómo objetivo la divulgación de la oferta cultural del colegio o Institución dueña de la biblioteca, entre las secciones sugeridas se encuentra,
+Esta landing funcionará cómo una demo, la cual será usada para probar funcionalidades y hacer CX Research
 
 - **Eventos** Los eventos culturales y de interés realizados por el colegio
 
@@ -42,10 +43,9 @@ Las secciones padicionales serán evauladas a solicitud del cliente
 
 Nuestro público objetivo son ***colegios, fundaciones, bibliotecas comunitarias*** y toda institución que posea una biblioteca y/o que cuenta con una oferta cultural para ofrecer a la comunidad (talleres, eventos, pre-icfes,etc)
 
-
 ## Distribución
 
-- **Medios propios** Aplicación web, redes sociales
+- **Medios propios** Aplicación web, redes sociales, Aplicación móvil
 - **Medios de terceros** Recomendaciones, eventos académicos
 
 ## Stack tecnológico
@@ -61,9 +61,22 @@ Nuestro público objetivo son ***colegios, fundaciones, bibliotecas comunitarias
 ![Node.js](https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white)
 ![Express.js](https://img.shields.io/badge/express.js-000000?style=for-the-badge&logo=express&logoColor=white)
 
+### Móvil
+![React Native](https://img.shields.io/badge/-React_Native-05122A?style=flat&logo=react)
+
 *Nota aclaratoria*
 
 *Cómo es un proyecto de código abierto, puedes implementar un backend con PHP,y bases de datos distintas al stack MERN. Así mismo se puede usar bases relacionales cómo MySQL*
+
+El repositorio del backend lo puedes conseguir en el siguiente link
+
+https://github.com/juan1988-tech/biblioteams-backend
+
+## Documentación
+
+**Las especificaciones técnicas de este proyecto** las puedes encontrar en**
+
+[Ver el Sistema de diseño](/.github/documentación.md) 
 
 ## Diseño
 
