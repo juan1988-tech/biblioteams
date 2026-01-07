@@ -51,7 +51,7 @@ Nuestro público objetivo son ***colegios, fundaciones, bibliotecas comunitarias
 ## Stack tecnológico
 
   El stack tecnologico consiste en
-
+ 
 ### Frontend
 ![React](https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=for-the-badge)
 ![Typescript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
