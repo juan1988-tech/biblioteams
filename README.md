@@ -10,9 +10,8 @@
 - La aplicación consta de una Landing Page + Aplicación web del catálogo + Aplicación móvil del catálogo
 
 ### Landing Page
-
+Esta landing funcionará cómo una demo, la cual será usada para probar funcionalidades y hacer CX Research.
 La landing page tiene cómo objetivo la divulgación de la oferta cultural del colegio o Institución dueña de la biblioteca, entre las secciones sugeridas se encuentra,
-Esta landing funcionará cómo una demo, la cual será usada para probar funcionalidades y hacer CX Research
 
 - **Eventos** Los eventos culturales y de interés realizados por el colegio
 
