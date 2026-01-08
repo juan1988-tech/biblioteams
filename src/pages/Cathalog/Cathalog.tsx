@@ -37,22 +37,22 @@ const Cathalog = () => {
           <SelectCathalog label="Ordenar por" selectName="order-book" selectClassName="flex flex-col w-37 relative ml-18 max-tablet-hor:ml-4 max-tablet:hidden"/>
         </header>
         <article className="col-span-9 col-start-4 col-end-13 max-tablet-hor:col-start-1 max-tablet-hor:col-end-5">
-            <div className="flex flex-col justify-items-center">
-              <section className="flex max-cellphone-hor:flex-col">
-                <div className="inline-flex max-cellphone-hor:justify-center">
-                  <p className="text-font-p text-tittle-blue font-bold">Resultado para:</p><p className="text-font-p ml-4">Resultado de libro</p>
-                </div>
-                <div className="inline-flex ml-8 max-cellphone-hor:ml-0 max-cellphone-hor:justify-center">
-                  <p className="text-font-p">Total resultado:</p><p className="ml-4 text-font-p text-tittle-blue font-bold">9 de 12 libros</p>
-                </div>
-              </section>
-              <section className="flex text-center">
-                <p className="text-font-p"><Link className="text-tittle-blue font-bold" to={"/ingresa"}>Ingresa</Link> o <Link to={"/registrate"} className="text-tittle-blue font-bold">Regístrate</Link>, recuerda que para reservar libros debes ser un usuario registrado</p>
-              </section>
-              </div>
-            </article>
-            <SelectButtonsCathalog />  
-            <RenderCathalogLoading loading={loadingCathalog}/>
+        <div className="flex flex-col justify-items-center">
+          <section className="flex max-cellphone-hor:flex-col">
+            <div className="inline-flex max-cellphone-hor:justify-center">
+              <p className="text-font-p text-tittle-blue font-bold">Resultado para:</p><p className="text-font-p ml-4">Resultado de libro</p>
+            </div>
+            <div className="inline-flex ml-8 max-cellphone-hor:ml-0 max-cellphone-hor:justify-center">
+              <p className="text-font-p">Total resultado:</p><p className="ml-4 text-font-p text-tittle-blue font-bold">9 de 12 libros</p>
+            </div>
+          </section>
+          <section className="flex text-center">
+            <p className="text-font-p"><Link className="text-tittle-blue font-bold" to={"/ingresa"}>Ingresa</Link> o <Link to={"/registrate"} className="text-tittle-blue font-bold">Regístrate</Link>, recuerda que para reservar libros debes ser un usuario registrado</p>
+          </section>
+          </div>
+        </article>
+        <SelectButtonsCathalog />  
+        <RenderCathalogLoading loading={loadingCathalog}/>
       </div>
     </main>
   )

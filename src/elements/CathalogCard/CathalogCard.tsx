@@ -60,23 +60,12 @@ const reducer = (state:State,action:Action) =>{
   }
 }
 
-/* const experimentalClassCard:CathalogBookCard = {
-  title: "El Principito",
-  author: "Antoine de Saint-Exupéry",
-  editorial: "Gallimard",
-  year: "1943",
-  topics: ["Fábula", "Aventura"],
-  availability: "Disponible",
-  classNameCard: "col-span-6 border-2 border-b-main-black rounded-xl p-3 max-w-169.5"
-} */
-
-//col-span-6 border-2 border-b-main-black rounded-xl p-3 max-w-169.5 mt-4 | col-span-6 border-2 border-b-main-black rounded-xl p-3 max-w-169.5
 const CathalogCard:React.FC<CathalogBookCard> = ({title,author,editorial,year,topics,index,classNameCard}) => {
   const [state,dispatch] = useReducer(reducer,IconsState)
 
    return (
     <article className={classNameCard}>
-      <header className='flex w-full h-6'>
+      <header className='flex w-full h-auto'>
         <h4 className='w-8 h-full bg-main-black text-white-font rounded-md text-center font-normal'>{index}</h4>
         <h4 className='text-tittle-blue text-font-h4-20 font-bold ml-2'>{title}</h4>    
       </header>

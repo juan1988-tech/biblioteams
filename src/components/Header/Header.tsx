@@ -9,7 +9,7 @@ const Header:React.FC = () => {
         {
           HeaderLinks.map((link)=>(
            <li key={link.name}>
-            <Link to={link.link} className="text-tittle-blue font-bold">{link.name}</Link>
+            <Link to={link.link} className="text-tittle-blue font-bold text-font-p-18">{link.name}</Link>
            </li>
          ))
         }

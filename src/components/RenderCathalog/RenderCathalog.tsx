@@ -53,17 +53,3 @@ const RenderCathalog:React.FC = () =>{
 const RenderCathalogLoading = onLoadingCathalog(RenderCathalog);
 
 export default RenderCathalogLoading;
-
-  {/*   {booksPerPages && booksPerPages.map((book,num)=>{
-          return 
-          <CathalogCard 
-            title={book.title}
-            author={book.author}
-            editorial={book.editorial}
-            year={book.year}
-            topics={book.topics}
-            availability={book.availability}
-            index={book.index}
-            classNameCard="col-span-6 border-2 border-b-main-black rounded-xl p-3 max-w-169.5"
-          />
-        })} */}
