@@ -13,7 +13,7 @@ export const ButtonCathalogOptions = () =>{
     }
 
   return(
-  <div className="flex flex-col w-1/3 ml-1 max-cellphone-hor:w-full max-cellphone:ml-0">
+  <div className="flex flex-col w-1/3 max-tablet:w-2/4 ml-1 max-cellphone-hor:w-full max-cellphone:ml-0">
     <h4 className="text-font-p bold text-tittle-blue font-bold" >Filtrar</h4>  
     <button className="flex appearance-none h-9 p-1 border-2 border-main-black rounded-md justify-between cursor-pointer"
     onClick={onChangeAsideFilter}>
