@@ -23,7 +23,7 @@ const Cathalog = () => {
       <AsideHeaderFilter/>
       <div className="w-[90%] mx-auto grid grid-cols-12 gap-3 grid-rows-[64px_48px_1fr]   
       max-tablet-hor:grid-cols-4 max-tablet-hor:h-auto max-tablet:justify-center max-tablet:grid-rows-[64px_72px_64px_1fr] max-tablet:auto-rows-auto
-      max-tablet:w-11/12 max-cellphone:grid-rows-[40px_90px_1fr] max-cellphone:">
+      max-tablet:w-11/12 max-cellphone:grid-rows-[minmax(48px,60px)_90px_1fr]">
         <aside className="col-span-3 h-full max-tablet-hor:col-span-1 row-start-3 row-end-4 max-tablet:hidden max-tablet:auto-rows-auto">
           <FilterCathalog/>
         </aside>
