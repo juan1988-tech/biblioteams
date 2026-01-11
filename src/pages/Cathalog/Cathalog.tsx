@@ -21,16 +21,18 @@ const Cathalog = () => {
     return (
     <main className="mt-8 max-tablet-hor:mt-0">
       <AsideHeaderFilter/>
-      <div className="w-[90%] mx-auto grid grid-cols-12 gap-3 grid-rows-[64px_48px_1fr]   
-      max-tablet-hor:grid-cols-4 max-tablet-hor:h-auto max-tablet:justify-center max-tablet:grid-rows-[64px_72px_64px_1fr] max-tablet:auto-rows-auto
+      <div className="w-[90%] mx-auto grid grid-cols-12 gap-3 grid-rows-[64px_48px_1fr] max-tablet-hor:grid-cols-4
+      max-tablet-hor:h-auto max-tablet:justify-center max-tablet:grid-rows-[64px_72px_64px_1fr] max-tablet:auto-rows-auto
       max-tablet:w-11/12 max-cellphone:grid-rows-[minmax(48px,60px)_90px_1fr]">
         <aside className="col-span-3 h-full max-tablet-hor:col-span-1 row-start-3 row-end-4 max-tablet:hidden max-tablet:auto-rows-auto">
           <FilterCathalog/>
         </aside>
-        <header className="flex col-span-9 col-start-4 col-end-13 max-tablet-hor:col-start-1 max-tablet-hor:col-end-5
-        max-tablet:items-center max-tablet:col-span-4 max-tablet:justify-center max-cellphone:col-span-full">
+        <header className="flex col-span-8 col-start-4 col-end-12 justify-self-start max-tablet-hor:col-start-1 max-tablet-hor:col-end-5
+        max-tablet:items-center max-tablet:col-span-4 max-tablet:justify-center max-cellphone:col-span-full max-cellphone:w-full">
           <CathalogSerachBar /> 
-          <SelectCathalog label="Ordenar por" selectName="order-book" selectClassName="flex flex-col w-37 relative ml-18 max-tablet-hor:ml-4 max-tablet:hidden"/>
+          <SelectCathalog label="Ordenar por" 
+            selectName="order-book" 
+            selectClassName="flex flex-col w-37 relative  max-tablet-hor:ml-4 max-tablet:hidden"/>
         </header>
         <article className="col-span-9 col-start-4 col-end-13 max-tablet-hor:col-start-1 max-tablet-hor:col-end-5">
         <div className="flex flex-col justify-items-center">
