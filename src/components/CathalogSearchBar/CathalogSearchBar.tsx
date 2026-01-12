@@ -2,12 +2,15 @@ import { useState, useEffect } from "react";
 import type { FormCathalogProps } from "./types";
 import ButtonCathalogSearch from "../../elements/ButtonCathalogSearch/ButtonCathalogSearch";
 import SearcherSelector from "../../elements/SearcherSelector/SearcherSelector";
+import { useLocation } from "react-router-dom";
+import { classNamesChatalog,classNameHome } from "./data";
 
 const CathalogSerachBar:React.FC<FormCathalogProps> = () => {
   const [selector,setSelector] = useState<boolean>(false);
   const [searcherValue,setSearcherValue] = useState<string>('title');
   const [indicatorValue,setIndicatorValue] =useState<string>('Título');
-
+  const { pathname }  = useLocation();
+  
   const handleChangeSelector = (e:React.MouseEvent) =>{
       e.preventDefault();
         setSelector(!selector);
@@ -42,22 +45,19 @@ const CathalogSerachBar:React.FC<FormCathalogProps> = () => {
 
   return (
      <section className="flex flex-col w-full"> 
-     <form className="flex border-2 w-150 border-black items-center min-w-72 h-9 mt-6 rounded-full relative px-1 ml-4 max-tablet:m-0
-     max-cellphone-hor:w-full justify-between">
-       <input type="text" className="appearance-none w-90 h-full outline-none focus:outline-none max-tablet-hor:w-80 px-2
-       max-cellphone-hor:w-2/3" placeholder="Resultado libro"/>
+     <form className={(pathname==="/catalogo")?classNamesChatalog.clasNameForm:classNameHome.clasNameForm}>
+       <input type="text" className={(pathname==="/catalogo")?classNamesChatalog.classNameInput:classNameHome.classNameInput} placeholder="Resultado libro"/>
        <section className="flex"> 
        <ButtonCathalogSearch onClickEvent={handleChangeSelector}/>
-       <button className="cursor-pointer w-7 h-7 rounded-full flex justify-center items-center border-2
-         border-gray-500 bg-light-gray ml-2" onClick={onCloseSearcher}>
-          <img className="w-4 h-4" src="/assets/navbar-dark-loop.svg" alt="Buscar libro"/>
+       <button className={(pathname==="/catalogo")?classNamesChatalog.classNameButton:classNameHome.classNameButton} onClick={onCloseSearcher}>
+          <img className="w-4 h-4" src={(pathname==="/catalogo"?classNamesChatalog.imageSrc:classNameHome.imageSrc)} alt="Buscar libro"/>
         </button>
       </section>
       {
         selector?<SearcherSelector onClickEvent={handleChangeSelector} handleSearchValue={handleSearchValue}/>:<></>
       }
      </form>
-     <article className="flex mt-1 cellphone:hidden">
+     <article className={(pathname==="/catalogo")?classNamesChatalog.classNameOutput:classNameHome.classNameOutput}>
        <h4 className="text-tittle-blue font-bold">Buscar por:</h4>
        <p className="ml-1">{indicatorValue}</p>
      </article>
