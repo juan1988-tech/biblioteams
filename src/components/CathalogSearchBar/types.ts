@@ -1,6 +1,5 @@
 export type FormCathalogProps ={
-  classNameForm?: string;
-  classNameInput?: string;
+  placeholder: string
 }
 
 export interface classNameCathalogSearch{

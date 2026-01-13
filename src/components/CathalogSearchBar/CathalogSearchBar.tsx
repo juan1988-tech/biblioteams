@@ -5,7 +5,7 @@ import SearcherSelector from "../../elements/SearcherSelector/SearcherSelector";
 import { useLocation } from "react-router-dom";
 import { classNamesChatalog,classNameHome } from "./data";
 
-const CathalogSerachBar:React.FC<FormCathalogProps> = () => {
+const CathalogSerachBar:React.FC<FormCathalogProps> = ({placeholder}) => {
   const [selector,setSelector] = useState<boolean>(false);
   const [searcherValue,setSearcherValue] = useState<string>('title');
   const [indicatorValue,setIndicatorValue] =useState<string>('Título');
@@ -46,11 +46,11 @@ const CathalogSerachBar:React.FC<FormCathalogProps> = () => {
   return (
      <section className="flex flex-col w-full"> 
      <form className={(pathname==="/catalogo")?classNamesChatalog.clasNameForm:classNameHome.clasNameForm}>
-       <input type="text" className={(pathname==="/catalogo")?classNamesChatalog.classNameInput:classNameHome.classNameInput} placeholder="Resultado libro"/>
+       <input type="text" className={(pathname==="/catalogo")?classNamesChatalog.classNameInput:classNameHome.classNameInput} placeholder={placeholder}/>
        <section className="flex"> 
        <ButtonCathalogSearch onClickEvent={handleChangeSelector}/>
        <button className={(pathname==="/catalogo")?classNamesChatalog.classNameButton:classNameHome.classNameButton} onClick={onCloseSearcher}>
-          <img className="w-4 h-4" src={(pathname==="/catalogo"?classNamesChatalog.imageSrc:classNameHome.imageSrc)} alt="Buscar libro"/>
+        <img className="w-4 h-4" src={(pathname==="/catalogo"?classNamesChatalog.imageSrc:classNameHome.imageSrc)} alt="Buscar libro"/>
         </button>
       </section>
       {

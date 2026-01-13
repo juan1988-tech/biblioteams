@@ -29,8 +29,7 @@ const Cathalog = () => {
         </aside>
         <header className="flex col-span-8 col-start-4 col-end-12 justify-self-start max-tablet-hor:col-start-1 max-tablet-hor:col-end-5
         max-tablet:items-center max-tablet:col-span-4 max-tablet:justify-center max-cellphone:col-span-full max-cellphone:w-full">
-          <CathalogSerachBar  classNameForm="flex border-2 w-150 border-black items-center min-w-72 h-9 mt-6 rounded-full relative px-1 ml-4 max-tablet:m-0
-            max-cellphone-hor:w-full justify-between"/> 
+          <CathalogSerachBar  placeholder="Resultado libro ..."/> 
           <SelectCathalog label="Ordenar por" 
             selectName="order-book" 
             selectClassName="flex flex-col w-37 relative  max-tablet-hor:ml-4 max-tablet:hidden"/>

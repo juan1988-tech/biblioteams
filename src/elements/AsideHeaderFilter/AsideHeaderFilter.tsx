@@ -8,12 +8,12 @@ const AsideHeaderFilter = () =>{
     const handleToggleBackground = useToggleContextUX((state)=>state.onChangeBackground);
     const handleToggleAsideFilter = useToggleContextUX((state)=>state.onChangeAsideFilter);
     
-    const [asideClassName,setAsideClassName] = useState<string>("w-2/4 h-full bg-white-font tablet-hor:hidden flex flex-col items-center justify-center z-20 fixed top-0 left-[100%] transition-all duration-1000 max-cellphone:items-start max-cellphone-hor:w-2/3"); 
+    const [asideClassName,setAsideClassName] = useState<string>("w-2/4 h-full bg-white-font tablet-hor:hidden flex flex-col items-center justify-center z-30 fixed top-0 left-[100%] transition-all duration-1000 max-cellphone:items-start max-cellphone-hor:w-2/3"); 
 
     useEffect(()=>{
     ((toggleAsideFilter===true)
-    ?setAsideClassName("w-2/4 h-full bg-white-font tablet-hor:hidden flex flex-col items-center p-4 z-20 fixed top-0 left-[50%] transition-all duration-1000 max-cellphone:items-start max-cellphone-hor:w-2/3 max-cellphone-hor:left-[40%] max-cellphone:left-[34%] max-cellphone:w-2/3")
-    :setAsideClassName("w-2/4 h-full bg-white-font tablet-hor:hidden flex flex-col items-center p-4 z-20 fixed top-0 left-[100%] transition-all duration-1000 max-cellphone:items-start max-cellphone-hor:w-2/3"))
+    ?setAsideClassName("w-2/4 h-full bg-white-font tablet-hor:hidden flex flex-col items-center p-4 z-30 fixed top-0 left-[50%] transition-all duration-1000 max-cellphone:items-start max-cellphone-hor:w-2/3 max-cellphone-hor:left-[40%] max-cellphone:left-[34%] max-cellphone:w-2/3")
+    :setAsideClassName("w-2/4 h-full bg-white-font tablet-hor:hidden flex flex-col items-center p-4 z-30 fixed top-0 left-[100%] transition-all duration-1000 max-cellphone:items-start max-cellphone-hor:w-2/3"))
   },[toggleAsideFilter])
     
     const onCloseAsideFilter = (e:React.MouseEvent) =>{
