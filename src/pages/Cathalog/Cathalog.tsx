@@ -32,7 +32,7 @@ const Cathalog = () => {
           <CathalogSerachBar  placeholder="Resultado libro ..."/> 
           <SelectCathalog label="Ordenar por" 
             selectName="order-book" 
-            selectClassName="flex flex-col w-37 relative  max-tablet-hor:ml-4 max-tablet:hidden"/>
+            selectClassName="flex flex-col w-56 relative max-tablet-hor:ml-4 max-tablet:hidden"/>
         </header>
         <article className="col-span-9 col-start-4 col-end-13 max-tablet-hor:col-start-1 max-tablet-hor:col-end-5">
         <div className="flex flex-col justify-items-center">

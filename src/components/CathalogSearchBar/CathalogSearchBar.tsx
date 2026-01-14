@@ -48,11 +48,11 @@ const CathalogSerachBar:React.FC<FormCathalogProps> = ({placeholder}) => {
      <form className={(pathname==="/catalogo")?classNamesChatalog.clasNameForm:classNameHome.clasNameForm}>
        <input type="text" className={(pathname==="/catalogo")?classNamesChatalog.classNameInput:classNameHome.classNameInput} placeholder={placeholder}/>
        <section className="flex"> 
-       <ButtonCathalogSearch onClickEvent={handleChangeSelector}/>
-       <button className={(pathname==="/catalogo")?classNamesChatalog.classNameButton:classNameHome.classNameButton} onClick={onCloseSearcher}>
-        <img className="w-4 h-4" src={(pathname==="/catalogo"?classNamesChatalog.imageSrc:classNameHome.imageSrc)} alt="Buscar libro"/>
+        <ButtonCathalogSearch onClickEvent={handleChangeSelector}/>
+        <button className={(pathname==="/catalogo")?classNamesChatalog.classNameButton:classNameHome.classNameButton} onClick={onCloseSearcher}>
+          <img className="w-4 h-4" src={(pathname==="/catalogo"?classNamesChatalog.imageSrc:classNameHome.imageSrc)} alt="Buscar libro"/>
         </button>
-      </section>
+        </section>
       {
         selector?<SearcherSelector onClickEvent={handleChangeSelector} handleSearchValue={handleSearchValue}/>:<></>
       }

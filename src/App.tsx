@@ -6,6 +6,7 @@ import BurguerButton from './components/BurguerButton/BurguerButton';
 import DarkBackground from './elements/DarkBackground/DarkBackground';
 import AsideHeader from './elements/AsideHeader/AsideHeader';
 import Cathalog from './pages/Cathalog/Cathalog';
+import LogIn from './pages/LogIn/LogIn';
 import SingIn from './pages/SingIn/SingIn';
 
 function App() { 
@@ -19,8 +20,8 @@ function App() {
     <Routes>
       <Route path={"/"} element={<Home/>}/>
       <Route path={"/catalogo"} element={<Cathalog/>}/>      
-      <Route path={"/ingresa"} element={<SingIn/>} />
-      <Route path={"/registrate"} element={<h1>Regístrate</h1>}/>
+      <Route path={"/ingresa"} element={<LogIn/>} />
+      <Route path={"/registrate"} element={<SingIn/>}/>
       <Route path={"*"} element={<h1>Error 404</h1>}/> 
     </Routes>
     </main>
