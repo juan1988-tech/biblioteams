@@ -1,67 +1,9 @@
-import React, { useReducer } from 'react'
 // el tipo CathalogBook corresponde a un tipo global, ya que controla la presentación del libro en el catálogo
 import type { CathalogBookCard } from '../../types/cathalog-env'
-
-type State ={
-  favourite:boolean,
-  share:boolean,
-  reserve:boolean
-} 
-
-const IconsState:State ={
-  favourite:false,
-  share:false,
-  reserve:false
-}
-
-type Action = { type: "FAVOURITE" } |{ type: "NON-FAVOURITE" } | { type: "SHARE"} | { type: "NON-SHARE"} | { type: "RESERVE"}
-| { type: "NON-RESERVE"} 
-
-const reducer = (state:State,action:Action) =>{
-  const resetState = Object.fromEntries(
-      Object.keys(state).map(key => [key, false])
-    ) as State;
-
-  switch (action.type) {
-    case "FAVOURITE":
-      return{
-        ...resetState,
-        favourite: true,
-      }
-    case "NON-FAVOURITE":
-      return{
-        ...resetState,
-        favourite: false,
-      }    
-    case "SHARE":
-      return{
-        ...resetState,
-          share: true,
-      }
-    case "NON-SHARE":
-      return{
-        ...resetState,
-          share: false,
-      }    
-    case "RESERVE":
-      return{
-        ...resetState,
-          reserve: true,
-      }
-    case "NON-RESERVE":
-      return{
-        ...resetState,
-          reserve: false,
-      }    
-    default:
-      return {
-        ...IconsState,
-      }
-  }
-}
+import { useCathalogCard } from './useCathalogCard'
 
 const CathalogCard:React.FC<CathalogBookCard> = ({title,author,editorial,year,topics,index,classNameCard}) => {
-  const [state,dispatch] = useReducer(reducer,IconsState)
+  const {state,dispatch} = useCathalogCard();
 
    return (
     <article className={classNameCard}>
@@ -94,7 +36,7 @@ const CathalogCard:React.FC<CathalogBookCard> = ({title,author,editorial,year,to
             <article className='grid grid-cols-[104px_1fr] gap-x-1.5 gap-y-4 mt-2'>
               <h4 className='text-font-p font-bold text-tittle-blue text-left'>Disponibilidad</h4>
               <div className='flex'>
-                <p className='text-[18px] text-green-available font-bold'>Disponible</p>
+                <p className='text-font-p-18 text-green-available font-bold'>Disponible</p>
                 <p className='text-font-p text-red-unavailable ml-4'>No Disponible</p>
               </div>
             </article>
