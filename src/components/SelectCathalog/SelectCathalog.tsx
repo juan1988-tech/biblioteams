@@ -92,13 +92,12 @@ const SelectCathalog:React.FC<SelectCathalogProps> = ({label,selectName,selectCl
     }
   },[orderCathalog]) 
 
-  console.log(orderCathalog)
   return (
     <div className={selectClassName}>
      <h4 className="text-font-p bold text-tittle-blue font-bold" >{label}</h4>
         <section className="flex justify-between max-tablet:grid grid-cols-[1fr_32px] gap-1">  
-        <img src="/assets/ep_arrow-black.svg" className="w-4 h-4 absolute top-8 left-[60%] max-tablet:left-[75%] max-cellphone:left-[85%]"/>
-        <select name={selectName} className="appearance-none h-9 p-1 border-2 border-main-black rounded-md w-32 max-tablet:w-full"
+        <img src="/assets/ep_arrow-black.svg" className="w-4 h-4 absolute top-8 left-[75%] max-tablet:left-[75%] max-cellphone:left-[80%]"/>
+        <select name={selectName} className="appearance-none h-9 p-1 border-2 border-main-black rounded-md w-full max-tablet:w-full"
         onChange={(e:React.ChangeEvent<HTMLSelectElement>)=>{
           setOrderCathalog(e.target.value)
         }}
