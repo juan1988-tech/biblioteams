@@ -1,26 +1,6 @@
 import { create } from "zustand";
 import type { CathalogBook } from "../../types/cathalog-env";
-
-interface PaginationNumberPage{
-   numberPageIndex:number;
-   paginationClassName:"w-8 h-8 rounded-md border-2 border-black text-white-font bg-main-black text-font-h4-20 text-center cursor-pointer" | 
-   "w-8 h-8 rounded-md border-2 border-black text-main-black text-font-h4-20 text-center cursor-pointer";
-   handlePagination:(pageNumber:number)=> void;
-}
-
-type RenderCathalogStore = {
-    cathalog:CathalogBook[];
-    page:number;
-    paginationButtons:PaginationNumberPage[];
-}
-
-type RenderCathalogActions ={
-    setCathalog:(cathalog: CathalogBook[])=>void;
-    setPage:(page:number)=>void;
-    setPaginationButtons:(paginationButtons:PaginationNumberPage[])=>void;
-    //funciones de estado relacionadas con el orden de los libros en el catálogo
-    orderCathalog:({cathalog, key}: {cathalog: CathalogBook[]; key: keyof CathalogBook})=>void;
-}
+import type { PaginationNumberPage,RenderCathalogStore,RenderCathalogActions } from "./types";
 
 export const useRenderCathalog = create<RenderCathalogStore & RenderCathalogActions>((set)=>({
     cathalog: [],
@@ -30,8 +10,8 @@ export const useRenderCathalog = create<RenderCathalogStore & RenderCathalogActi
     setPage: (page:number) => set({ page }),
     setPaginationButtons: (paginationButtons:PaginationNumberPage[]) => set({ paginationButtons }),
     //funciones de estado relacionadas con el orden de los libros en el catálogo
-    //A-Z
-    orderCathalog: ({
+    //A-Z: de menor a mayor
+    orderCathalogBooks: ({
     cathalog,
     key,
     }: {
@@ -49,7 +29,8 @@ export const useRenderCathalog = create<RenderCathalogStore & RenderCathalogActi
       return 0;
     }),
   })),
-  orderCathalogDesc: ({
+  //Z-A: de mayor a menors
+  orderCathalogBooksDesc: ({
   cathalog,
   key,
 }: {
@@ -79,5 +60,4 @@ orderCathalog({ cathalog, key: "year" });
 orderCathalogDesc({ cathalog, key: "title" });
 orderCathalogDesc({ cathalog, key: "year" });
 orderCathalogDesc({ cathalog, key: "author" });
-
 */

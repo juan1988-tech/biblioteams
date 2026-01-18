@@ -1,12 +1,12 @@
-type availableState = "Disponible" | "No Disponible"
+//type availableState = "Disponible para préstamo" | "No Disponible"
 
 export interface CathalogBook {
     title:string,
     author: string | string[],
     editorial: string,
     year:string,
-    topics:string[],
-    availability: availableState,
+    topics: string | string[],
+    availability: string,
     description?: string,
     image?:string,
     index:string|number,

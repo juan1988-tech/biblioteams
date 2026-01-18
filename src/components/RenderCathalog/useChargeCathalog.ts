@@ -9,6 +9,7 @@ export const useChargeCathalog = () =>{
     paginationButtons, setPaginationButtons
    } = useRenderCathalog();
 
+
    const getInformationCathalog = async () =>{
     const request = await fetch('/dummy/cathalogBook.json');
     const data = await request.json();

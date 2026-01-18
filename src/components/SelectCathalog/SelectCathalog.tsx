@@ -1,93 +1,65 @@
 import { useEffect, useReducer, useState } from "react"
-import type { SelectCathalogProps,arrowRotation } from "./types"
-
-type SelectionState ={
-  selection: string,
-  arrowOrder: arrowRotation
-}
-
-type SelectionAction = {
-  type:"Autor (A-Z)"|"Autor (Z-A)"|"Año (mayor a menor)"|"Año (menor a mayor)"|"Disponible para préstamo" |"No Disponible"
-}
-
-const SelectionReducer = (state:SelectionState,action:SelectionAction):SelectionState=>{
-  switch(action.type){
-    case "Autor (A-Z)":
-      return { selection:"Autor (A-Z)",
-              arrowOrder: "rotate-0"
-          }
-    case "Autor (Z-A)":
-      return { selection:"Autor (Z-A)",
-              arrowOrder:"rotate-180" 
-          }  
-    case "Año (mayor a menor)":
-      return { selection:"Año (mayor a menor)", 
-              arrowOrder:"rotate-0"
-          }
-    case "Año (menor a mayor)":
-      return { selection: "Año (menor a mayor)",
-               arrowOrder:"rotate-180"
-          }
-    case "Disponible para préstamo":
-      return { selection: "Disponible para préstamo",
-               arrowOrder:"rotate-0" 
-          }
-    case "No Disponible":
-      return { selection: "No Disponible",
-               arrowOrder:"rotate-180"
-          }
-   default:
-        return{
-          ...state
-        } 
-  } 
-}
+import type { SelectCathalogProps } from "./types"
+import { useRenderCathalog } from "../../store/cathalog/useRenderCathalog"
+import { SelectionReducer } from "./useSelectCathalog"
 
 const SelectCathalog:React.FC<SelectCathalogProps> = ({label,selectName,selectClassName}) => {
   const [state,dispatch] = useReducer(SelectionReducer,{ selection: "Autor (A-Z)",arrowOrder:"rotate-0" });
-  const [orderCathalog,setOrderCathalog] = useState<string>("");
-
+  const [orderCathalog,setOrderCathalog] = useState<string>("Autor (A-Z)");
+  const { cathalog,orderCathalogBooks,orderCathalogBooksDesc } = useRenderCathalog(); 
+  
   const handleOrderBooks = () =>{
-      console.log(state.selection)
       if(state.selection==="Autor (A-Z)"){
         dispatch({type: "Autor (Z-A)"})
+        orderCathalogBooks({ cathalog, key: "author" });  
       } 
       else if(state.selection==="Autor (Z-A)"){
         dispatch({type: "Autor (A-Z)"})
+        orderCathalogBooksDesc({ cathalog, key:"author" });
       }
       else if(state.selection==="Año (mayor a menor)"){
-        dispatch({type: "Año (menor a mayor)"})
+        dispatch({type: "Año (menor a mayor)"});
+        orderCathalogBooks({ cathalog, key: "year" });
       }
       else if(state.selection==="Año (menor a mayor)"){
-        dispatch({type:"Año (mayor a menor)"})
+        dispatch({type:"Año (mayor a menor)"});
+        orderCathalogBooksDesc({ cathalog, key: "year"});
       }
-      else if(state.selection==="Disponible para préstamo"){
+      else if(state.selection==="Disponible"){
         dispatch({type:"No Disponible"})
+        orderCathalogBooks({ cathalog, key: "availability"});
       }
       else if(state.selection==="No Disponible"){
-        dispatch({type:"Disponible para préstamo"})
+        dispatch({type:"Disponible"});
+        orderCathalogBooksDesc({ cathalog, key: "availability"}); 
       }
   }
 
  useEffect(()=>{
     switch (orderCathalog) {
       case "Autor (A-Z)":
-        dispatch({type: "Autor (A-Z)"})
+        dispatch({type: "Autor (A-Z)"});
+        orderCathalogBooks({ cathalog, key: "author" });
         break;
       case "Autor (Z-A)":
-        dispatch({type: "Autor (Z-A)"})
+        dispatch({type: "Autor (Z-A)"});
+        orderCathalogBooksDesc({cathalog,key: "author"});
         break;
       case "Año (mayor a menor)":
-        dispatch({type: "Año (mayor a menor)"})
+        dispatch({type: "Año (mayor a menor)"});
+        orderCathalogBooks({ cathalog, key: "year"});
         break;
       case "Año (menor a mayor)":
-        dispatch({type: "Año (menor a mayor)"})
+        dispatch({type: "Año (menor a mayor)"});
+        orderCathalogBooksDesc({cathalog, key: "year"});
         break;  
-      case "Disponible para préstamo":
-        dispatch({type: "Disponible para préstamo"}) 
+      case "Disponible":
+        dispatch({type: "Disponible"});
+        orderCathalogBooks({ cathalog, key: "availability"});
         break; 
       case "No Disponible":
-        dispatch({type: "No Disponible"})
+        dispatch({type: "No Disponible"});
+        orderCathalogBooksDesc({ cathalog, key: "availability"});
         break;
     }
   },[orderCathalog]) 
@@ -107,7 +79,7 @@ const SelectCathalog:React.FC<SelectCathalogProps> = ({label,selectName,selectCl
           <option value="Autor (Z-A)">Autor (Z-A)</option>
           <option value="Año (mayor a menor)">Año (mayor a menor)</option>
           <option value="Año (menor a mayor)">Año (menor a mayor)</option>
-          <option value="Disponible para préstamo">Disponible para préstamo</option>
+          <option value="Disponible">Disponible para préstamo</option>
           <option value="No Disponible">No Disponible</option> 
         </select>
         <button className="h-9 w-9 rounded-md border-2 border-black flex items-center justify-center cursor-pointer"
