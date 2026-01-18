@@ -29,7 +29,7 @@ const CathalogCard:React.FC<CathalogBookCard> = ({title,author,editorial,year,to
               <h4 className='text-font-p font-bold text-tittle-blue text-left'>Tema(s)</h4>
               <div className='flex flex-col'>
                    {
-                    topics && topics.map((topic)=>(<p>{topic}</p>))
+                    topics && (Array.isArray(topics) ? topics.map((topic)=>(<p>{topic}</p>)) : <p>{topics}</p>)
                    } 
               </div>
             </article>
