@@ -4,7 +4,7 @@ export interface CathalogBook {
     title:string,
     author: string | string[],
     editorial: string,
-    year:string,
+    year:string | number,
     topics: string | string[],
     availability: string,
     description?: string,

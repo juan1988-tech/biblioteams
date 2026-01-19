@@ -17,7 +17,4 @@ export type RenderCathalogActions ={
     setCathalog:(cathalog: CathalogBook[])=>void;
     setPage:(page:number)=>void;
     setPaginationButtons:(paginationButtons:PaginationNumberPage[])=>void;
-    //funciones de estado relacionadas con el orden de los libros en el catálogo
-    orderCathalogBooks:({cathalog, key}: {cathalog: CathalogBook[]; key: keyof CathalogBook})=>void;
-    orderCathalogBooksDesc:({cathalog, key}: {cathalog: CathalogBook[]; key: keyof CathalogBook})=>void;
 }

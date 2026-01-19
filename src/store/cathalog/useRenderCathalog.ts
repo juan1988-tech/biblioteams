@@ -9,55 +9,15 @@ export const useRenderCathalog = create<RenderCathalogStore & RenderCathalogActi
     setCathalog: (cathalog: CathalogBook[]) => set({ cathalog }),
     setPage: (page:number) => set({ page }),
     setPaginationButtons: (paginationButtons:PaginationNumberPage[]) => set({ paginationButtons }),
-    //funciones de estado relacionadas con el orden de los libros en el catálogo
-    //A-Z: de menor a mayor
-    orderCathalogBooks: ({
-    cathalog,
-    key,
-    }: {
-        cathalog: CathalogBook[];
-        key: keyof CathalogBook;
-    }) =>
-    set(() => ({
-    cathalog: [...cathalog].sort((a, b) => {
-      const valueA = a[key];
-      const valueB = b[key];
-
-      if (valueA === undefined || valueB === undefined) return 0;
-      if (valueA < valueB) return -1;
-      if (valueA > valueB) return 1;
-      return 0;
-    }),
-  })),
-  //Z-A: de mayor a menors
-  orderCathalogBooksDesc: ({
-  cathalog,
-  key,
-}: {
-  cathalog: CathalogBook[];
-  key: keyof CathalogBook;
-}) =>
-  set(() => ({
-    cathalog: [...cathalog].sort((a, b) => {
-      const valueA = a[key];
-      const valueB = b[key];
-
-      if (valueA === undefined || valueB === undefined) return 0;
-      if (valueA < valueB) return 1;
-      if (valueA > valueB) return -1;
-      return 0;
-    }),
-  })),
+    orderCathalogAuthorZA: (cathalog: CathalogBook[]) =>
+      set(() => {
+      const orderedCathalogZA = cathalog.sort(
+        (a, b) => {
+          if (a.author < b.author) return 1;   // Z → A
+          if (a.author > b.author) return -1;
+          return 0;
+        }
+      );
+      return { cathalog: orderedCathalogZA };
+    })
 }))
-
-/*
-//para descendente (A-z)
-orderCathalog({ cathalog, key: "title" });
-orderCathalog({ cathalog, key: "author" });
-orderCathalog({ cathalog, key: "year" });
-
-//para ascendente (Z-A)
-orderCathalogDesc({ cathalog, key: "title" });
-orderCathalogDesc({ cathalog, key: "year" });
-orderCathalogDesc({ cathalog, key: "author" });
-*/
