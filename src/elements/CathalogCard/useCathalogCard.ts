@@ -1,5 +1,6 @@
-import type { State,Action } from "./types";
-import { useReducer } from "react";
+import type { State,Action,SelectColorProps } from "./types";
+import { useReducer,useEffect,useState } from "react";
+import type { CathalogBookCard } from "../../types/cathalog-env";
 
  const IconsState:State ={
     favourite:false,
@@ -7,7 +8,8 @@ import { useReducer } from "react";
     reserve:false
 }
 
-export const useCathalogCard = () =>{
+export const useCathalogCard = ({availability}:CathalogBookCard) =>{
+  //reductor para controlar el hover de los botones
   const reducer = (state:State,action:Action) =>{
   const resetState = Object.fromEntries(
       Object.keys(state).map(key => [key, false])
@@ -50,6 +52,27 @@ export const useCathalogCard = () =>{
       }}}
 
     const [state,dispatch] = useReducer(reducer,IconsState);
+    
+    //implementacion para los colores segun la disponibilidad del libro
+    const [availableColors,setAvailableColors] = useState<SelectColorProps>({
+    firstColor:"text-green-available",
+    secondColor:"text-red-non-unavailable",
+  })
 
-    return { state,dispatch }  
+  useEffect(()=>{
+    if(availability==="Disponible"){
+      setAvailableColors({
+        firstColor:"text-green-available",
+        secondColor:"text-red-non-unavailable"
+      })
+    }
+    else{
+      setAvailableColors({
+        firstColor:"text-green-non-available",
+        secondColor:"text-red-unavailable"
+      })
+    }
+  },[availability])  
+
+    return { state,dispatch,availableColors }  
 }

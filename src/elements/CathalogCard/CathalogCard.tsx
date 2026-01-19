@@ -2,8 +2,10 @@
 import type { CathalogBookCard } from '../../types/cathalog-env'
 import { useCathalogCard } from './useCathalogCard'
 
-const CathalogCard:React.FC<CathalogBookCard> = ({title,author,editorial,year,topics,index,classNameCard}) => {
-  const {state,dispatch} = useCathalogCard();
+
+
+const CathalogCard:React.FC<CathalogBookCard> = ({title,author,editorial,year,topics,index,classNameCard,availability}) => {
+  const {state,dispatch,availableColors} = useCathalogCard({title,author,editorial,year,topics,index,classNameCard,availability});
 
    return (
     <article className={classNameCard}>
@@ -36,8 +38,8 @@ const CathalogCard:React.FC<CathalogBookCard> = ({title,author,editorial,year,to
             <article className='grid grid-cols-[104px_1fr] gap-x-1.5 gap-y-4 mt-2'>
               <h4 className='text-font-p font-bold text-tittle-blue text-left'>Disponibilidad</h4>
               <div className='flex'>
-                <p className='text-font-p-18 text-green-available font-bold'>Disponible</p>
-                <p className='text-font-p text-red-unavailable ml-4'>No Disponible</p>
+                <p className={`text-font-p ${availableColors.firstColor} font-bold`}>Disponible</p>
+                <p className={`text-font-p ml-2 ${availableColors.secondColor} font-bold`}>No Disponible</p>
               </div>
             </article>
         </section>

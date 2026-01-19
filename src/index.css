@@ -40,7 +40,9 @@
 
   /*Colores warning para disponibilidad de libro*/
   --color-green-available: #18CA00;
+  --color-green-non-available: rgba(24, 202, 0,.25);
   --color-red-unavailable:#FF4400;
+  --color-red-non-unavailable:rgba(255, 68, 0,.25);
 
   /*variables para el tamaño de los títulos*/
   --text-font-little-p-12:12px;
