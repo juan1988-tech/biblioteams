@@ -66,6 +66,7 @@ Nuestro público objetivo son ***colegios, fundaciones, bibliotecas comunitarias
 ![Express.js](https://img.shields.io/badge/express.js-000000?style=for-the-badge&logo=express&logoColor=white)
 
 ### Móvil
+
 ![React Native](https://img.shields.io/badge/-React_Native-05122A?style=flat&logo=react)
 
 *Nota aclaratoria*
@@ -81,6 +82,25 @@ https://github.com/juan1988-tech/biblioteams-backend
 **Las especificaciones técnicas de este proyecto** las puedes encontrar en**
 
 [Ver el Sistema de diseño](/.github/documentación.md) 
+
+### ¿Cómo descargar y usar este proyecto?
+
+Para usar este proyecto tienes que seguir los siguientes pasos
+
+1. Ve al link de este proyecto
+
+https://github.com/juan1988-tech/biblioteams-2
+
+2. En tu terminal usa el comando, dirigéte al botón "<> Code" y copia el link en la interfaz
+
+
+    ``git clone https://github.com/juan1988-tech/biblioteams-2``
+
+    <img src="./.github/assets/git-clone-instruction.png" width="300" alt="Portada de la biblioteca" />
+
+3. Posteriormente, utiliza el comando ``npm install`` para instalar todas las dependencias de la aplicación
+4. Corre el comando ``npm run dev`` lo cual correrá el proyecto en el puerto localhost:5173, con esto estás listo para usar tu proyecto
+5. Si tienes problemas para correr el proyecto, mi número de contacto está en la parte de abajo de esta documentación
 
 ## Diseño
 

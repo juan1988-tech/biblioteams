@@ -2,8 +2,6 @@
 import type { CathalogBookCard } from '../../types/cathalog-env'
 import { useCathalogCard } from './useCathalogCard'
 
-
-
 const CathalogCard:React.FC<CathalogBookCard> = ({title,author,editorial,year,topics,index,classNameCard,availability}) => {
   const {state,dispatch,availableColors} = useCathalogCard({title,author,editorial,year,topics,index,classNameCard,availability});
 
