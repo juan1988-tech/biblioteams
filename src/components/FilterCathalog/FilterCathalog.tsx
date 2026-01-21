@@ -1,50 +1,9 @@
 import { FilterParameter } from "../../elements/FilterParameter/FilterParameter"
+import { authorParameters,yearParameters,availabiityParameters } from "./data"
 
 const FilterCathalog = () => {
-  const authorParameters=[
-    {
-     value: "Autor 1",
-     name: "Autor"
-    },
-    {
-     value: "Autor 2",
-     name: "Autor"
-    },
-    {
-     value: "Autor 3",
-     name: "Autor"
-    }
-  ]
-  
-  const yearParameters =[
-    {
-     value: "0001",
-     name: "Año"
-    },
-    {
-     value: "0002",
-     name: "Año"
-    },
-    {
-     value: "0003",
-     name: "Año"
-    }
-  ]
-
-  const availabiityParameters = [
-    {
-     value: "Disponible",
-     name: "Disponibilidad"
-    },
-    {
-     value: "No Disponible",
-     name: "Disponibilidad"
-    }
-  ]
   return (
-    <form className="flex flex-col border-2 border-black border-radius rounded-xl p-4 h-auto overflow-y-hidden max-w-83
-    
-    ">
+    <form className="flex flex-col border-2 border-black border-radius rounded-xl p-4 h-auto overflow-y-hidden max-w-83">
       <h1 className="text-center text-tittle-blue text-font-h4-20 font-bold">Filtrar</h1>
       <FilterParameter label="Autor" children={authorParameters}/>
       <FilterParameter label="Año" children={yearParameters}/>
