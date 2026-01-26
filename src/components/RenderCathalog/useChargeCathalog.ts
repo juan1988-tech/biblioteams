@@ -9,19 +9,27 @@ export const useChargeCathalog = () =>{
     paginationButtons, setPaginationButtons
    } = useRenderCathalog();
 
-   const getInformationCathalog = async () =>{
-    const request = await fetch('/dummy/cathalogBook.json');
-    const data = await request.json();
-    
+   const getInformationCathalog = async () => {
     try {
-      if(data){        
-        setCathalog(data);
-      }  
-    } catch (error) {
-      console.error(`Error al cargar los datos: ${error}`)
-    }
-  }
+        //llamado para los datos dummy: const request = await fetch('/dummy/cathalogBook.json');
+        const request = await fetch("http://localhost:3000/api/cathalog");
+        
+        if (!request.ok) {
+            throw new Error(`HTTP error! status: ${request.status}`);
+        }
+        
+        const data = await request.json();
+        if (data.status === "success" && data.cathalogBooks) {
 
+            setCathalog(data.cathalogBooks);
+        } else if (data.status === "error") {
+            console.error(`Error del servidor: ${data.message}`);
+        }
+        
+    } catch (error) {
+        console.error(`Error al cargar los datos: ${error}`);
+    }
+}
   const onChangePage = (pageNumber:number) =>{
     setPage(pageNumber);
     setSearchParams(`?page=${pageNumber}`);
