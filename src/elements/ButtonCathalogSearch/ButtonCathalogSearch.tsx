@@ -15,7 +15,7 @@ const ButtonCathalogSearch:React.FC<ButtonCathalogProps> = ({onClickEvent}) =>{
 
   if(mainWidth >426){
       return(
-    <section className={(pathname==="/catalogo"?classNameCathalog.classNameSection:classNameHome.classNameSection)}>
+    <section className={(pathname==="/catalogo")?classNameCathalog.classNameSection:classNameHome.classNameSection}>
         <img src={(pathname==="/catalogo")?classNameCathalog.classNameIconImage:classNameHome.classNameIconImage} className="w-3.5 h-3.5 absolute left-[90%] max-tablet-hor:left-11/12"/>
          <h4 className={(pathname==="/catalogo")?classNameCathalog.classNameTittle:classNameHome.classNameTittle}>Buscar por: </h4>
          <select name="find-book" className={(pathname==="/catalogo")?classNameCathalog.classNameSelect:classNameHome.classNameSelect}>    
