@@ -1,59 +1,11 @@
-import { useState, useEffect } from "react";
 import type { FormCathalogProps } from "./types";
 import ButtonCathalogSearch from "../../elements/ButtonCathalogSearch/ButtonCathalogSearch";
 import SearcherSelector from "../../elements/SearcherSelector/SearcherSelector";
-import { useLocation } from "react-router-dom";
-import { classNamesChatalog,classNameHome } from "./data";
-import type { classNameCathalogSearch } from "./types"
 import { useCathalogSearchBar } from "./useCathalogSearchBar";
 
 const CathalogSerachBar:React.FC<FormCathalogProps> = ({placeholder}) => {
-  const { controlSelectorValues,handleChangeSelector,onCloseSearcher,handleSearchValue
-   } = useCathalogSearchBar();
-  
-  const [indicatorValue,setIndicatorValue] = useState<string>('Título');
-  const { pathname }  = useLocation();
-  const [classNameSearchBar,setClassNameSearchBar] = useState<classNameCathalogSearch>(classNameHome);
-  const [classNameSelector,setClassNameSelector] = useState<boolean>(false);
-
-  useEffect(()=>{
-    //declaración switch para modificar el indicador de parámetro de búsqueda
-    switch (controlSelectorValues.searcherValueSelector) {
-      case "title":
-        setIndicatorValue("Título")  
-        break;
-      case "author":
-        setIndicatorValue("Autor")  
-        break;
-      case "topics":
-        setIndicatorValue("Tema(s)")  
-        break;
-      case "availability":
-        setIndicatorValue("Disponibilidad")  
-        break;
-    }
-
-    //declaración de clases de acuerdo a la url
-    if(pathname==="/catalogo"){
-        setClassNameSearchBar(classNamesChatalog);
-    }else{
-      setClassNameSearchBar(classNameHome);
-    }
-  },[controlSelectorValues.searcherValueSelector])
-
-  useEffect(()=>{
-     //declaración de clases para el evento hover del botón
-    if(classNameSelector===true && pathname==="/catalogo"){
-      setClassNameSearchBar({...classNamesChatalog,
-        imageSrc: classNameHome.imageSrc
-      });
-    }else{
-      setClassNameSearchBar({...classNamesChatalog,
-        imageSrc: classNamesChatalog.imageSrc
-      });
-    }
-  },[classNameSelector])
-
+  const { controlSelectorValues,handleChangeSelector,onCloseSearcher,handleSearchValue,classNameSearchBar,setClassNameSelector
+  } = useCathalogSearchBar();
   return (
      <section className="flex flex-col w-full"> 
      <form className={classNameSearchBar.clasNameForm}>

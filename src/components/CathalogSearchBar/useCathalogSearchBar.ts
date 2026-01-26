@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import type { controlSelectorValuesProps } from "./types";
-
+import type { controlSelectorValuesProps,classNameCathalogSearch } from "./types";
+import { classNamesChatalog,classNameHome } from "./data";
 
 export const useCathalogSearchBar = () =>{
-    /*funcionalidades relacionadas con el botón del selector*/
-    const [indicatorValue,setIndicatorValue] = useState<string>('Título');
-    const { pathname }  = useLocation();
+    /*funcionalidades relacionadas con el modificar el selector para la barra de busqueda*/
     const [controlSelectorValues,setControlSelectorValues] = useState<controlSelectorValuesProps>({
         searcherSelectorRender: false,
         searcherValueSelector: "title",
@@ -34,68 +32,51 @@ export const useCathalogSearchBar = () =>{
         ...controlSelectorValues,
         searcherValueSelector: e.target.value,
       })
-      
-     switch (controlSelectorValues.searcherValueSelector) {
-      case "title":
-       setControlSelectorValues({
-            ...controlSelectorValues,
-            indicatorValue:"Título" 
-        })
-        break;
-      case "author":
-       setControlSelectorValues({
-          ...controlSelectorValues,
-          indicatorValue:"Autor"   
-        })
-       console.log("Autor")
-        break;
-      case "topics":
-        setControlSelectorValues({
-          ...controlSelectorValues,
-          indicatorValue:"Tema(s)"   
-        })
-        break;
-      case "availability":
-         setControlSelectorValues({
-          ...controlSelectorValues,
-          indicatorValue:"Disponibilidad"   
-        })
-        break;
-    }
    }
 
-   //console.log(controlSelectorValues)
- /*   switch (controlSelectorValues.searcherValueSelector) {
-      case "title":
-       setControlSelectorValues({
-            ...controlSelectorValues,
-            indicatorValue:"Título" 
-        })
-        break;
-      case "author":
-       setControlSelectorValues({
-          ...controlSelectorValues,
-          indicatorValue:"Autor"   
-        })
-       console.log("Autor")
-        break;
-      case "topics":
-        setControlSelectorValues({
-          ...controlSelectorValues,
-          indicatorValue:"Tema(s)"   
-        })
-        break;
-      case "availability":
-         setControlSelectorValues({
-          ...controlSelectorValues,
-          indicatorValue:"Disponibilidad"   
-        })
-        break;
+  //useEffect para controlar el nombre del Buscar por:  
+  useEffect(() => {
+    const indicatorMap: Record<string, string> = {
+    title: "Título",
+    author: "Autor",
+    topics: "Tema(s)",
+    availability: "Disponibilidad",
+  };
+
+  setControlSelectorValues(prev => ({
+    ...prev,
+    indicatorValue: indicatorMap[prev.searcherValueSelector] ?? "",
+  }));
+  }, [controlSelectorValues.searcherValueSelector]);
+
+  /*funcionalidades relacionadas con la modificación de las clases del componente según la página en la que se está renderizando*/
+  const [classNameSearchBar,setClassNameSearchBar] = useState<classNameCathalogSearch>(classNameHome);
+  const [classNameSelector,setClassNameSelector] = useState<boolean>(false);
+  const { pathname }  = useLocation();
+
+  useEffect(()=>{
+    //declaración switch para modificar el indicador de parámetro de búsqueda
+    //declaración de clases de acuerdo a la url
+    if(pathname==="/catalogo"){
+        setClassNameSearchBar(classNamesChatalog);
+    }else{
+      setClassNameSearchBar(classNameHome);
     }
-    */
+  },[controlSelectorValues.searcherValueSelector])
 
-   //console.log(controlSelectorValues)
+  useEffect(()=>{
+     //declaración de clases para el evento hover del botón
+    if(classNameSelector===true && pathname==="/catalogo"){
+      setClassNameSearchBar({...classNamesChatalog,
+        imageSrc: classNameHome.imageSrc
+      });
+    }else{
+      setClassNameSearchBar({...classNamesChatalog,
+        imageSrc: classNamesChatalog.imageSrc
+      });
+    }
+  },[classNameSelector])
 
-
-    return { controlSelectorValues,setControlSelectorValues,handleChangeSelector,onCloseSearcher,handleSearchValue }
+return { controlSelectorValues,setControlSelectorValues,handleChangeSelector,onCloseSearcher,handleSearchValue,classNameSearchBar,setClassNameSelector }
 }
+
