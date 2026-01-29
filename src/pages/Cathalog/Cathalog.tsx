@@ -9,7 +9,18 @@ import RenderCathalogLoading from "../../components/RenderCathalog/RenderCathalo
 
 const Cathalog = () => {
   const [loadingCathalog,setLoadingCathalog] = useState(false);
- 
+  
+   //variable de estado para la busqueda
+  const [questBook,setBookQuestBook] = useState<string>('');
+  
+  //funcion de busqueda del botón
+  const inputHandler = (e: React.ChangeEvent<HTMLInputElement>) =>{
+    let lowerCase = e.target.value;
+    lowerCase.toLowerCase();
+    lowerCase.trim();
+    setBookQuestBook(lowerCase);
+  }
+  
   useEffect(()=>{
       if(!RenderCathalogLoading){
     setLoadingCathalog(true);
@@ -29,7 +40,11 @@ const Cathalog = () => {
         </aside>
         <header className="flex col-span-8 col-start-4 col-end-10 justify-self-start max-tablet-hor:col-start-1 max-tablet-hor:col-end-5
         max-tablet:items-center max-tablet:col-span-4 max-tablet:justify-center max-cellphone:col-span-full max-cellphone:w-full">
-          <CathalogSerachBar  placeholder="Resultado libro ..."/> 
+          <CathalogSerachBar  
+            placeholder="Resultado libro ..."
+            questBook={questBook}
+            inputHandler={inputHandler}
+            /> 
           <SelectCathalog label="Ordenar por" 
             selectName="order-book" 
             selectClassName="flex flex-col w-84 relative max-tablet-hor:ml-4 max-tablet:hidden"/>

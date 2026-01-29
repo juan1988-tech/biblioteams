@@ -5,7 +5,7 @@ import { useChargeCathalog } from "./useChargeCathalog";
 
 const RenderCathalog:React.FC = () =>{
   const { booksPerPages, paginationButtons } = useChargeCathalog();
-
+ 
     return(
       <section className="flex flex-col col-span-9 row-start-3 row-end-4 max-tablet-hor:col-span-3 max-tablet:col-span-4 
       max-tablet:row-start-4 max-tablet:row-end-5 max-w-169.5">

@@ -1,5 +1,7 @@
 export type FormCathalogProps ={
-  placeholder: string
+  placeholder: string,
+  questBook: string,
+  inputHandler: (e:React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export interface classNameCathalogSearch{

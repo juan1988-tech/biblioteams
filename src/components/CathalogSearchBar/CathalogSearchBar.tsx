@@ -5,7 +5,7 @@ import { useCathalogSearchBarSelector, useClassNamesSearchbar } from "./useCatha
 import { useLocation } from "react-router-dom";
 import {classNamesChatalog,classNameHome} from './data';
 
-const CathalogSerachBar:React.FC<FormCathalogProps> = ({placeholder}) => {
+const CathalogSerachBar:React.FC<FormCathalogProps> = ({placeholder,questBook,inputHandler}) => {
   //variables relacionadas con el control del selector de la barra de busqueda  
   const { controlSelectorValues,handleChangeSelector,onCloseSearcher,handleSearchValue} = useCathalogSearchBarSelector();
 
@@ -13,13 +13,18 @@ const CathalogSerachBar:React.FC<FormCathalogProps> = ({placeholder}) => {
   const { classNameSearchBar,setClassNameSelector } = useClassNamesSearchbar();
 
   const { pathname }  = useLocation();
-
+  
   if(pathname==="/catalogo"){
     return(
     <section className="flex flex-col w-full"> 
      <form className={classNamesChatalog.clasNameForm}>
-       <input type="text" className={classNamesChatalog.classNameInput} 
-       placeholder={placeholder}/>
+       <input
+        type="text"
+        className={classNamesChatalog.classNameInput} 
+        placeholder={placeholder}
+        value={questBook}
+        onChange={inputHandler}
+        />
        <section className="flex"> 
         <ButtonCathalogSearch onClickEvent={handleChangeSelector}/>
         <button className={classNameSearchBar.classNameButton} 
@@ -43,8 +48,11 @@ const CathalogSerachBar:React.FC<FormCathalogProps> = ({placeholder}) => {
     return(
     <section className="flex flex-col w-full"> 
      <form className={classNameHome.clasNameForm}>
-       <input type="text" className={classNameHome.classNameInput} 
-       placeholder={placeholder}/>
+       <input type="text"
+          className={classNameHome.classNameInput} 
+          placeholder={placeholder}
+          
+          />
        <section className="flex"> 
         <ButtonCathalogSearch onClickEvent={handleChangeSelector}/>
         <button className={classNameHome.classNameButton} 
