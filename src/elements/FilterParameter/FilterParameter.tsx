@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { FilterElementProps,FilterParameterProps } from "./types";
 
 const FilterElement:React.FC<FilterElementProps> = ({value,name}) =>{
@@ -10,32 +10,59 @@ const FilterElement:React.FC<FilterElementProps> = ({value,name}) =>{
     )
 }
 
-export const FilterParameter:React.FC<FilterParameterProps>= ({children,label}) =>{
-    //hago un valor booleano para cambiar entre dos estilos 
-    const [toggleHeightFilter,setToggleHeightFilter]  = useState<boolean>(false);
+export const FilterParameter: React.FC<FilterParameterProps> = ({ children, label }) => {
+    // Cambia collapsed a false para que inicie expandido
+    const [collapsed, setCollapsed] = useState<boolean>(false);
+    const [maxHeight, setMaxHeight] = useState<string>("0px");
+    const filterReference = useRef<HTMLDivElement | null>(null);
 
-    //sacar la referencia del elemento contenedor
-    const filterRefererence = useRef<HTMLDivElement|null>(null)
+    // y después de montar el componente
+    // Así la transición es fluida en ambos sentidos
+    useEffect(() => {
+        const filternode = filterReference.current;
+        if (filternode) {
+            if (collapsed) {
+                setMaxHeight("24px");
+            } else {
+                setMaxHeight(`${filternode.scrollHeight}px`);
+            }
+        }
+    }, [collapsed, children]);
+
+    // Para evitar salto en filternode primer render, expandido por defecto
+    useEffect(() => {
+        const filternode = filterReference.current;
+        if (filternode && !collapsed) {
+            setMaxHeight(`${filternode.scrollHeight}px`);
+        }
+    }, []);
 
     return (
         <section
-        style={{
-            maxHeight: toggleHeightFilter?"24px":`${filterRefererence?.current?.scrollHeight}px` 
-        }}
-        className="max-h-full overflow-hidden transition-[max-height] duration-700 ease-in-out" 
-        ref={filterRefererence} >
-          <article className="flex justify-between cursor-pointer" onClick={()=>setToggleHeightFilter(!toggleHeightFilter)}>
-            <h2 className="text-tittle-blue font-bold">{label}</h2>
-            <img src="/assets/ep_arrow-blue-bold.svg" 
-                className="duration-700 ease-in-out"
-            style={{
-                transform: toggleHeightFilter?"rotate(0deg)":"rotate(180deg)"
-            }}/>
-          </article>
-            {children.map((element)=><FilterElement 
-                value={element.value}
-                name={element.name}
-            />)}    
+            style={{ maxHeight }}
+            className="overflow-hidden transition-[max-height] duration-700 ease-in-out"
+            ref={filterReference}
+        >
+            <article
+                className="flex justify-between cursor-pointer"
+                onClick={() => setCollapsed((prev) => !prev)}
+            >
+                <h2 className="text-tittle-blue font-bold">{label}</h2>
+                <img
+                    src="/assets/ep_arrow-blue-bold.svg"
+                    className="duration-700 ease-in-out"
+                    style={{
+                        transform: collapsed ? "rotate(0deg)" : "rotate(180deg)"
+                    }}
+                />
+            </article>
+            {children.map((element) => (
+                <FilterElement
+                    key={element.value}
+                    value={element.value}
+                    name={element.name}
+                />
+            ))}
         </section>
-    )
+    );
 }
