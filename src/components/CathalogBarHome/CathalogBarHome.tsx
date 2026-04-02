@@ -1,8 +1,7 @@
-
 import { useState } from "react";
 import CathalogSerachBar from "../CathalogSearchBar/CathalogSearchBar";
 
-export default function CathalogBar() {
+const CathalogBarHome = () => {
   const [questBook, setQuestBook] = useState("");
   const inputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuestBook(e.target.value);
@@ -20,3 +19,5 @@ export default function CathalogBar() {
     </section>
   )
 }
+
+export default CathalogBarHome;
