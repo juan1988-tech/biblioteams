@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import type { controlSelectorValuesProps,classNameCathalogSearch } from "./types";
-import { classNamesChatalog,classNameHome } from "./data";
+import { classNameCathalog,classNameHome } from "./data";
 
 /*hook personalizado para controlar las clases CSS de la barra de búsqueda según la página en la que aparece*/
 export const useClassNamesSearchbar = () =>{
@@ -13,7 +13,7 @@ export const useClassNamesSearchbar = () =>{
     //declaración switch para modificar el indicador de parámetro de búsqueda
     //declaración de clases de acuerdo a la url
     if(pathname==="/catalogo"){
-        setClassNameSearchBar(classNamesChatalog);
+        setClassNameSearchBar(classNameCathalog);
     }else{
       setClassNameSearchBar(classNameHome);
     }
@@ -22,12 +22,12 @@ export const useClassNamesSearchbar = () =>{
   useEffect(()=>{
      //declaración de clases para el evento hover del botón
     if(classNameSelector===true && pathname==="/catalogo"){
-      setClassNameSearchBar({...classNamesChatalog,
+      setClassNameSearchBar({...classNameCathalog,
         imageSrc: classNameHome.imageSrc
       });
     }else{
-      setClassNameSearchBar({...classNamesChatalog,
-        imageSrc: classNamesChatalog.imageSrc
+      setClassNameSearchBar({...classNameCathalog,
+        imageSrc: classNameCathalog.imageSrc
       });
     }
   },[classNameSelector])
@@ -58,10 +58,10 @@ export const useCathalogSearchBarSelector = () =>{
       })
     }}
 
-    const handleSearchValue = (e:React.ChangeEvent<HTMLInputElement>) =>{
+    const handleSearchValue = (value: string) =>{
       setControlSelectorValues({
         ...controlSelectorValues,
-        searcherValueSelector: e.target.value,
+        searcherValueSelector: value,
       })
    }
 
