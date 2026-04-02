@@ -4,7 +4,7 @@ import { useRenderCathalog } from "../../store/cathalog/useRenderCathalog";
 import { useSearchParams } from "react-router-dom";
 
 export const useChargeCathalog = () =>{
-    const [searchParams, setSearchParams] = useSearchParams();
+    const [, setSearchParams] = useSearchParams();
     const { cathalog, setCathalog, page, setPage,
     paginationButtons, setPaginationButtons
    } = useRenderCathalog();
@@ -64,7 +64,7 @@ export const useChargeCathalog = () =>{
 
   // Sincroniza la URL con la página actual
   useEffect(() => {
-    setSearchParams(`?page=${searchParams}`, { replace: true });
+    setSearchParams(`?page=${page}`, { replace: true });
   }, [page])
 
   useEffect(() => {
