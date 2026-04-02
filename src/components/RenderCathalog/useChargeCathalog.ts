@@ -64,7 +64,7 @@ export const useChargeCathalog = () =>{
 
   // Sincroniza la URL con la página actual
   useEffect(() => {
-    setSearchParams(`?page=${page}`, { replace: true });
+    setSearchParams(`?page=${searchParams}`, { replace: true });
   }, [page])
 
   useEffect(() => {
